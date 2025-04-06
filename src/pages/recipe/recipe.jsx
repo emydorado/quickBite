@@ -1,7 +1,7 @@
 function Recipe() {
 	return (
 		<>
-			<h1>recipe</h1>
+			<h1>Recipe</h1>
 		</>
 	);
 }
