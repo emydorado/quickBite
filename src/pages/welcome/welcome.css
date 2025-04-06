@@ -26,26 +26,42 @@ body {
 	width: 216px;
 	border-radius: 12px;
 	padding: 12px;
-	cursor: pointer;
 	transition: background-color 0.3s ease;
+}
+
+.welcome-button-started:hover {
+	background-color: #7eb44b;
+}
+
+.welcome-button-started:active {
+	background-color: #4c6d2d;
 }
 
 .welcome-login {
 	display: flex;
-  justify-content: center;
+	justify-content: center;
 }
 
 .welcome-already {
 	font-size: 14px;
 	margin-bottom: 20px;
-  margin-top: 0px;
+	margin-top: 0px;
 }
 
 .welcome-login-button {
 	font-size: 14px;
 	margin-bottom: 20px;
-  font-weight: 700;
-  color: #F76711;
-  margin-top: 0px;
-  margin-left: 10px;
+	font-weight: 700;
+	color: #f76711;
+	margin-top: 0px;
+	margin-left: 10px;
+}
+
+.welcome-login-button:hover {
+	font-size: 14px;
+	margin-bottom: 20px;
+	font-weight: 700;
+	color: #e15e0f;
+	margin-top: 0px;
+	margin-left: 10px;
 }
