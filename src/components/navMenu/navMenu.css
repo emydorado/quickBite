@@ -14,6 +14,8 @@
 #search,
 #saved,
 #profile {
+	cursor: pointer;
+
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -25,8 +27,8 @@
 }
 
 .navIcon {
-	width: 2vw;
-	height: 2vw;
+	width: 3vw;
+	height: 3vw;
 }
 
 #icons {
@@ -37,6 +39,7 @@
 
 #navContainer img {
 	height: 55px;
+	cursor: pointer;
 }
 
 #home {
@@ -87,6 +90,7 @@
 
 @media (max-width: 767px) {
 	#navContainer {
+		cursor: pointer;
 		display: inline-flex;
 		position: fixed;
 		top: 91%;
