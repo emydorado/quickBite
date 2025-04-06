@@ -1,0 +1,51 @@
+body {
+	background-color: #003324;
+}
+
+.welcome-title {
+	font-size: 39px;
+	margin-bottom: 50px;
+}
+
+.welcome-logo {
+	height: 259px;
+	width: auto;
+}
+
+.welcome-slogan {
+	font-size: 14px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.welcome-button-started {
+	font-size: 14px;
+	margin-bottom: 20px;
+	background-color: #8bc652;
+	height: 41px;
+	width: 216px;
+	border-radius: 12px;
+	padding: 12px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.welcome-login {
+	display: flex;
+  justify-content: center;
+}
+
+.welcome-already {
+	font-size: 14px;
+	margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.welcome-login-button {
+	font-size: 14px;
+	margin-bottom: 20px;
+  font-weight: 700;
+  color: #F76711;
+  margin-top: 0px;
+  margin-left: 10px;
+}
