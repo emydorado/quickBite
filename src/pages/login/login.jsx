@@ -17,7 +17,13 @@ function LogIn() {
 				Password
 			</label>
 			<ul></ul>
-			<input type='password' name='password' id='password' placeholder='Your Password'  className='login-input-password' />
+			<input
+				type='password'
+				name='password'
+				id='password'
+				placeholder='Your Password'
+				className='login-input-password'
+			/>
 			<ul></ul>
 
 			<p className='login-forgot-password'>Forget password?</p>
@@ -25,8 +31,8 @@ function LogIn() {
 			<button className='login-button'>Log in</button>
 
 			<section className='login-signup'>
-				<p className='welcome-already'>Don't have an account? </p>
-				<p className='welcome-login-button'>Sign Up</p>
+				<p className='login-account'>Don't have an account? </p>
+				<p className='signup-button'>Sign Up</p>
 			</section>
 		</div>
 	);
