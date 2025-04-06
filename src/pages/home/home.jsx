@@ -1,7 +1,14 @@
+import BigCardDish from '../../components/bigCardDish/bigCardDish';
+import { recipes } from '../../data/recipes';
+
 function Home() {
+	console.log(recipes);
+
 	return (
 		<>
-			<h1>home</h1>
+			{recipes.map((recipe) => {
+				return <BigCardDish key={recipe.id} img={recipe.img} title={recipe.recipe_name} time={recipe.id}></BigCardDish>;
+			})}
 		</>
 	);
 }
