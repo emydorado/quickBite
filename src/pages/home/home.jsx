@@ -1,29 +1,28 @@
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import SmallCardDish from '../../components/smallCardDish/smallCardDish';
+import SavedCardDish from '../../components/savedCardDish/savedCardDish';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
 import { recipes } from '../../data/recipes';
 import { ingredientes } from '../../data/ingredients';
 
 function Home() {
-	console.log(recipes);
-
 	return (
 		<>
-			{ingredientes.map((ingrediente) => {
-				return (
-					<IngredientButton key={ingrediente.id} name={ingrediente.name} emoji={ingrediente.emoji}></IngredientButton>
-				);
-			})}
+			{ingredientes[0] && (
+				<IngredientButton key={ingredientes[0].id} name={ingredientes[0].name} emoji={ingredientes[0].emoji} />
+			)}
 
-			{recipes.map((recipe) => {
-				return <BigCardDish key={recipe.id} img={recipe.img} title={recipe.recipe_name} time={recipe.id}></BigCardDish>;
-			})}
+			{recipes[1] && (
+				<BigCardDish key={recipes[1].id} img={recipes[1].img} title={recipes[1].recipe_name} time={recipes[1].id} />
+			)}
 
-			{recipes.map((recipe) => {
-				return (
-					<SmallCardDish key={recipe.id} img={recipe.img} title={recipe.recipe_name} time={recipe.id}></SmallCardDish>
-				);
-			})}
+			{recipes[2] && (
+				<SmallCardDish key={recipes[2].id} img={recipes[2].img} title={recipes[2].recipe_name} time={recipes[2].id} />
+			)}
+
+			{recipes[3] && (
+				<SavedCardDish key={recipes[3].id} img={recipes[3].img} title={recipes[3].recipe_name} time={recipes[3].id} />
+			)}
 		</>
 	);
 }
