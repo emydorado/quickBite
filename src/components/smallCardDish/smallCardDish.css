@@ -5,6 +5,19 @@
 	border-radius: 0.7rem;
 }
 
+.textContent {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.onlyText {
+	display: flex;
+	flex-direction: column;
+	margin-right: 10vh;
+}
+
 .title {
 	color: #6b6967;
 	font-family: 'DM Sans', sans-serif;
