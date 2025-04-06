@@ -4,6 +4,7 @@ export const recipes = [
 		recipe_name: 'Scrambled Eggs with Avocado',
 		img: 'https://delightfullylowcarb.com/wp-content/uploads/2020/01/avocado-scrambled-eggs.jpg',
 		classification: 'Breakfast',
+		description: 'Creamy scrambled eggs paired with ripe avocado for a healthy, satisfying breakfast.',
 		ingredients: [
 			{ name: 'Eggs', quantity: 3, unit: 'units' },
 			{ name: 'Butter', quantity: 1, unit: 'tbsp' },
@@ -17,6 +18,7 @@ export const recipes = [
 		recipe_name: 'Chicken Salad',
 		img: 'https://thegirlonbloor.com/wp-content/uploads/2022/06/buffalo-chicken-salad-8.jpg',
 		classification: 'Lunch',
+		description: 'A fresh and protein-packed salad with chicken, veggies, and a light dressing.',
 		ingredients: [
 			{ name: 'Chicken', quantity: 200, unit: 'g' },
 			{ name: 'Lettuce', quantity: 2, unit: 'cups' },
@@ -33,6 +35,7 @@ export const recipes = [
 		recipe_name: 'Grilled Salmon with Rice',
 		img: 'https://www.erinliveswhole.com/wp-content/uploads/2022/07/grilled-salmon-with-coconut-rice-12.jpg',
 		classification: 'Dinner',
+		description: 'Delicious grilled salmon served with fluffy rice and a touch of lemon.',
 		ingredients: [
 			{ name: 'Salmon', quantity: 200, unit: 'g' },
 			{ name: 'Olive oil', quantity: 1, unit: 'tbsp' },
@@ -47,6 +50,7 @@ export const recipes = [
 		recipe_name: 'Peanut Butter & Banana Toast',
 		img: 'https://40aprons.com/wp-content/uploads/2014/03/peanut-butter-banana-toast-1-1.jpg',
 		classification: 'Snack',
+		description: 'A quick and tasty snack made with toasted bread, peanut butter, banana, and honey.',
 		ingredients: [
 			{ name: 'Bread', quantity: 2, unit: 'slices' },
 			{ name: 'Peanut', quantity: 2, unit: 'tbsp' },
@@ -59,6 +63,7 @@ export const recipes = [
 		recipe_name: 'Chocolate and Strawberry Smoothie',
 		img: 'https://www.elizabethrider.com/wp-content/uploads/2023/02/GL0A2698-scaled.jpg',
 		classification: 'Dessert',
+		description: 'A rich and fruity smoothie blending chocolate, strawberries, and honey.',
 		ingredients: [
 			{ name: 'Strawberry', quantity: 1, unit: 'cup' },
 			{ name: 'Dark Chocolate', quantity: 1, unit: 'oz' },
@@ -72,6 +77,7 @@ export const recipes = [
 		recipe_name: 'Pasta Primavera',
 		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeLuJsmqKYQHH5pP1hFmKSZ6fY1vh4D-1MiA&s',
 		classification: 'Lunch',
+		description: 'Colorful veggies tossed with pasta in a light garlic and olive oil sauce.',
 		ingredients: [
 			{ name: 'Pasta', quantity: 1, unit: 'cup' },
 			{ name: 'Olive oil', quantity: 1, unit: 'tbsp' },
@@ -88,6 +94,7 @@ export const recipes = [
 		recipe_name: 'Vegetable Stir-fry',
 		img: 'https://www.mccormick.com/-/media/project/oneweb/mccormick-us/mccormick/recipe-images/stir-fry-vegetables-recipe-800x800.jpg?rev=56e6eec8c7b14887a5c238eb35a20da9&vd=20240606T181334Z&extension=webp&hash=FF02DA13F3817A968D847A8A85B1E48D',
 		classification: 'Dinner',
+		description: 'A fast and flavorful mix of stir-fried veggies with soy, garlic, and ginger.',
 		ingredients: [
 			{ name: 'Broccoli', quantity: 1, unit: 'cup' },
 			{ name: 'Carrot', quantity: 1, unit: 'unit' },
@@ -103,6 +110,7 @@ export const recipes = [
 		recipe_name: 'Eggplant Parmesan',
 		img: 'https://www.tablefortwoblog.com/wp-content/uploads/2022/06/eggplant-parmesan-recipe-photo-tablefortwoblog-2-scaled.jpg',
 		classification: 'Dinner',
+		description: 'Crispy breaded eggplant baked with cheese and tomato sauce for a cozy meal.',
 		ingredients: [
 			{ name: 'Eggplant', quantity: 1, unit: 'unit' },
 			{ name: 'Flour', quantity: 0.5, unit: 'cup' },
@@ -119,6 +127,7 @@ export const recipes = [
 		recipe_name: 'Lentil Soup',
 		img: 'https://www.themediterraneandish.com/wp-content/uploads/2022/01/spicy-lentil-soup-recipe-10.jpg',
 		classification: 'Dinner',
+		description: 'A warm and hearty soup made with lentils, vegetables, and spices.',
 		ingredients: [
 			{ name: 'Lentils', quantity: 1, unit: 'cup' },
 			{ name: 'Carrot', quantity: 1, unit: 'unit' },
@@ -135,6 +144,7 @@ export const recipes = [
 		recipe_name: 'Mango Smoothie',
 		img: 'https://www.cubesnjuliennes.com/wp-content/uploads/2021/04/Mango-Smoothie-Recipe.jpg',
 		classification: 'Snack',
+		description: 'A creamy, tropical mango smoothie perfect for a refreshing snack.',
 		ingredients: [
 			{ name: 'Mango', quantity: 1, unit: 'unit' },
 			{ name: 'Yogurt', quantity: 1, unit: 'cup' },
@@ -146,6 +156,7 @@ export const recipes = [
 		recipe_name: 'Spinach and Feta Omelette',
 		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8A9zPukNGJhBvHnlZif06LbeuzR0oeXkXcg&s',
 		classification: 'Breakfast',
+		description: 'A fluffy omelette filled with fresh spinach and creamy feta cheese.',
 		ingredients: [
 			{ name: 'Eggs', quantity: 3, unit: 'units' },
 			{ name: 'Spinach', quantity: 1, unit: 'cup' },
@@ -160,6 +171,7 @@ export const recipes = [
 		recipe_name: 'Veggie Wrap',
 		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_GPFMFEtnDQuI-KgCmNyFIVYNS6M_zqe_5Q&s',
 		classification: 'Lunch',
+		description: 'A light wrap filled with fresh vegetables, creamy hummus, and avocado.',
 		ingredients: [
 			{ name: 'Lettuce', quantity: 1, unit: 'cup' },
 			{ name: 'Cucumber', quantity: 0.5, unit: 'unit' },
@@ -176,6 +188,7 @@ export const recipes = [
 		recipe_name: 'Grilled Chicken Tacos',
 		img: 'Grilled Chicken Tacos',
 		classification: 'Dinner',
+		description: 'Flavorful grilled chicken served in soft tortillas with fresh toppings and a squeeze of lime.',
 		ingredients: [
 			{ name: 'Chicken', quantity: 200, unit: 'g' },
 			{ name: 'Taco shells', quantity: 2, unit: 'units' },
@@ -192,6 +205,8 @@ export const recipes = [
 		recipe_name: 'Avocado Toast with Poached Eggs',
 		img: 'https://www.aberdeenskitchen.com/wp-content/uploads/2019/05/Avocado-Egg-Breakfast-Toast-FI-Thumbnail-1200X1200.jpg',
 		classification: 'Breakfast',
+		description:
+			'Creamy avocado spread on toasted bread, topped with perfectly poached eggs and a sprinkle of seasoning.',
 		ingredients: [
 			{ name: 'Eggs', quantity: 2, unit: 'units' },
 			{ name: 'Avocado', quantity: 1, unit: 'unit' },
@@ -206,6 +221,7 @@ export const recipes = [
 		recipe_name: 'Chicken Caesar Salad',
 		img: 'https://s23209.pcdn.co/wp-content/uploads/2023/01/220905_DD_Chx-Caesar-Salad_051-500x500.jpg',
 		classification: 'Lunch',
+		description: 'A classic salad with grilled chicken, crunchy romaine lettuce, Caesar dressing, and crispy croutons.',
 		ingredients: [
 			{ name: 'Chicken', quantity: 200, unit: 'g' },
 			{ name: 'Lettuce', quantity: 2, unit: 'cups' },
@@ -222,6 +238,7 @@ export const recipes = [
 		recipe_name: 'Mango Chicken Stir-fry',
 		img: 'https://www.ambitiouskitchen.com/wp-content/uploads/2018/07/mangochicken-2long.jpg',
 		classification: 'Dinner',
+		description: 'Sweet and savory stir-fry made with juicy mango chunks, tender chicken, and colorful vegetables.',
 		ingredients: [
 			{ name: 'Chicken', quantity: 200, unit: 'g' },
 			{ name: 'Mango', quantity: 1, unit: 'unit' },
@@ -239,6 +256,8 @@ export const recipes = [
 		recipe_name: 'Avocado and Chickpea Salad',
 		img: 'https://www.oliveandmango.com/images/uploads/2022_05_14_chickpea_avocado_salad_2.jpg',
 		classification: 'Lunch',
+		description:
+			'A refreshing salad combining creamy avocado, protein-rich chickpeas, and crisp veggies with a zesty dressing.',
 		ingredients: [
 			{ name: 'Avocado', quantity: 1, unit: 'unit' },
 			{ name: 'Chickpeas', quantity: 1, unit: 'cup' },
@@ -256,6 +275,8 @@ export const recipes = [
 		recipe_name: 'Cheese and Spinach Stuffed Chicken',
 		img: 'https://www.spendwithpennies.com/wp-content/uploads/2024/05/Cropped-Spinach-and-Cheese-Stuffed-Chicken-Breasts-SpendWithPennies-25.jpg',
 		classification: 'Dinner',
+		description:
+			'Juicy chicken breasts filled with a savory mix of melted cheese and sautéed spinach, baked to perfection.',
 		ingredients: [
 			{ name: 'Chicken', quantity: 200, unit: 'g' },
 			{ name: 'Spinach', quantity: 1, unit: 'cup' },
@@ -271,6 +292,7 @@ export const recipes = [
 		recipe_name: 'Eggplant Stir-fry',
 		img: 'https://www.foodelicacy.com/wp-content/uploads/2020/09/brinjal-with-garlic-and-dried-shrimps-1.jpg',
 		classification: 'Dinner',
+		description: 'A flavorful vegetarian stir-fry featuring tender eggplant cooked with garlic, soy sauce, and spices.',
 		ingredients: [
 			{ name: 'Eggplant', quantity: 1, unit: 'unit' },
 			{ name: 'Bell pepper', quantity: 1, unit: 'unit' },
@@ -287,6 +309,8 @@ export const recipes = [
 		recipe_name: 'Tomato and Cheese Sandwich',
 		img: 'https://www.homecookingadventure.com/wp-content/uploads/2022/01/grilled_sandwich_main_image.jpg',
 		classification: 'Snack',
+		description:
+			'A fresh and simple sandwich made with ripe tomatoes, cheese, and your choice of bread, perfect for a quick lunch.',
 		ingredients: [
 			{ name: 'Bread', quantity: 2, unit: 'slices' },
 			{ name: 'Tomato', quantity: 1, unit: 'unit' },
