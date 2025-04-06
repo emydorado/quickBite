@@ -1,6 +1,7 @@
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import SavedCardDish from '../../components/savedCardDish/savedCardDish';
+import NavMenu from '../../components/navMenu/navMenu';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
 import { recipes } from '../../data/recipes';
 import { ingredientes } from '../../data/ingredients';
@@ -8,6 +9,7 @@ import { ingredientes } from '../../data/ingredients';
 function Home() {
 	return (
 		<>
+			<NavMenu></NavMenu>
 			{ingredientes[0] && (
 				<IngredientButton key={ingredientes[0].id} name={ingredientes[0].name} emoji={ingredientes[0].emoji} />
 			)}
