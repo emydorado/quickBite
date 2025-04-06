@@ -2,7 +2,6 @@ import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import SavedCardDish from '../../components/savedCardDish/savedCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
-import IngredientButton from '../../components/ingredientButton/ingredientButton';
 import { recipes } from '../../data/recipes';
 import './home.css';
 
