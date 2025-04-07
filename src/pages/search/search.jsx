@@ -38,8 +38,14 @@ function Search() {
 					<IngredientButton key={ingredientes[5].id} name={ingredientes[5].name} emoji={ingredientes[5].emoji} />
 				)}
 			</section>
-			{recipes[1] && (
-				<BigCardDish key={recipes[1].id} img={recipes[1].img} title={recipes[1].recipe_name} time={recipes[1].id} />
+			{recipes[15] && (
+				<BigCardDish key={recipes[15].id} img={recipes[15].img} title={recipes[15].recipe_name} time={recipes[15].id} />
+			)}
+			{recipes[16] && (
+				<BigCardDish key={recipes[16].id} img={recipes[16].img} title={recipes[16].recipe_name} time={recipes[16].id} />
+			)}
+			{recipes[17] && (
+				<BigCardDish key={recipes[17].id} img={recipes[17].img} title={recipes[17].recipe_name} time={recipes[17].id} />
 			)}
 		</>
 	);
