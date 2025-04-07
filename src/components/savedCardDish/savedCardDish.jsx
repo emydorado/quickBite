@@ -3,12 +3,12 @@ import SavedIcon from '../savedIcon/savedIcon';
 
 const SavedCardDish = ({ img, title, time }) => {
 	return (
-		<div id='smallCard'>
-			<img src={img} alt='dish picture' />
+		<div id='savedCard'>
+			<img src={img} alt='dish picture' className='saved-image' />
 			<div className='textContent'>
 				<div className='onlyText'>
-					<h1 className='title'>{title} </h1>
-					<p className='time'>{time}</p>
+					<h1 className='saved-card-title'>{title} </h1>
+					<p className='saved-card-time'>{time}</p>
 				</div>
 				<div id='icon'>
 					<SavedIcon />

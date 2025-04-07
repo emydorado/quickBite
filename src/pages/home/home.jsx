@@ -3,7 +3,7 @@ import NavMenu from '../../components/navMenu/navMenu';
 import { recipes } from '../../data/recipes';
 import { useNavigate } from 'react-router-dom';
 import './home.css';
-
+import BigCardDish from '../../components/bigCardDish/bigCardDish';
 function Home() {
 	const navigate = useNavigate();
 
@@ -24,6 +24,7 @@ function Home() {
 							time={recipes[1].id}
 						/>
 					)}
+
 					{recipes[2] && (
 						<SmallCardDish
 							key={recipes[2].id}
