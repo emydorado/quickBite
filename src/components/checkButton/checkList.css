@@ -10,12 +10,12 @@
 
 #checklist button:hover {
 	background-color: #8bc652;
-	border: none;
+	border: 3px solid #8bc652;
 }
 
 #checklist button.checked {
 	background-color: #8bc652;
-	border: none;
+	border: 3px solid #8bc652;
 }
 
 #checklist button.unchecked {

@@ -20,7 +20,7 @@ function Welcome() {
 				<h1 className='welcome-title'>Welcome</h1>
 				<img className='welcome-logo' src={logo} alt='QuickBite-logo' />
 				<p className='welcome-slogan'>Cook delicious recipes with what’s in your fridge</p>
-				<button onClick={() => navigate('/home')} className='welcome-button-started'>
+				<button onClick={() => navigate('/signup')} className='welcome-button-started'>
 					Get Started
 				</button>
 				<section className='welcome-login'>

@@ -61,13 +61,13 @@
 	}
 
 	.onlyTextChecklist .title {
-		font-size: 16px;
+		font-size: 15px;
 		margin: 0;
 	}
 
 	.onlyTextChecklist .time,
 	.onlyTextChecklist .checklistDescription {
-		font-size: 12px;
+		font-size: 11px;
 		margin: 2px;
 	}
 }

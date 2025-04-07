@@ -13,6 +13,7 @@ function Profile() {
 					img={recipes[4].img}
 					title={recipes[4].recipe_name}
 					time={recipes[4].id}
+					description={recipes[4].description}
 				/>
 			)}{' '}
 		</>
