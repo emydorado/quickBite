@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 function SignUp() {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<h1>Sign Up</h1>
@@ -10,9 +14,9 @@ function SignUp() {
 			<label htmlFor=''>Password</label>
 			<input type='password' name='' id='' placeholder='Your Password' />
 			<p>Forget password?</p>
-			<button>Log in</button>
+			<button onClick={() => navigate('/home')}>Sign in</button>
 			<p>Already have an account? </p>
-			<button>Log in</button>
+			<button onClick={() => navigate('/login')}>Log in</button>
 			<p>By continue you agree to our</p>
 			<button>Terms & Privacy Policy</button>
 		</>

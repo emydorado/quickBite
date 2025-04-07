@@ -1,9 +1,11 @@
 import ChecklistCardDish from '../../components/checklistCardDish/checklistCardDish';
 import { recipes } from '../../data/recipes';
+import NavMenu from '../../components/navMenu/navMenu';
 
 function Profile() {
 	return (
 		<>
+			<NavMenu></NavMenu>
 			<h1>profile</h1>
 			{recipes[4] && (
 				<ChecklistCardDish

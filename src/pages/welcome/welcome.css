@@ -68,6 +68,7 @@ body {
 	color: #f76711;
 	margin: 18px 0px 20px 7px;
 	font-family: 'DM Sans', sans-serif;
+	cursor: pointer;
 }
 
 .welcome-login-button:hover {

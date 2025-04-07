@@ -4,10 +4,13 @@ import IngredientButton from '../../components/ingredientButton/ingredientButton
 import { ingredientes } from '../../data/ingredients';
 import { recipes } from '../../data/recipes';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
+import NavMenu from '../../components/navMenu/navMenu';
 
 function Search() {
 	return (
 		<>
+			<NavMenu></NavMenu>
+
 			<h1 className='search-title'>Search for recipes</h1>
 			<input type='text' placeholder="What's in your fridge?" className='search-input' />
 			<section className='container-ingredients'>

@@ -1,14 +1,17 @@
 import './navMenu.css';
+import { useNavigate } from 'react-router-dom';
 
 const NavMenu = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div id='navContainer'>
 			<div id='logo'>
-				<img src='../../src/assets/logo.png' alt='logo' />
+				<img src='../../src/assets/logo.png' alt='logo' onClick={() => navigate('/home')} />
 			</div>
 
 			<div id='icons'>
-				<div id='search'>
+				<div id='search' onClick={() => navigate('/search')}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='5vw'
@@ -21,7 +24,7 @@ const NavMenu = () => {
 					</svg>
 					<p className='categorie'>Search</p>
 				</div>
-				<div id='home'>
+				<div id='home' onClick={() => navigate('/home')}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='5vw'
@@ -33,7 +36,7 @@ const NavMenu = () => {
 						<path d='M12.71 2.29a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42A1 1 0 0 0 3 13h1v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h1a1 1 0 0 0 1-1 1 1 0 0 0-.29-.71zM6 20v-9.59l6-6 6 6V20z'></path>
 					</svg>
 				</div>
-				<div id='saved'>
+				<div id='saved' onClick={() => navigate('/saved')}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='5vw'
@@ -46,7 +49,7 @@ const NavMenu = () => {
 					</svg>
 					<p className='categorie'>Saved</p>
 				</div>
-				<div id='profile'>
+				<div id='profile' onClick={() => navigate('/profile')}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='5vw'
