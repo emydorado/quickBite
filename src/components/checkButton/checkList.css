@@ -1,0 +1,41 @@
+#checklist button {
+	border-radius: 18px;
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+#checklist button:hover {
+	background-color: #8bc652;
+	border: none;
+}
+
+#checklist button.checked {
+	background-color: #8bc652;
+	border: none;
+}
+
+#checklist button.unchecked {
+	border: 3px solid #8bc652;
+	background-color: transparent;
+}
+
+.bookmark {
+	width: 2vw;
+	height: 2vw;
+	transition: fill 0.3s ease;
+}
+
+@media (max-width: 900px) {
+	#checklist button {
+		border-radius: 10px;
+		padding: 6px;
+	}
+	.bookmark {
+		width: 4vw;
+		height: 4vw;
+	}
+}
