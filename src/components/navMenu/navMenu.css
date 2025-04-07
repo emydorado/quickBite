@@ -12,6 +12,28 @@
 	z-index: 999;
 }
 
+.nav-item {
+	color: #54766c;
+	fill: #54766c;
+	transition: color 0.3s ease, fill 0.3s ease;
+}
+
+.nav-item.active {
+	color: #003324;
+	fill: #003324;
+}
+
+.nav-item.active p {
+	color: #003324;
+	fill: #003324;
+}
+
+.nav-item p {
+	color: #54766c;
+	fill: #54766c;
+	transition: color 0.3s ease, fill 0.3s ease;
+}
+
 #search,
 #saved,
 #profile {
