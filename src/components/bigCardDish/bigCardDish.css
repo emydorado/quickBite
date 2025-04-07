@@ -1,35 +1,33 @@
 #card img {
-	width: 100%;
+	width: 369px;
+	height: 119px;
+	border-radius: 12px;
 	aspect-ratio: 3 / 1;
 	object-fit: cover;
-	border-radius: 0.7rem;
+	border-radius: 6px;
 }
 
-.title {
-	color: #6b6967;
+.bigcard-title {
 	font-family: 'DM Sans', sans-serif;
-	font-size: 4vh;
-	font-weight: 500;
+	font-size: 16px;
 	text-align: left;
-	margin: 5px;
+	color: #6b6967;
+	font-weight: 500;
+	margin: 0px;
+	width: 363px;
 }
-
-.time {
+.bid-card-time {
 	color: #b5b2ae;
 	font-family: 'DM Sans', sans-serif;
-	font-weight: 500;
-	font-size: 2.5vh;
+	font-weight: medium;
+	font-size: 10px;
 	text-align: left;
-	margin: 5px;
+	margin: 0px 0px 12px 0px;
 }
 
 @media (max-width: 768px) {
 	.card img {
 		aspect-ratio: 6 / 2;
-	}
-
-	.title {
-		font-size: 2vh;
 	}
 
 	.time {

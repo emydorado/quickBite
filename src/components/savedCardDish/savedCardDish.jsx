@@ -1,4 +1,4 @@
-import '../smallCardDish/smallCardDish.css';
+import '../savedCardDish/savedCardDish.css';
 import SavedIcon from '../savedIcon/savedIcon';
 
 const SavedCardDish = ({ img, title, time }) => {
