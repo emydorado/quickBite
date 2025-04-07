@@ -1,8 +1,8 @@
-
+import RecipeComponent from '../../components/recipe/recipe';
 function Recipe() {
 	return (
 		<>
-
+			<RecipeComponent />
 		</>
 	);
 }

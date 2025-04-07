@@ -1,11 +1,12 @@
-import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import SmallCardDish from '../../components/smallCardDish/smallCardDish';
-import SavedCardDish from '../../components/savedCardDish/savedCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
 import { recipes } from '../../data/recipes';
+import { useNavigate } from 'react-router-dom';
 import './home.css';
 
 function Home() {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<section className='home-container'>
@@ -14,7 +15,7 @@ function Home() {
 				<NavMenu></NavMenu>
 
 				<p className='home-subtitle'>Recommended recipes</p>
-				<section className='home-recommended'>
+				<section className='home-recommended' onClick={() => navigate('/recipe')}>
 					{recipes[1] && (
 						<SmallCardDish
 							key={recipes[1].id}

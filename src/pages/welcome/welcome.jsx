@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 import './welcome.css';
