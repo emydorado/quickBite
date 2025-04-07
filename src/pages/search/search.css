@@ -9,7 +9,7 @@
 	align-items: center;
 	font-family: 'DM Sans', sans-serif;
 	color: #00150f;
-	margin: 5px;
+	margin: 5px 5px 5px 0px;
 	padding: 8px 12px 8px 12px;
 	background-color: #e8e4df;
 	border-radius: 12px;
@@ -38,4 +38,8 @@
 	padding: 0px 50px 0px 50px;
 	font-weight: bold;
 	color: #b5b2ae;
+}
+.search-ingredients {
+	text-align: left;
+	display: flex;
 }

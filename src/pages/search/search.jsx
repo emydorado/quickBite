@@ -1,5 +1,9 @@
 import './search.css';
 import { categories } from '../../data/categories';
+import IngredientButton from '../../components/ingredientButton/ingredientButton';
+import { ingredientes } from '../../data/ingredients';
+import { recipes } from '../../data/recipes';
+import BigCardDish from '../../components/bigCardDish/bigCardDish';
 
 function Search() {
 	return (
@@ -26,7 +30,17 @@ function Search() {
 					<span>{categories[5].emoji}</span> {categories[5].name}
 				</div>
 			</section>
-			<h3 className='search-empty'>Tell us what's in your fridge and prepare the best recipe</h3>
+			<section className='search-ingredients'>
+				{ingredientes[2] && (
+					<IngredientButton key={ingredientes[2].id} name={ingredientes[2].name} emoji={ingredientes[2].emoji} />
+				)}
+				{ingredientes[5] && (
+					<IngredientButton key={ingredientes[5].id} name={ingredientes[5].name} emoji={ingredientes[5].emoji} />
+				)}
+			</section>
+			{recipes[1] && (
+				<BigCardDish key={recipes[1].id} img={recipes[1].img} title={recipes[1].recipe_name} time={recipes[1].id} />
+			)}
 		</>
 	);
 }
