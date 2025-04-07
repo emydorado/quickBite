@@ -41,10 +41,11 @@
 	margin: 4px 0 0;
 }
 
-.onlyTextChecklist .description {
+.onlyTextChecklist .checklistDescription {
 	font-size: 14px;
 	color: #6b6967;
 	margin: 4px 0 0;
+	text-align: left;
 }
 
 @media (max-width: 900px) {
@@ -65,7 +66,7 @@
 	}
 
 	.onlyTextChecklist .time,
-	.onlyTextChecklist .description {
+	.onlyTextChecklist .checklistDescription {
 		font-size: 12px;
 		margin: 2px;
 	}
@@ -89,7 +90,7 @@
 	}
 
 	.onlyTextChecklist .time,
-	.onlyTextChecklist .description {
+	.onlyTextChecklist .checklistDescription {
 		font-size: 9px;
 		margin: 2px;
 	}

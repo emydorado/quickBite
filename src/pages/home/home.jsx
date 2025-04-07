@@ -10,14 +10,6 @@ function Home() {
 		<>
 			<section className='home-container'>
 				<h1 className='home-title'>Explore recipes</h1>
-				{recipes[4] && (
-					<ChecklistCardDish
-						key={recipes[4].id}
-						img={recipes[4].img}
-						title={recipes[4].recipe_name}
-						time={recipes[4].id}
-					/>
-				)}
 
 				<NavMenu></NavMenu>
 
