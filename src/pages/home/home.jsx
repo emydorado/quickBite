@@ -3,7 +3,6 @@ import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import SavedCardDish from '../../components/savedCardDish/savedCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
 import ChecklistCardDish from '../../components/checklistCardDish/checklistCardDish';
-import CheckButton from '../../components/checkButton/checkButton';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
 import { recipes } from '../../data/recipes';
 import { ingredientes } from '../../data/ingredients';
@@ -11,10 +10,14 @@ import { ingredientes } from '../../data/ingredients';
 function Home() {
 	return (
 		<>
-			{recipes.map((recipe) => {
-				return <ChecklistCardDish key={recipe.id} img={recipe.img} title={recipe.recipe_name} time={recipe.id} />;
-			})}
-			<CheckButton></CheckButton>
+			{recipes[4] && (
+				<ChecklistCardDish
+					key={recipes[4].id}
+					img={recipes[4].img}
+					title={recipes[4].recipe_name}
+					time={recipes[4].id}
+				/>
+			)}
 
 			<NavMenu></NavMenu>
 			{ingredientes[0] && (
