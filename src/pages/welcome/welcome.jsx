@@ -1,9 +1,18 @@
 import logo from '../../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 import './welcome.css';
+import { useEffect } from 'react';
 
 function Welcome() {
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		document.body.classList.add('welcome-body');
+
+		return () => {
+			document.body.classList.remove('welcome-body');
+		};
+	}, []);
 
 	return (
 		<>
