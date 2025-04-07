@@ -10,6 +10,7 @@ import { ingredientes } from '../../data/ingredients';
 function Home() {
 	return (
 		<>
+			<h1>Explore recipes</h1>
 			{recipes[4] && (
 				<ChecklistCardDish
 					key={recipes[4].id}
@@ -23,15 +24,15 @@ function Home() {
 			{ingredientes[0] && (
 				<IngredientButton key={ingredientes[0].id} name={ingredientes[0].name} emoji={ingredientes[0].emoji} />
 			)}
-
+			<p>Recommended recipes</p>
 			{recipes[1] && (
 				<BigCardDish key={recipes[1].id} img={recipes[1].img} title={recipes[1].recipe_name} time={recipes[1].id} />
 			)}
-
+			<p>Lastest recipes made by you</p>
 			{recipes[2] && (
 				<SmallCardDish key={recipes[2].id} img={recipes[2].img} title={recipes[2].recipe_name} time={recipes[2].id} />
 			)}
-
+			<p>Because you liked "Chickpea cookies"</p>
 			{recipes[3] && (
 				<SavedCardDish key={recipes[3].id} img={recipes[3].img} title={recipes[3].recipe_name} time={recipes[3].id} />
 			)}

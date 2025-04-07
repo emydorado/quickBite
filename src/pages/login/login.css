@@ -1,0 +1,97 @@
+.login-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh; /* alto total de la pantalla */
+}
+
+.login-container {
+	text-align: left;
+}
+
+.login-title {
+	font-size: 31px;
+	margin: 0px;
+	color: #00150f;
+	font-family: 'Radio Canada', sans-serif;
+}
+.login-subtitle {
+	font-size: 14px;
+	margin-bottom: 110px;
+	color: #00150f;
+	font-family: 'DM Sans', sans-serif;
+}
+.login-label {
+	color: #00150f;
+	font-weight: 500;
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 700;
+}
+.login-input {
+	width: 360px;
+	height: 41px;
+	border-radius: 12px;
+	background-color: #fffdfc;
+	border-style: none;
+	border-width: 1px;
+	padding-left: 7px;
+	font-size: 14px;
+	margin-bottom: 18px;
+}
+
+.login-input-password {
+	width: 360px;
+	height: 39px;
+	border-radius: 12px;
+	background-color: #fffdfc;
+	border-style: none;
+	border-width: 1px;
+	padding-left: 7px;
+	font-size: 14px;
+}
+.login-forgot-password {
+	font-size: 11px;
+	color: #00150f;
+	margin-bottom: 50px;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.login-button {
+	font-size: 14px;
+	margin-bottom: 20px;
+	background-color: #8bc652;
+	height: 41px;
+	width: 369px;
+	border-radius: 12px;
+	padding: 1px 2px 1px 7px;
+	transition: background-color 0.3s ease;
+	font-weight: 600;
+	color: #fffdfc;
+	border-style: none;
+}
+
+.login-button:hover {
+	background-color: #7eb44b;
+}
+
+.login-button:active {
+	background-color: #4c6d2d;
+}
+
+.login-account {
+	font-size: 14px;
+	margin-top: 18px;
+	color: #00150f;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.login-signup {
+	display: flex;
+	align-items: center;
+}
+.signup-button {
+	margin: 0px 0px 0px 7px;
+	color: #f76711;
+	font-family: 'DM Sans', sans-serif;
+	font-size: 14px;
+}
