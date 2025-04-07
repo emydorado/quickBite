@@ -1,3 +1,10 @@
 body {
 	background-color: #fffdfc;
+	margin-top: 70px;
+}
+
+@media (max-width: 820px) {
+	body {
+		margin-top: 0;
+	}
 }
