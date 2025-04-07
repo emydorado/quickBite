@@ -1,6 +1,6 @@
-#ingredientContainer .emoji,
+.ingredient-emoji,
 .ingredientName {
-	font-size: 2vh;
+	font-size: 14px;
 	font-family: 'DM Sans', sans-serif;
 	font-weight: 400;
 	color: #00150f;
@@ -9,19 +9,16 @@
 
 #ingredientContainer {
 	display: inline-flex;
-	gap: 1.5vh;
+	gap: 5px;
 	background-color: #e8e4df;
 	width: auto;
 	height: auto;
-	padding: 2vh;
-	padding-right: 1.5vh;
-	padding-top: 0.5vh;
-	padding-bottom: 0.5vh;
-	border-radius: 3rem;
+	border-radius: 12px;
 	justify-content: center;
 	align-items: center;
-	margin: 10px;
-	white-space: nowrap;
+	margin: 10px 5px 20px 0px;
+	font-size: 14px;
+	padding: 5px 10px 5px 10px;
 }
 
 .deleteButton {
@@ -47,19 +44,6 @@
 }
 
 @media (max-width: 768px) {
-	#ingredientContainer .emoji,
-	.ingredientName {
-		font-size: 1.3vh;
-	}
-
-	#ingredientContainer {
-		gap: 1.5vh;
-		padding: 1vh;
-		padding-right: 0.8vh;
-		padding-top: 0.2vh;
-		padding-bottom: 0.2vh;
-	}
-
 	.deleteButton {
 		width: 1.8vh;
 		height: 1.8vh;

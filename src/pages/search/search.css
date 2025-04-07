@@ -1,0 +1,45 @@
+.container-ingredients {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	width: 363px;
+}
+.categories-food {
+	display: flex;
+	align-items: center;
+	font-family: 'DM Sans', sans-serif;
+	color: #00150f;
+	margin: 5px 5px 5px 0px;
+	padding: 8px 12px 8px 12px;
+	background-color: #e8e4df;
+	border-radius: 12px;
+}
+.search-input {
+	width: 360px;
+	height: 41px;
+	border-radius: 12px;
+	background-color: #fffdfc;
+	border-style: none;
+	border-width: 1px;
+	padding-left: 7px;
+	font-size: 14px;
+	margin-bottom: 12px;
+}
+.search-title {
+	text-align: left;
+	font-family: 'Radio Canada', sans-serif;
+	margin-bottom: 18px;
+	color: #00150f;
+}
+.search-empty {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 14px;
+	margin-top: 280px;
+	padding: 0px 50px 0px 50px;
+	font-weight: bold;
+	color: #b5b2ae;
+}
+.search-ingredients {
+	text-align: left;
+	display: flex;
+}
