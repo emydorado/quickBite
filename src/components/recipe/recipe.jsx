@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import CheckButton from '../checkButton/checkButton';
 import './recipe.css';
 
-const RecipeComponent = ({ img, title, time, ingredients, step, description }) => {
+const RecipeComponent = ({ img, title, time, ingredients, steps }) => {
 	useEffect(() => {
 		document.body.classList.add('recipe-body');
 
@@ -21,7 +21,7 @@ const RecipeComponent = ({ img, title, time, ingredients, step, description }) =
 						<h1 className='recipe-title'>{title} </h1>
 					</div>
 					<div className='check-button'>
-						<p className='recipe-time'>{time}</p>
+						<p className='recipe-time'>{time} minutes</p>
 
 						<CheckButton></CheckButton>
 					</div>
@@ -37,10 +37,11 @@ const RecipeComponent = ({ img, title, time, ingredients, step, description }) =
 				</ol>
 				<h2 className='titulo-ingredientes'>Steps</h2>
 				<ol id='steps'>
-					<li>
-						<h3>{step}</h3>
-						<p>{description}</p>
-					</li>
+					{Object.entries(steps).map(([value], index) => (
+						<li className='recipe-steps-numbers' key={index}>
+							<p className='recipe-steps-description'>{steps[value]}</p>
+						</li>
+					))}
 				</ol>
 			</section>
 		</div>

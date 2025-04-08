@@ -10,14 +10,20 @@ function Recipe() {
 
 	return (
 		<>
-			<h1>recipe</h1>
-			<RecipeComponent
-				key={receta.id}
-				img={receta.img}
-				time={receta.id}
-				title={receta.recipe_name}
-				ingredients={receta.ingredients}
-			/>
+			<section>
+				{recipes
+					.filter((recipes) => recipes.id === 1) // Filtra los elementos con id: 1 o id: 2
+					.map((recipes) => (
+						<RecipeComponent
+							key={recipes.id}
+							img={recipes.img}
+							time={recipes.prep_time_minutes}
+							title={recipes.recipe_name}
+							ingredients={recipes.ingredients}
+							steps={recipes.steps}
+						/>
+					))}
+			</section>
 		</>
 	);
 }

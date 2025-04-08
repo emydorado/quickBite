@@ -35,7 +35,7 @@
 
 .recipe-time {
 	font-family: 'DM Sans', sans-serif;
-	font-size: 22px;
+	font-size: 14px;
 	color: #6b6967;
 	font-weight: 500;
 }
@@ -53,10 +53,23 @@
 	list-style: disc;
 	text-align: left;
 	color: #6b6967;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 300;
 }
 
 #recipe-content {
 	margin-left: 40px;
+}
+.recipe-steps-description {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 14px;
+	color: #6b6967;
+	display: flex;
+	text-align: left;
+}
+.recipe-steps-numbers {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 14px;
+	color: #6b6967;
+	font-weight: 500;
 }
