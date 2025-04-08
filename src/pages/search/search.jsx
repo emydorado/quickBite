@@ -5,51 +5,53 @@ import { ingredientes } from '../../data/ingredients';
 import { recipes } from '../../data/recipes';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
+import CategorieButton from '../../components/categorieButton';
 
 function Search() {
 	return (
 		<>
 			<NavMenu></NavMenu>
 
-			<h1 className='search-title'>Search for recipes</h1>
-			<input type='text' placeholder="What's in your fridge?" className='search-input' />
-			<section className='container-ingredients'>
-				<div className='categories-food'>
-					<span>{categories[0].emoji}</span> {categories[0].name}
+			<div id='search-container'>
+				<div className='top-section'>
+					<h1 className='search-title'>Search for recipes</h1>
+
+					<input type='text' placeholder="What's in your fridge?..." className='search-input' />
+
+					<div id='filters'>
+						<section className='container-categories'>
+							{categories.map((category) => (
+								<CategorieButton key={category.id} emoji={category.emoji} categorie={category.name}></CategorieButton>
+							))}
+						</section>
+
+						<section className='search-ingredients'>
+							{[2, 5].map((i) =>
+								recipes[i] ? (
+									<IngredientButton
+										key={ingredientes[i].id}
+										name={ingredientes[i].name}
+										emoji={ingredientes[i].emoji}
+									/>
+								) : null
+							)}
+						</section>
+					</div>
 				</div>
-				<div className='categories-food'>
-					<span>{categories[1].emoji}</span> {categories[1].name}
-				</div>
-				<div className='categories-food'>
-					<span>{categories[2].emoji}</span> {categories[2].name}
-				</div>
-				<div className='categories-food'>
-					<span>{categories[3].emoji}</span> {categories[3].name}
-				</div>
-				<div className='categories-food'>
-					<span>{categories[4].emoji}</span> {categories[4].name}
-				</div>
-				<div className='categories-food'>
-					<span>{categories[5].emoji}</span> {categories[5].name}
-				</div>
-			</section>
-			<section className='search-ingredients'>
-				{ingredientes[2] && (
-					<IngredientButton key={ingredientes[2].id} name={ingredientes[2].name} emoji={ingredientes[2].emoji} />
-				)}
-				{ingredientes[5] && (
-					<IngredientButton key={ingredientes[5].id} name={ingredientes[5].name} emoji={ingredientes[5].emoji} />
-				)}
-			</section>
-			{recipes[15] && (
-				<BigCardDish key={recipes[15].id} img={recipes[15].img} title={recipes[15].recipe_name} time={recipes[15].id} />
-			)}
-			{recipes[16] && (
-				<BigCardDish key={recipes[16].id} img={recipes[16].img} title={recipes[16].recipe_name} time={recipes[16].id} />
-			)}
-			{recipes[17] && (
-				<BigCardDish key={recipes[17].id} img={recipes[17].img} title={recipes[17].recipe_name} time={recipes[17].id} />
-			)}
+
+				<section className='results'>
+					{[8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((i) =>
+						recipes[i] ? (
+							<BigCardDish
+								key={recipes[i].id}
+								img={recipes[i].img}
+								title={recipes[i].recipe_name}
+								time={recipes[i].id}
+							/>
+						) : null
+					)}
+				</section>
+			</div>
 		</>
 	);
 }
