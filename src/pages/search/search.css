@@ -9,7 +9,18 @@
 	gap: 5px;
 }
 
-.container-categories::-webkit-scrollbar {
+.container-ingredients {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	width: 530px;
+	border-radius: 10px;
+	gap: 5px;
+	margin: 10px 0 50px 0;
+}
+
+.container-categories::-webkit-scrollbar,
+.container-ingredients::-webkit-scrollbar {
 	display: none;
 }
 

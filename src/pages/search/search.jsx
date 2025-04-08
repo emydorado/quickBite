@@ -10,13 +10,17 @@ import { useState } from 'react';
 
 function Search() {
 	const [search, setSearch] = useState('');
+	const [searchIngredient, setSearchIngredient] = useState('');
 
 	const handleSearchChange = (event) => {
 		setSearch(event.target.value);
+		setSearchIngredient(event.target.value);
 	};
 
 	const filteredRecipes = recipes.filter((recipe) => recipe.recipe_name.toLowerCase().includes(search.toLowerCase()));
-	console.log(filteredRecipes);
+	const filteredIngredient = ingredientes.filter((ingrediente) =>
+		ingrediente.name.toLowerCase().includes(searchIngredient.toLowerCase())
+	);
 
 	return (
 		<>
@@ -41,30 +45,26 @@ function Search() {
 							))}
 						</section>
 
-						<section className='search-ingredients'>
-							{[2, 5].map((i) =>
-								recipes[i] ? (
-									<IngredientButton
-										key={ingredientes[i].id}
-										name={ingredientes[i].name}
-										emoji={ingredientes[i].emoji}
-									/>
-								) : null
-							)}
+						<section className='container-ingredients'>
+							{searchIngredient &&
+								filteredIngredient.map((ingrediente) => (
+									<IngredientButton key={ingrediente.id} name={ingrediente.name} emoji={ingrediente.emoji} />
+								))}
 						</section>
 					</div>
 				</div>
 
 				<section className='results'>
-					{filteredRecipes.map((recipe) => (
-						<BigCardDish
-							key={recipe.id}
-							id={recipe.id}
-							img={recipe.img}
-							title={recipe.recipe_name}
-							time={recipe.prep_time_minutes}
-						/>
-					))}
+					{search &&
+						filteredRecipes.map((recipe) => (
+							<BigCardDish
+								key={recipe.id}
+								id={recipe.id}
+								img={recipe.img}
+								title={recipe.recipe_name}
+								time={recipe.prep_time_minutes}
+							/>
+						))}
 				</section>
 			</div>
 		</>
