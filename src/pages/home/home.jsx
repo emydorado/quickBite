@@ -38,7 +38,7 @@ const Home = () => {
 									id={recipe.id}
 									img={recipe.img}
 									title={recipe.recipe_name}
-									time={recipe.id}
+									time={recipe.prep_time_minutes}
 								/>
 							);
 						})}

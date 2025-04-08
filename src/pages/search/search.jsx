@@ -44,9 +44,10 @@ function Search() {
 						recipes[i] ? (
 							<BigCardDish
 								key={recipes[i].id}
+								id={ingredientes[i].id}
 								img={recipes[i].img}
 								title={recipes[i].recipe_name}
-								time={recipes[i].id}
+								time={recipes[i].prep_time_minutes}
 							/>
 						) : null
 					)}
