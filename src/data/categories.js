@@ -29,4 +29,9 @@ export const categories = [
 		emoji: '🍦',
 		name: 'Dessert',
 	},
+	{
+		id: 7,
+		emoji: '🍎',
+		name: 'Fit',
+	},
 ];
