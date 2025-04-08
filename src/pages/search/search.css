@@ -30,6 +30,10 @@
 	margin-bottom: 12px;
 }
 
+.search-input :focus {
+	border-color: #d3d3d3;
+}
+
 .search-input::placeholder {
 	color: #d3d3d3;
 	padding-left: 10px;

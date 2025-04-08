@@ -6,8 +6,18 @@ import { recipes } from '../../data/recipes';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
 import CategorieButton from '../../components/categorieButton';
+import { useState } from 'react';
 
 function Search() {
+	const [search, setSearch] = useState('');
+
+	const handleSearchChange = (event) => {
+		setSearch(event.target.value);
+	};
+
+	const filteredRecipes = recipes.filter((recipe) => recipe.recipe_name.toLowerCase().includes(search.toLowerCase()));
+	console.log(filteredRecipes);
+
 	return (
 		<>
 			<NavMenu></NavMenu>
@@ -16,7 +26,13 @@ function Search() {
 				<div className='top-section'>
 					<h1 className='search-title'>Search for recipes</h1>
 
-					<input type='text' placeholder="What's in your fridge?..." className='search-input' />
+					<input
+						type='text'
+						placeholder="What's in your fridge?..."
+						className='search-input'
+						value={search}
+						onChange={handleSearchChange}
+					/>
 
 					<div id='filters'>
 						<section className='container-categories'>
@@ -40,17 +56,15 @@ function Search() {
 				</div>
 
 				<section className='results'>
-					{[8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((i) =>
-						recipes[i] ? (
-							<BigCardDish
-								key={recipes[i].id}
-								id={ingredientes[i].id}
-								img={recipes[i].img}
-								title={recipes[i].recipe_name}
-								time={recipes[i].prep_time_minutes}
-							/>
-						) : null
-					)}
+					{filteredRecipes.map((recipe) => (
+						<BigCardDish
+							key={recipe.id}
+							id={recipe.id}
+							img={recipe.img}
+							title={recipe.recipe_name}
+							time={recipe.prep_time_minutes}
+						/>
+					))}
 				</section>
 			</div>
 		</>
