@@ -1,0 +1,62 @@
+.banner-image {
+	width: 100vw;
+	height: 20vw;
+	object-fit: cover;
+	border-radius: 0 0 1.2rem 1.2rem;
+	margin: 0;
+	display: block;
+}
+
+.recipe-body {
+	background-color: #fffdfc;
+
+	margin: 0;
+}
+
+#top-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.check-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.recipe-title {
+	font-family: 'Radio Canada', sans-serif;
+	color: #00150f;
+	font-size: 49px;
+}
+
+.recipe-time {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 22px;
+	color: #6b6967;
+	font-weight: 500;
+}
+
+.titulo-ingredientes {
+	font-family: 'DM Sans', sans-serif;
+	color: #00150f;
+	text-align: left;
+	font-size: 22px;
+	font-weight: 600;
+}
+
+#ingredients {
+	font-family: 'DM Sans', sans-serif;
+	list-style: disc;
+	text-align: left;
+	color: #6b6967;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+#recipe-content {
+	margin-left: 40px;
+}

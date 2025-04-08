@@ -1,12 +1,9 @@
 import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
 import { recipes } from '../../data/recipes';
-import { useNavigate } from 'react-router-dom';
 import './home.css';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 function Home() {
-	const navigate = useNavigate();
-
 	return (
 		<>
 			<section className='home-container'>
@@ -15,19 +12,21 @@ function Home() {
 				<NavMenu></NavMenu>
 
 				<p className='home-subtitle'>Recommended recipes</p>
-				<section className='home-recommended' onClick={() => navigate('/recipe')}>
+				<section className='home-recommended'>
 					{recipes[1] && (
 						<SmallCardDish
 							key={recipes[1].id}
+							id={recipes[1].id}
 							img={recipes[1].img}
 							title={recipes[1].recipe_name}
-							time={recipes[1].id}
+							time={recipes[1].time}
 						/>
 					)}
 
 					{recipes[2] && (
 						<SmallCardDish
 							key={recipes[2].id}
+							id={recipes[2].id}
 							img={recipes[2].img}
 							title={recipes[2].recipe_name}
 							time={recipes[2].id}
@@ -36,6 +35,7 @@ function Home() {
 					{recipes[3] && (
 						<SmallCardDish
 							key={recipes[3].id}
+							id={recipes[3].id}
 							img={recipes[3].img}
 							title={recipes[3].recipe_name}
 							time={recipes[3].id}
@@ -44,6 +44,7 @@ function Home() {
 					{recipes[4] && (
 						<SmallCardDish
 							key={recipes[4].id}
+							id={recipes[4].id}
 							img={recipes[4].img}
 							title={recipes[4].recipe_name}
 							time={recipes[4].id}
@@ -55,6 +56,7 @@ function Home() {
 				<section className='home-made-by-you'>
 					{recipes[5] && (
 						<SmallCardDish
+							id={recipes[5].id}
 							key={recipes[5].id}
 							img={recipes[5].img}
 							title={recipes[5].recipe_name}
@@ -64,6 +66,7 @@ function Home() {
 					{recipes[6] && (
 						<SmallCardDish
 							key={recipes[6].id}
+							id={recipes[6].id}
 							img={recipes[6].img}
 							title={recipes[6].recipe_name}
 							time={recipes[6].id}
@@ -72,6 +75,7 @@ function Home() {
 					{recipes[7] && (
 						<SmallCardDish
 							key={recipes[7].id}
+							id={recipes[7].id}
 							img={recipes[7].img}
 							title={recipes[7].recipe_name}
 							time={recipes[7].id}
@@ -80,6 +84,7 @@ function Home() {
 					{recipes[8] && (
 						<SmallCardDish
 							key={recipes[8].id}
+							id={recipes[8].id}
 							img={recipes[8].img}
 							title={recipes[8].recipe_name}
 							time={recipes[8].id}
@@ -92,6 +97,7 @@ function Home() {
 					{recipes[3] && (
 						<SmallCardDish
 							key={recipes[9].id}
+							id={recipes[9].id}
 							img={recipes[9].img}
 							title={recipes[9].recipe_name}
 							time={recipes[9].id}
@@ -100,6 +106,7 @@ function Home() {
 					{recipes[3] && (
 						<SmallCardDish
 							key={recipes[10].id}
+							id={recipes[10].id}
 							img={recipes[10].img}
 							title={recipes[10].recipe_name}
 							time={recipes[10].id}
@@ -108,6 +115,7 @@ function Home() {
 					{recipes[3] && (
 						<SmallCardDish
 							key={recipes[11].id}
+							id={recipes[11].id}
 							img={recipes[11].img}
 							title={recipes[11].recipe_name}
 							time={recipes[11].id}
@@ -116,6 +124,7 @@ function Home() {
 					{recipes[3] && (
 						<SmallCardDish
 							key={recipes[12].id}
+							id={recipes[12].id}
 							img={recipes[12].img}
 							title={recipes[12].recipe_name}
 							time={recipes[12].id}
@@ -124,6 +133,7 @@ function Home() {
 					{recipes[3] && (
 						<SmallCardDish
 							key={recipes[13].id}
+							id={recipes[13].id}
 							img={recipes[13].img}
 							title={recipes[13].recipe_name}
 							time={recipes[13].id}
