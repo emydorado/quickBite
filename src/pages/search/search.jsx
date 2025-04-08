@@ -17,19 +17,21 @@ function Search() {
 
 				<input type='text' placeholder="What's in your fridge?..." className='search-input' />
 
-				<section className='container-ingredients'>
-					{categories.map((category) => (
-						<CategorieButton key={category.id} emoji={category.emoji} categorie={category.name}></CategorieButton>
-					))}
-				</section>
+				<div id='filters'>
+					<section className='container-categories'>
+						{categories.map((category) => (
+							<CategorieButton key={category.id} emoji={category.emoji} categorie={category.name}></CategorieButton>
+						))}
+					</section>
 
-				<section className='search-ingredients'>
-					{[2, 5].map((i) =>
-						recipes[i] ? (
-							<IngredientButton key={ingredientes[i].id} name={ingredientes[i].name} emoji={ingredientes[i].emoji} />
-						) : null
-					)}
-				</section>
+					<section className='search-ingredients'>
+						{[2, 5].map((i) =>
+							recipes[i] ? (
+								<IngredientButton key={ingredientes[i].id} name={ingredientes[i].name} emoji={ingredientes[i].emoji} />
+							) : null
+						)}
+					</section>
+				</div>
 			</div>
 
 			{[15, 16, 17].map((i) =>

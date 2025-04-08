@@ -1,32 +1,24 @@
-.container-ingredients {
+.container-categories {
 	display: flex;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
 	width: 500px;
-	padding: 0 10px 0 10px;
+	padding: 6px 10px 6px 10px;
 	background-color: #b5b2ae;
 	border-radius: 10px;
+	gap: 5px;
 }
+
+.container-categories::-webkit-scrollbar {
+	display: none;
+}
+
 .top-section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.container-ingredients::-webkit-scrollbar {
-	display: none;
-}
-.categories-food {
-	display: flex;
-	align-items: center;
-	font-family: 'DM Sans', sans-serif;
-	color: #00150f;
-	margin: 5px 5px 5px 0px;
-	padding: 5px 12px 5px 12px;
-	background-color: #e8e4df;
-	border-radius: 14px;
-	gap: 8px;
-}
 .search-input {
 	width: 520px;
 	height: 41px;
@@ -60,6 +52,13 @@
 	color: #b5b2ae;
 }
 .search-ingredients {
+	text-align: left;
+	display: flex;
+	margin: 10px 0 10px 0;
+	gap: 5px;
+}
+
+.filters {
 	text-align: left;
 	display: flex;
 }

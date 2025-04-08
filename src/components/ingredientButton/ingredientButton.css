@@ -21,14 +21,14 @@
 }
 
 .deleteButton {
-	width: 2vh;
-	height: 2vh;
+	width: 1.5vw;
+	height: 1.5vw;
+	padding: 2px;
 	border-radius: 50%;
 	border: none;
 	font-size: 1rem;
 	font-family: 'DM Sans', sans-serif;
 	font-weight: 200;
-	color: #00150f;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -37,15 +37,28 @@
 	background-color: #fffdfc;
 }
 
+.x-icon {
+	fill: #00150f;
+}
+
 .deleteButton:hover {
 	background-color: #fffaf5;
 	transform: scale(1.1);
 }
 
+@media (max-width: 820px) {
+	.deleteButton {
+		width: 2vw;
+		height: 2vw;
+		font-size: 0.8rem;
+		margin: 0;
+	}
+}
+
 @media (max-width: 768px) {
 	.deleteButton {
-		width: 1.8vh;
-		height: 1.8vh;
+		width: 5vw;
+		height: 5vw;
 		font-size: 0.8rem;
 		margin: 0;
 	}
