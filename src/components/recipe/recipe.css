@@ -1,8 +1,9 @@
 .banner-image {
 	width: 100vw;
-	height: 20vw;
+	height: 50vw;
+	
 	object-fit: cover;
-	border-radius: 0 0 1.2rem 1.2rem;
+	border-radius: 0 0 20px 20px;
 	margin: 0;
 	display: block;
 }
@@ -30,7 +31,10 @@
 .recipe-title {
 	font-family: 'Radio Canada', sans-serif;
 	color: #00150f;
-	font-size: 49px;
+	font-size: 31px;
+	display: flex;
+	text-align: left;
+	margin: 12px 0px 0px 0px;
 }
 
 .recipe-time {
@@ -38,6 +42,7 @@
 	font-size: 14px;
 	color: #6b6967;
 	font-weight: 500;
+	margin: 0px 0px 0px 0px;
 }
 
 .titulo-ingredientes {
@@ -46,6 +51,7 @@
 	text-align: left;
 	font-size: 22px;
 	font-weight: 600;
+	margin: 8px 0px 8px 0px;
 }
 
 #ingredients {
@@ -55,10 +61,12 @@
 	color: #6b6967;
 	font-size: 14px;
 	font-weight: 300;
+	padding: 0px 0px 0px 16px;
+	margin: 0px 0px 0px 0px;
 }
 
 #recipe-content {
-	margin-left: 40px;
+	margin-left: 16px;
 }
 .recipe-steps-description {
 	font-family: 'DM Sans', sans-serif;
@@ -72,4 +80,16 @@
 	font-size: 14px;
 	color: #6b6967;
 	font-weight: 500;
+}
+.top-text {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+ol#steps {
+	padding: 0px 0px 0px 16px;
+	margin: 0px 0px 0px 0px;
+}
+.recipe-checkbutton {
+	margin: 20px;
 }
