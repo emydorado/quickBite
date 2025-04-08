@@ -12,6 +12,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Crack the eggs into a bowl, add salt and pepper, and beat them until well mixed.',
+			step_2: 'Heat the butter in a non-stick skillet over medium heat.',
+			step_3: 'Pour in the eggs and gently stir with a spatula, cooking slowly until softly scrambled.',
+			step_4: 'Slice the avocado in half, remove the pit, and scoop out the flesh.',
+			step_5: 'Slice or mash the avocado as desired and serve on the side or on top of the scrambled eggs.',
+		},
+		prep_time_minutes: 10,
 	},
 	{
 		id: 2,
@@ -29,6 +37,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Cook the chicken until fully cooked and then let it cool.',
+			step_2: 'Chop the lettuce, tomato, and cucumber into bite-sized pieces.',
+			step_3: 'Slice or shred the chicken and add it to the vegetables.',
+			step_4: 'In a small bowl, mix olive oil, vinegar, salt, and pepper.',
+			step_5: 'Pour the dressing over the salad and toss well to combine.',
+		},
+		prep_time_minutes: 15,
 	},
 	{
 		id: 3,
@@ -44,6 +60,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Cook the rice according to package instructions and set aside.',
+			step_2: 'Season the salmon with salt, pepper, and a drizzle of olive oil.',
+			step_3: 'Grill the salmon for 3–4 minutes on each side until cooked through.',
+			step_4: 'Squeeze lemon juice over the grilled salmon.',
+			step_5: 'Serve the salmon over the rice and enjoy.',
+		},
+		prep_time_minutes: 20,
 	},
 	{
 		id: 4,
@@ -57,6 +81,14 @@ export const recipes = [
 			{ name: 'Banana', quantity: 1, unit: 'unit' },
 			{ name: 'Honey', quantity: 1, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Toast the slices of bread until golden brown.',
+			step_2: 'Spread peanut butter evenly on each slice.',
+			step_3: 'Slice the banana and place the slices over the peanut butter.',
+			step_4: 'Drizzle honey on top of the banana slices.',
+			step_5: 'Serve immediately and enjoy your snack.',
+		},
+		prep_time_minutes: 5,
 	},
 	{
 		id: 5,
@@ -71,6 +103,14 @@ export const recipes = [
 			{ name: 'Vanilla Extract', quantity: 1, unit: 'tsp' },
 			{ name: 'Honey', quantity: 1, unit: 'tbsp' },
 		],
+		steps: {
+			step_1: 'Melt the dark chocolate in the microwave or over a double boiler.',
+			step_2: 'Add strawberries, melted chocolate, milk, vanilla extract, and honey into a blender.',
+			step_3: 'Blend until smooth and creamy.',
+			step_4: 'Pour into a glass and serve chilled.',
+			step_5: 'Garnish with a strawberry slice or chocolate shavings if desired.',
+		},
+		prep_time_minutes: 7,
 	},
 	{
 		id: 6,
@@ -88,6 +128,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Cook the pasta according to the package instructions. Drain and set aside.',
+			step_2: 'Chop all vegetables into bite-sized pieces.',
+			step_3: 'Heat olive oil in a pan and sauté garlic until fragrant.',
+			step_4: 'Add the vegetables and cook until just tender, about 5–7 minutes.',
+			step_5: 'Toss the cooked pasta with the vegetables, season with salt and pepper, and serve.',
+		},
+		prep_time_minutes: 15,
 	},
 	{
 		id: 7,
@@ -104,6 +152,14 @@ export const recipes = [
 			{ name: 'Garlic', quantity: 2, unit: 'cloves' },
 			{ name: 'Ginger', quantity: 1, unit: 'inch' },
 		],
+		steps: {
+			step_1: 'Cut all vegetables into thin, even pieces.',
+			step_2: 'Heat olive oil in a large pan or wok over medium-high heat.',
+			step_3: 'Add garlic and ginger, sauté for 1–2 minutes until fragrant.',
+			step_4: 'Add vegetables and stir-fry for 5–7 minutes until tender-crisp.',
+			step_5: 'Add soy sauce, toss to coat, and serve immediately.',
+		},
+		prep_time_minutes: 12,
 	},
 	{
 		id: 8,
@@ -121,6 +177,15 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Lava y corta la berenjena en rodajas.',
+			step_2: 'Pasa las rodajas por harina, luego por huevo batido, y sazona con sal y pimienta.',
+			step_3: 'Fríe ligeramente las rodajas en aceite de oliva hasta que estén doradas.',
+			step_4: 'En una bandeja para hornear, alterna capas de berenjena, tomate en rodajas y queso.',
+			step_5: 'Hornea a 180°C durante 25 minutos o hasta que el queso esté dorado.',
+			step_6: 'Sirve caliente.',
+		},
+		prep_time_minutes: 30,
 	},
 	{
 		id: 9,
@@ -138,6 +203,15 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'En una olla, sofríe la cebolla, ajo y zanahoria picada con aceite de oliva.',
+			step_2: 'Agrega las lentejas lavadas, comino, sal y pimienta.',
+			step_3: 'Cubre con 4 tazas de agua o caldo vegetal.',
+			step_4: 'Hierve y cocina a fuego medio-bajo por 25-30 minutos o hasta que las lentejas estén tiernas.',
+			step_5: 'Ajusta sal y condimentos al gusto.',
+			step_6: 'Sirve caliente.',
+		},
+		prep_time_minutes: 35,
 	},
 	{
 		id: 10,
@@ -150,6 +224,13 @@ export const recipes = [
 			{ name: 'Yogurt', quantity: 1, unit: 'cup' },
 			{ name: 'Honey', quantity: 1, unit: 'tbsp' },
 		],
+		steps: {
+			step_1: 'Pela y corta el mango en cubos.',
+			step_2: 'Coloca el mango, yogur y miel en una licuadora.',
+			step_3: 'Licúa hasta obtener una textura suave.',
+			step_4: 'Sirve frío y disfruta.',
+		},
+		prep_time_minutes: 5,
 	},
 	{
 		id: 11,
@@ -165,6 +246,15 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Bate los huevos con sal y pimienta en un tazón.',
+			step_2: 'Derrite la mantequilla en una sartén a fuego medio.',
+			step_3: 'Agrega la espinaca y cocina hasta que se ablande.',
+			step_4: 'Vierte los huevos batidos sobre la espinaca.',
+			step_5: 'Cuando los huevos comiencen a cuajar, agrega el queso feta.',
+			step_6: 'Dobla la omelette por la mitad y cocina un minuto más. Sirve caliente.',
+		},
+		prep_time_minutes: 10,
 	},
 	{
 		id: 12,
@@ -182,11 +272,20 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Lava y corta el pepino, tomate y aguacate en rodajas finas.',
+			step_2: 'Unta el hummus sobre el wrap.',
+			step_3: 'Coloca la lechuga, el pepino, el tomate y el aguacate sobre el hummus.',
+			step_4: 'Agrega sal y pimienta al gusto.',
+			step_5: 'Enrolla el wrap firmemente y córtalo por la mitad si lo deseas.',
+			step_6: 'Sirve inmediatamente o envuélvelo para llevar.',
+		},
+		prep_time_minutes: 8,
 	},
 	{
 		id: 13,
 		recipe_name: 'Grilled Chicken Tacos',
-		img: 'Grilled Chicken Tacos',
+		img: 'https://www.simplyrecipes.com/thmb/vGbSBdhkAjgBL-ZAgMGZ0wTxwmY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Grilled-Chicken-Tacos-LEAD-1-97e4fd7c59ee447b9c25d91f6eec34cf.jpg',
 		classification: 'Dinner',
 		description: 'Flavorful grilled chicken served in soft tortillas with fresh toppings and a squeeze of lime.',
 		ingredients: [
@@ -199,6 +298,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Corta el pollo en tiras y sazónalo con sal, pimienta y aceite.',
+			step_2: 'Cocina el pollo en una parrilla o sartén hasta que esté bien cocido.',
+			step_3: 'Calienta los tacos en una sartén o microondas.',
+			step_4: 'Coloca el pollo en los tacos y añade tomate en cubos, lechuga y queso.',
+			step_5: 'Agrega un toque de limón si lo deseas y sirve caliente.',
+		},
+		prep_time_minutes: 20,
 	},
 	{
 		id: 14,
@@ -215,6 +322,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Tuesta las rebanadas de pan hasta que estén doradas.',
+			step_2: 'Machaca el aguacate con el jugo de limón, sal y pimienta.',
+			step_3: 'Pocha los huevos en agua caliente con vinagre durante 3-4 minutos.',
+			step_4: 'Unta el aguacate sobre el pan tostado.',
+			step_5: 'Coloca los huevos pochados encima y sirve inmediatamente.',
+		},
+		prep_time_minutes: 15,
 	},
 	{
 		id: 15,
@@ -232,6 +347,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Sazona y cocina el pollo a la plancha hasta que esté dorado y cocido.',
+			step_2: 'Corta la lechuga y el tomate en trozos.',
+			step_3: 'Corta el pollo en tiras o cubos.',
+			step_4: 'Mezcla en un bol la lechuga, tomate, pollo, crutones, queso y aderezo.',
+			step_5: 'Agrega sal y pimienta al gusto y sirve frío.',
+		},
+		prep_time_minutes: 20,
 	},
 	{
 		id: 16,
@@ -250,6 +373,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Corta el pollo, el mango y el pimentón en tiras.',
+			step_2: 'Saltea el ajo y jengibre en aceite por 1 minuto.',
+			step_3: 'Agrega el pollo y cocina hasta que esté dorado.',
+			step_4: 'Añade el pimentón y mango, luego la salsa de soya, sal y pimienta.',
+			step_5: 'Cocina por 3-4 minutos más y sirve caliente.',
+		},
+		prep_time_minutes: 25,
 	},
 	{
 		id: 17,
@@ -269,6 +400,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Corta el aguacate, tomate y pepino en cubos.',
+			step_2: 'Lava y corta la lechuga.',
+			step_3: 'Mezcla todos los ingredientes en un bol grande.',
+			step_4: 'Añade el jugo de limón, aceite, sal y pimienta.',
+			step_5: 'Revuelve bien y sirve fresco.',
+		},
+		prep_time_minutes: 15,
 	},
 	{
 		id: 18,
@@ -286,6 +425,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Precalienta el horno a 180°C.',
+			step_2: 'Saltea la espinaca y el ajo en aceite hasta que se ablanden.',
+			step_3: 'Haz un corte en las pechugas de pollo y rellénalas con la mezcla de espinaca y queso feta.',
+			step_4: 'Sazona con sal y pimienta y colócalas en una bandeja para hornear.',
+			step_5: 'Hornea durante 25-30 minutos o hasta que el pollo esté completamente cocido.',
+		},
+		prep_time_minutes: 35,
 	},
 	{
 		id: 19,
@@ -303,6 +450,14 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Corta la berenjena y el pimiento en tiras.',
+			step_2: 'Saltea el ajo y el jengibre en aceite hasta que estén fragantes.',
+			step_3: 'Agrega la berenjena y el pimiento, cocina hasta que estén tiernos.',
+			step_4: 'Incorpora la salsa de soya, sal y pimienta, y cocina por unos minutos más.',
+			step_5: 'Sirve caliente acompañado de arroz si lo deseas.',
+		},
+		prep_time_minutes: 25,
 	},
 	{
 		id: 20,
@@ -319,5 +474,13 @@ export const recipes = [
 			{ name: 'Salt', quantity: 0.25, unit: 'tsp' },
 			{ name: 'Pepper', quantity: 0.25, unit: 'tsp' },
 		],
+		steps: {
+			step_1: 'Corta el tomate en rodajas finas.',
+			step_2: 'Coloca el tomate y el queso entre las rebanadas de pan.',
+			step_3: 'Unta un poco de aceite de oliva en la parte exterior del pan.',
+			step_4: 'Tuesta el sándwich en una sartén hasta que esté dorado y crujiente por ambos lados.',
+			step_5: 'Sirve caliente con un poco de sal y pimienta al gusto.',
+		},
+		prep_time_minutes: 10,
 	},
 ];
