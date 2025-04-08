@@ -1,12 +1,15 @@
 import './smallCardDish.css';
+import { useNavigate } from 'react-router-dom';
 
-const SmallCardDish = ({ img, title, time }) => {
+const SmallCardDish = ({ id, img, title, time }) => {
+	const navigate = useNavigate();
+
 	return (
-		<div id='smallCard'>
+		<div id='smallCard' onClick={() => navigate(`/recipe/${id}`)}>
 			<img src={img} alt='dish picture' className='home-image' />
 			<div className='onlyText'>
-				<h1 className='title'>{title} </h1>
-				<p className='time'>{time}</p>
+				<h1 className='small-card-title'>{title} </h1>
+				<p className='small-card-time'>{time}</p>
 			</div>
 		</div>
 	);

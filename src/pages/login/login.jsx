@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 function LogIn() {
+	const navigate = useNavigate();
+
 	return (
 		<div className='login-wrapper'>
 			<div className='login-container'>
@@ -23,11 +26,15 @@ function LogIn() {
 
 				<p className='login-forgot-password'>Forget password?</p>
 
-				<button className='login-button'>Log in</button>
+				<button className='login-button' onClick={() => navigate('/home')}>
+					Log in
+				</button>
 
 				<section className='login-signup'>
 					<p className='login-account'>Don't have an account? </p>
-					<p className='signup-button'>Sign Up</p>
+					<p className='signup-button' onClick={() => navigate('/signup')}>
+						Sign Up
+					</p>
 				</section>
 			</div>
 		</div>

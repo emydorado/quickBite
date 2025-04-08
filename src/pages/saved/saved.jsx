@@ -1,10 +1,16 @@
 import SavedCardDish from '../../components/savedCardDish/savedCardDish';
 import { recipes } from '../../data/recipes';
+import NavMenu from '../../components/navMenu/navMenu';
+import SmallCardDish from '../../components/smallCardDish/smallCardDish';
+import BigCardDish from '../../components/bigCardDish/bigCardDish';
 
 function Saved() {
 	return (
 		<>
+			<NavMenu></NavMenu>
+
 			<h1>Saved recipes</h1>
+
 			{recipes[3] && (
 				<SavedCardDish key={recipes[3].id} img={recipes[3].img} title={recipes[3].recipe_name} time={recipes[3].id} />
 			)}

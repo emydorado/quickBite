@@ -8,12 +8,37 @@
 	align-items: center;
 	padding: 0.5rem 5rem 0.5rem 3rem;
 	background-color: #fffffe;
-	box-shadow: 0px 4px 8px #00150f40;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	z-index: 999;
 }
+
+.nav-item {
+	color: #54766c;
+	fill: #54766c;
+	transition: color 0.3s ease, fill 0.3s ease;
+}
+
+.nav-item.active {
+	color: #003324;
+	fill: #003324;
+}
+
+.nav-item.active p {
+	color: #003324;
+	fill: #003324;
+}
+
+.nav-item p {
+	color: #54766c;
+	fill: #54766c;
+	transition: color 0.3s ease, fill 0.3s ease;
+}
+
 #search,
 #saved,
 #profile {
+	cursor: pointer;
+
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -37,6 +62,7 @@
 
 #navContainer img {
 	height: 55px;
+	cursor: pointer;
 }
 
 #home {
@@ -87,6 +113,7 @@
 
 @media (max-width: 767px) {
 	#navContainer {
+		cursor: pointer;
 		display: inline-flex;
 		position: fixed;
 		top: 91%;

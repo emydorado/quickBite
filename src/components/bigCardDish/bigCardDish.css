@@ -1,4 +1,14 @@
-#card img {
+.big-card {
+	display: flex;
+	flex-direction: column;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	width: 369px;
+	transition: transform 0.2s ease;
+	cursor: pointer;
+}
+.big-card img {
 	width: 369px;
 	height: 119px;
 	border-radius: 12px;
@@ -7,30 +17,41 @@
 	border-radius: 6px;
 }
 
-.bigcard-title {
+.big-card-title {
 	font-family: 'DM Sans', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	text-align: left;
 	color: #6b6967;
 	font-weight: 500;
-	margin: 0px;
+	margin: 10px;
+	margin-bottom: 0;
 	width: 363px;
 }
-.bid-card-time {
+.big-card-time {
 	color: #b5b2ae;
 	font-family: 'DM Sans', sans-serif;
 	font-weight: medium;
-	font-size: 10px;
+	font-size: 15px;
 	text-align: left;
-	margin: 0px 0px 12px 0px;
+	margin: 10px;
+	margin-top: 2px;
 }
 
 @media (max-width: 768px) {
-	.card img {
-		aspect-ratio: 6 / 2;
+	.big-card img {
+		width: 246px;
+		height: 80px;
 	}
 
-	.time {
-		font-size: 1.5vh;
+	.big-card {
+		width: 246px;
+	}
+
+	.big-card-title {
+		font-size: 11px;
+	}
+
+	.big-card-time {
+		font-size: 9px;
 	}
 }
