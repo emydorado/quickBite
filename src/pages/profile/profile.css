@@ -2,6 +2,7 @@
 	background-color: #8bc652;
 	margin-left: 0;
 	margin-right: 0;
+	margin-bottom: 0;
 	overflow: hidden;
 }
 
@@ -115,9 +116,79 @@
 	transition: fill 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
 	#profile-body {
-		grid-template-columns: 1fr;
-		padding: 20px;
+		gap: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px 40px 162px 40px;
+	}
+
+	.profile-body {
+		overflow: auto;
+	}
+
+	#checklist-section {
+		width: 65%;
+	}
+
+	.option-item {
+		width: 80%;
+		padding: 20px 0;
+	}
+
+	#options-section {
+		width: 65%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+@media (max-width: 767px) {
+	#profile-body {
+		gap: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px 40px 100px 40px;
+	}
+
+	#checklist-section {
+		width: 100%;
+	}
+
+	.option-item {
+		width: 100%;
+		padding: 22px 0;
+		font-size: 12px;
+		padding: 14px 0;
+	}
+
+	#options-section {
+		width: 100%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.profile-picture-container {
+		width: 120px;
+		height: 120px;
+		margin-bottom: 12px;
+	}
+
+	.profile-content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin-top: 40px;
+	}
+
+	.username {
+		font-size: 20px;
+		color: white;
+		font-family: 'DM Sans', sans-serif;
+		font-weight: 600;
+		margin-top: 10px;
 	}
 }

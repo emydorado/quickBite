@@ -56,14 +56,14 @@
 
 @media (max-width: 900px) {
 	#checklistCard {
-		max-width: 50%;
-		padding: 12px;
+		max-width: 100%;
+		padding: 10px;
 		gap: 10px;
 	}
 
 	#checklistCard img {
-		width: 120px;
-		height: 80px;
+		width: 110px;
+		height: 60px;
 	}
 
 	.onlyTextChecklist .title {
@@ -75,12 +75,13 @@
 	.onlyTextChecklist .checklistDescription {
 		font-size: 11px;
 		margin: 2px;
+		width: 260px;
 	}
 }
 
 @media (max-width: 767px) {
 	#checklistCard {
-		max-width: 80%;
+		max-width: 100%;
 		padding: 12px;
 		gap: 10px;
 	}
@@ -90,14 +91,16 @@
 		height: 60px;
 	}
 
-	.onlyTextChecklist .title {
+	.checklist-title {
 		font-size: 11px;
 		margin: 0;
+		width: 180px;
 	}
 
 	.onlyTextChecklist .time,
 	.onlyTextChecklist .checklistDescription {
 		font-size: 9px;
 		margin: 2px;
+		width: 190px;
 	}
 }

@@ -17,13 +17,13 @@ function Profile() {
 			<NavMenu />
 
 			<section className='profile-content'>
-				<div class='profile-picture-container'>
+				<div className='profile-picture-container'>
 					<img
 						src='https://static.vecteezy.com/system/resources/thumbnails/029/271/069/small_2x/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg'
 						alt='profile picture'
 						className='profile-picture'
 					/>
-					<div class='edit-icon-profile'>
+					<div className='edit-icon-profile'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='20'
