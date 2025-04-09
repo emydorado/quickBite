@@ -1,0 +1,103 @@
+.signup-wrapper {
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	text-align: left;
+}
+
+.signup-title {
+	font-size: 31px;
+	margin: 0px;
+	color: #00150f;
+	font-family: 'Radio Canada', sans-serif;
+}
+.signup-subtitle {
+	font-size: 14px;
+	margin-bottom: 110px;
+	color: #00150f;
+	font-family: 'DM Sans', sans-serif;
+}
+.signup-label {
+	color: #00150f;
+	font-weight: 500;
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 700;
+}
+.signup-input {
+	width: 360px;
+	height: 41px;
+	border-radius: 12px;
+	background-color: #fffdfc;
+	border-style: none;
+	border-width: 1px;
+	padding-left: 7px;
+	font-size: 14px;
+	margin-bottom: 18px;
+}
+
+.signup-input-password {
+	width: 360px;
+	height: 39px;
+	border-radius: 12px;
+	background-color: #fffdfc;
+	border-style: none;
+	border-width: 1px;
+	padding-left: 7px;
+	font-size: 14px;
+}
+
+.signup-button {
+	font-size: 14px;
+	margin-bottom: 20px;
+	background-color: #8bc652;
+	height: 41px;
+	width: 369px;
+	border-radius: 12px;
+	padding: 1px 2px 1px 7px;
+	transition: background-color 0.3s ease;
+	font-weight: 600;
+	color: #fffdfc;
+	border-style: none;
+}
+
+.signup-button:hover {
+	background-color: #7eb44b;
+}
+
+.signup-button:active {
+	background-color: #4c6d2d;
+}
+
+.signup-account {
+	font-size: 14px;
+	margin-top: 18px;
+	color: #00150f;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.signup-signup {
+	display: flex;
+	align-items: center;
+}
+.signup-login-button {
+	margin: 0px 0px 0px 7px;
+	color: #f76711;
+	font-family: 'DM Sans', sans-serif;
+	font-size: 14px;
+	cursor: pointer;
+}
+.signup-forgot-password {
+	font-size: 11px;
+	color: #00150f;
+	margin-bottom: 50px;
+	font-family: 'DM Sans', sans-serif;
+}
+.signup-already-text {
+	font-size: 14px;
+	color: #00150f;
+	font-family: 'DM Sans', sans-serif;
+}
+.signup-container-login {
+	display: flex;
+  align-items: center;
+}
