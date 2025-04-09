@@ -235,7 +235,7 @@ export const recipes = [
 	{
 		id: 11,
 		recipe_name: 'Spinach and Feta Omelette',
-		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8A9zPukNGJhBvHnlZif06LbeuzR0oeXkXcg&s',
+		img: 'https://simplegraytshirt.com/wp-content/uploads/2023/03/spinach-feta-omelette-14.jpg',
 		classification: 'Breakfast',
 		description: 'A fluffy omelette filled with fresh spinach and creamy feta cheese.',
 		ingredients: [
@@ -285,7 +285,7 @@ export const recipes = [
 	{
 		id: 13,
 		recipe_name: 'Grilled Chicken Tacos',
-		img: 'https://www.simplyrecipes.com/thmb/vGbSBdhkAjgBL-ZAgMGZ0wTxwmY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Grilled-Chicken-Tacos-LEAD-1-97e4fd7c59ee447b9c25d91f6eec34cf.jpg',
+		img: 'https://amandascookin.com/wp-content/uploads/2019/06/chicken-tacos-680.jpg',
 		classification: 'Dinner',
 		description: 'Flavorful grilled chicken served in soft tortillas with fresh toppings and a squeeze of lime.',
 		ingredients: [
