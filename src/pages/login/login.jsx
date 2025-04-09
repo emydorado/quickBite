@@ -32,7 +32,7 @@ function LogIn() {
 
 				<section className='login-signup'>
 					<p className='login-account'>Don't have an account? </p>
-					<p className='signup-button' onClick={() => navigate('/signup')}>
+					<p className='login-signup-button' onClick={() => navigate('/signup')}>
 						Sign Up
 					</p>
 				</section>

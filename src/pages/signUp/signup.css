@@ -1,0 +1,124 @@
+.signup-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.signup-container {
+	width: 100%;
+	max-width: 400px;
+	background-color: #fffffe;
+	padding: 30px;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	text-align: left;
+	margin: auto; /* Esto es clave para el centrado horizontal */
+}
+
+.signup-title {
+	font-size: 32px;
+	margin-bottom: 10px;
+	color: #00150f;
+	font-family: 'Radio Canada', sans-serif;
+}
+
+.signup-subtitle {
+	font-size: 14px;
+	margin-bottom: 40px;
+	color: #00150f;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.signup-label {
+	color: #00150f;
+	font-weight: 700;
+	font-family: 'DM Sans', sans-serif;
+	display: block;
+	margin-bottom: 6px;
+}
+
+.signup-input-name,
+.signup-input-mail,
+.signup-input-password {
+	width: 100%;
+	height: 40px;
+	border-radius: 12px;
+	background-color: #fffffe;
+	border: 1px solid #b5b2ae;
+	padding: 0 10px;
+	font-size: 14px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+}
+
+.signup-forgot-password {
+	font-size: 12px;
+	color: #00150f;
+	margin-bottom: 30px;
+	font-family: 'DM Sans', sans-serif;
+	text-align: right;
+	cursor: pointer;
+}
+
+.signup-button {
+	width: 100%;
+	height: 41px;
+	border-radius: 12px;
+	background-color: #8bc652;
+	color: #fffdfc;
+	font-size: 14px;
+	font-weight: 600;
+	border: none;
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.signup-button:hover {
+	background-color: #7eb44b;
+}
+
+.signup-button:active {
+	background-color: #4c6d2d;
+}
+
+.signup-container-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-family: 'DM Sans', sans-serif;
+	color: #00150f;
+	margin-top: 10px;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.signup-login-button {
+	color: #f76711;
+	margin-left: 6px;
+	cursor: pointer;
+	font-weight: 500;
+}
+
+
+@media (max-width: 480px) {
+	.signup-container {
+		padding: 20px;
+	}
+
+	.signup-title {
+		font-size: 28px;
+	}
+
+	.signup-input-name,
+	.signup-input-mail,
+	.signup-input-password,
+	.signup-button {
+		height: 38px;
+	}
+}
