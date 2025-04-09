@@ -46,7 +46,7 @@ function SignUp() {
 				<div>
 					<p className='signup-forgot-password'>Forget password?</p>
 					<button className='signup-button' onClick={() => navigate('/home')}>
-						Sign in
+						Sign Up
 					</button>
 				</div>
 				<div className='signup-container-login'>

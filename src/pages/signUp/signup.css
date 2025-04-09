@@ -2,7 +2,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
 	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
@@ -16,7 +15,7 @@
 	border-radius: 16px;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 	text-align: left;
-	margin: auto; /* Esto es clave para el centrado horizontal */
+	margin: auto;
 }
 
 .signup-title {
@@ -37,7 +36,6 @@
 	color: #00150f;
 	font-weight: 700;
 	font-family: 'DM Sans', sans-serif;
-	display: block;
 	margin-bottom: 6px;
 }
 
@@ -47,12 +45,20 @@
 	width: 100%;
 	height: 40px;
 	border-radius: 12px;
-	background-color: #fffffe;
+	background-color: #fffdfc;
 	border: 1px solid #b5b2ae;
-	padding: 0 10px;
+	padding-left: 10px;
 	font-size: 14px;
 	margin-bottom: 20px;
+	outline: none;
 	box-sizing: border-box;
+	transition: border 0.3s ease;
+}
+
+.signup-input-name:focus,
+.signup-input-mail:focus,
+.signup-input-password:focus {
+	border: 1px solid #8bc652;
 }
 
 .signup-forgot-password {
@@ -66,7 +72,7 @@
 
 .signup-button {
 	width: 100%;
-	height: 41px;
+	height: 40px;
 	border-radius: 12px;
 	background-color: #8bc652;
 	color: #fffdfc;
@@ -104,7 +110,6 @@
 	cursor: pointer;
 	font-weight: 500;
 }
-
 
 @media (max-width: 480px) {
 	.signup-container {

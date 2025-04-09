@@ -1,15 +1,12 @@
-/* Centrado del login */
 .login-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
 	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
 }
 
-/* Contenedor blanco con sombra */
 .login-container {
 	width: 100%;
 	max-width: 400px;
@@ -21,41 +18,35 @@
 	margin: auto;
 }
 
-/* Título y subtítulo */
 .login-title {
-	font-size: 31px;
-	margin: 0;
+	font-size: 32px;
+	margin-bottom: 10px;
 	color: #00150f;
 	font-family: 'Radio Canada', sans-serif;
-	display: flex;
 }
 
 .login-subtitle {
 	font-size: 14px;
-	margin-bottom: 110px;
+	margin-bottom: 40px;
 	color: #00150f;
-	display: flex;
 }
 
-/* Etiquetas */
 .login-label {
 	color: #00150f;
 	font-weight: 700;
 	margin-bottom: 6px;
-	display: flex;
 }
 
-/* Inputs */
 .login-input,
 .login-input-password {
 	width: 100%;
-	height: 41px;
+	height: 40px;
 	border-radius: 12px;
 	background-color: #fffdfc;
 	border: 1px solid #d4d4d4;
 	padding-left: 10px;
 	font-size: 14px;
-	margin-bottom: 18px;
+	margin-bottom: px;
 	outline: none;
 	box-sizing: border-box;
 	transition: border 0.3s ease;
@@ -66,7 +57,6 @@
 	border: 1px solid #8bc652;
 }
 
-/* Botón de login */
 .login-button {
 	font-size: 14px;
 	margin-bottom: 20px;
@@ -89,7 +79,6 @@
 	background-color: #4c6d2d;
 }
 
-/* Texto de abajo */
 .login-forgot-password {
 	font-size: 11px;
 	color: #00150f;
@@ -122,7 +111,7 @@
 	color: #00150f;
 	font-family: 'DM Sans', sans-serif;
 }
-.login-forgot-password{
+.login-forgot-password {
 	font-size: 12px;
 	color: #00150f;
 	margin-bottom: 30px;
@@ -130,7 +119,7 @@
 	text-align: right;
 	cursor: pointer;
 }
-.login-label{
+.login-label {
 	color: #00150f;
 	font-weight: 700;
 	font-family: 'DM Sans', sans-serif;
