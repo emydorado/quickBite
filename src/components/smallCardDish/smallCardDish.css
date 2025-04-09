@@ -11,6 +11,10 @@
 	scroll-snap-align: start;
 }
 
+#smallCard:hover {
+	transform: translateY(-4px);
+}
+
 .home-image {
 	width: 300px;
 	height: 100px;

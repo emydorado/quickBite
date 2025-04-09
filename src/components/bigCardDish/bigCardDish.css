@@ -9,6 +9,11 @@
 	cursor: pointer;
 	scroll-snap-align: start;
 }
+
+.big-card:hover {
+	transform: translateY(-4px);
+}
+
 .big-card img {
 	width: 400px;
 	height: 119px;

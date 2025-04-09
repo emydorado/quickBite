@@ -1,0 +1,43 @@
+#saved-cards {
+	margin-left: 270px;
+	margin-right: 280px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	row-gap: 25px;
+	box-sizing: border-box;
+}
+
+.saved-title {
+	font-family: 'Radio Canada', sans-serif;
+	font-size: 2rem;
+	margin-bottom: 3rem;
+	color: #00150f;
+}
+
+@media (max-width: 820px) {
+	.saved-title {
+		text-align: left;
+		margin-left: 30px;
+		margin-bottom: 2rem;
+	}
+
+	#saved-cards {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+}
+
+@media (max-width: 767px) {
+	.saved-title {
+		text-align: left;
+		margin-left: 8px;
+		margin-bottom: 2rem;
+		margin-top: 60px;
+	}
+
+	#saved-cards {
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+}

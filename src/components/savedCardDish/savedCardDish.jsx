@@ -8,7 +8,7 @@ const SavedCardDish = ({ img, title, time }) => {
 			<div className='textContent'>
 				<div className='onlyText'>
 					<h1 className='saved-card-title'>{title} </h1>
-					<p className='saved-card-time'>{time}</p>
+					<p className='saved-card-time'>{time} minutes</p>
 				</div>
 				<div id='icon'>
 					<SavedIcon />
