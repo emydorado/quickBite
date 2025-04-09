@@ -1,73 +1,95 @@
+/* RESET para evitar scroll */
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: 'DM Sans', sans-serif;
+	background-color: #f9f9f9; /* opcional para contraste */
+}
+
+/* Centrado del login */
 .login-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 80vh; /* alto total de la pantalla */
+	height: 100vh;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
+/* Contenedor blanco con sombra */
 .login-container {
+	width: 100%;
+	max-width: 400px;
+	background-color: #fffffe;
+	padding: 30px;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 	text-align: left;
+	margin: auto;
 }
 
+/* Título y subtítulo */
 .login-title {
 	font-size: 31px;
-	margin: 0px;
+	margin: 0;
 	color: #00150f;
 	font-family: 'Radio Canada', sans-serif;
+	display: flex;
 }
+
 .login-subtitle {
 	font-size: 14px;
 	margin-bottom: 110px;
 	color: #00150f;
-	font-family: 'DM Sans', sans-serif;
+	display: flex;
 }
+
+/* Etiquetas */
 .login-label {
 	color: #00150f;
-	font-weight: 500;
-	font-family: 'DM Sans', sans-serif;
 	font-weight: 700;
+	margin-bottom: 6px;
+	display: flex;
 }
-.login-input {
-	width: 360px;
+
+/* Inputs */
+.login-input,
+.login-input-password {
+	width: 100%;
 	height: 41px;
 	border-radius: 12px;
 	background-color: #fffdfc;
-	border-style: none;
-	border-width: 1px;
-	padding-left: 7px;
+	border: 1px solid #d4d4d4;
+	padding-left: 10px;
 	font-size: 14px;
 	margin-bottom: 18px;
+	outline: none;
+	box-sizing: border-box;
+	transition: border 0.3s ease;
 }
 
-.login-input-password {
-	width: 360px;
-	height: 39px;
-	border-radius: 12px;
-	background-color: #fffdfc;
-	border-style: none;
-	border-width: 1px;
-	padding-left: 7px;
-	font-size: 14px;
-}
-.login-forgot-password {
-	font-size: 11px;
-	color: #00150f;
-	margin-bottom: 50px;
-	font-family: 'DM Sans', sans-serif;
+.login-input:focus,
+.login-input-password:focus {
+	border: 1px solid #8bc652;
 }
 
+/* Botón de login */
 .login-button {
 	font-size: 14px;
 	margin-bottom: 20px;
 	background-color: #8bc652;
 	height: 41px;
-	width: 369px;
+	width: 100%;
 	border-radius: 12px;
-	padding: 1px 2px 1px 7px;
 	transition: background-color 0.3s ease;
 	font-weight: 600;
 	color: #fffdfc;
-	border-style: none;
+	border: none;
+	cursor: pointer;
 }
 
 .login-button:hover {
@@ -78,21 +100,28 @@
 	background-color: #4c6d2d;
 }
 
+/* Texto de abajo */
+.login-forgot-password {
+	font-size: 11px;
+	color: #00150f;
+	margin-bottom: 50px;
+	text-align: right;
+}
+
 .login-account {
 	font-size: 14px;
-	margin-top: 18px;
 	color: #00150f;
-	font-family: 'DM Sans', sans-serif;
 }
 
 .login-signup {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 }
+
 .login-signup-button {
-	margin: 0px 0px 0px 7px;
+	margin-left: 7px;
 	color: #f76711;
-	font-family: 'DM Sans', sans-serif;
 	font-size: 14px;
 	cursor: pointer;
 }

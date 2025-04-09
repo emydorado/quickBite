@@ -7,28 +7,41 @@ function SignUp() {
 	return (
 		<>
 			<div className='signup-wrapper'>
+				<div className='signup-container'>
 				<h1 className='signup-title'>Sign Up</h1>
 				<p className='signup-subtitle'>Create your new QuickBite account</p>
 				<div>
-					<label className='signup-label ' htmlFor=''>
+					<label className='signup-label' htmlFor='name'>
 						Name
 					</label>
 					<ul></ul>
-					<input type='email' className='signup-input' name='' id='' placeholder='Jhon Doe' />
+					<input type='text' className='signup-input-name' name='name' id='name' placeholder='Jhon Doe' />
 				</div>
 				<div>
-					<label className='signup-label ' htmlFor=''>
+					<label className='signup-label' htmlFor='email'>
 						Email
 					</label>
 					<ul></ul>
-					<input type='email' className='signup-input' name='' id='' placeholder='Example@quickbite.com' />
+					<input
+						type='email'
+						className='signup-input-mail'
+						name='email'
+						id='email'
+						placeholder='Example@quickbite.com'
+					/>
 				</div>
 				<div>
-					<label className='signup-label ' htmlFor=''>
+					<label className='signup-label' htmlFor='password'>
 						Password
 					</label>
 					<ul></ul>
-					<input type='password' className='signup-input' name='' id='' placeholder='Your Password' />
+					<input
+						type='password'
+						className='signup-input-password'
+						name='password'
+						id='password'
+						placeholder='Your Password'
+					/>
 				</div>
 				<div>
 					<p className='signup-forgot-password'>Forget password?</p>
@@ -45,6 +58,7 @@ function SignUp() {
 				<div className='signup-container-login'>
 					<p className='signup-already-text'>By continue you agree to our</p>
 					<p className='signup-login-button'>Terms & Privacy Policy</p>
+				</div>
 				</div>
 			</div>
 		</>
