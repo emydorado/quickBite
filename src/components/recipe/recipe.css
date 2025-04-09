@@ -1,19 +1,25 @@
+/* Imagen principal */
 .banner-image {
 	width: 100vw;
-	height: 50vw;
-	
+	height: 50vh;
 	object-fit: cover;
 	border-radius: 0 0 20px 20px;
 	margin: 0;
 	display: block;
 }
 
+/* Fondo blanco para la página de la receta */
 .recipe-body {
 	background-color: #fffdfc;
-
 	margin: 0;
 }
 
+/* Contenedor general del contenido */
+#recipe-content {
+	margin: 16px;
+}
+
+/* Sección superior: título y botón */
 #top-section {
 	display: flex;
 	flex-direction: column;
@@ -21,20 +27,22 @@
 	align-items: flex-start;
 }
 
-.check-button {
+.top-text {
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
 	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .recipe-title {
 	font-family: 'Radio Canada', sans-serif;
 	color: #00150f;
 	font-size: 31px;
-	display: flex;
-	text-align: left;
-	margin: 12px 0px 0px 0px;
+	margin: 12px 0 0 0;
+}
+
+.recipe-checkbutton {
+	margin-left: 16px;
 }
 
 .recipe-time {
@@ -42,7 +50,7 @@
 	font-size: 14px;
 	color: #6b6967;
 	font-weight: 500;
-	margin: 0px 0px 0px 0px;
+	margin: 0;
 }
 
 .titulo-ingredientes {
@@ -51,45 +59,110 @@
 	text-align: left;
 	font-size: 22px;
 	font-weight: 600;
-	margin: 8px 0px 8px 0px;
+	margin: 16px 0 8px 0;
+}
+
+.recipe-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.recipe-ingredients {
+	text-align: left;
 }
 
 #ingredients {
 	font-family: 'DM Sans', sans-serif;
 	list-style: disc;
-	text-align: left;
 	color: #6b6967;
 	font-size: 14px;
 	font-weight: 300;
-	padding: 0px 0px 0px 16px;
-	margin: 0px 0px 0px 0px;
-}
-
-#recipe-content {
-	margin-left: 16px;
-}
-.recipe-steps-description {
-	font-family: 'DM Sans', sans-serif;
-	font-size: 14px;
-	color: #6b6967;
-	display: flex;
+	padding-left: 16px;
+	margin: 0;
 	text-align: left;
 }
+
+/* Pasos */
+.recipe-steps {
+	text-align: left;
+}
+
+#steps {
+	padding-left: 16px;
+	margin: 0;
+}
+
 .recipe-steps-numbers {
 	font-family: 'DM Sans', sans-serif;
 	font-size: 14px;
 	color: #6b6967;
 	font-weight: 500;
 }
-.top-text {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+
+.recipe-steps-description {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 14px;
+	color: #6b6967;
+	text-align: left;
 }
-ol#steps {
-	padding: 0px 0px 0px 16px;
-	margin: 0px 0px 0px 0px;
+
+@media (min-width: 1000px) {
+	#recipe-content {
+		margin: 32px 80px;
+	}
+
+	.recipe-grid {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.recipe-ingredients,
+	.recipe-steps {
+		width: 48%;
+	}
+
+	.recipe-steps-ingredients {
+		display: flex;
+	}
+
+	.recipe-ingredients-container {
+		margin-right: 300px;
+	}
+	.recipe-steps-container {
+		width: 48%;
+	}
+	.banner-image {
+		height: 400px;
+	}
 }
-.recipe-checkbutton {
-	margin: 20px;
+
+@media (min-width: 600px) {
+	#recipe-content {
+		margin: 32px 80px;
+	}
+
+	.recipe-grid {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.recipe-ingredients,
+	.recipe-steps-container {
+		width: 48%;
+	}
+
+	.recipe-steps-ingredients {
+		display: flex;
+	}
+
+	.recipe-ingredients-container {
+		margin-right: 20%;
+	}
+
+	.banner-image {
+		height: 400px;
+	}
 }

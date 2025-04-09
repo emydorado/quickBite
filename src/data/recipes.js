@@ -115,7 +115,7 @@ export const recipes = [
 	{
 		id: 6,
 		recipe_name: 'Pasta Primavera',
-		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeLuJsmqKYQHH5pP1hFmKSZ6fY1vh4D-1MiA&s',
+		img: 'https://sarasellos.com/wp-content/uploads/2024/07/pasta-primavera-pollo-2-683x1024.jpg',
 		classification: 'Lunch',
 		description: 'Colorful veggies tossed with pasta in a light garlic and olive oil sauce.',
 		ingredients: [
@@ -259,7 +259,7 @@ export const recipes = [
 	{
 		id: 12,
 		recipe_name: 'Veggie Wrap',
-		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_GPFMFEtnDQuI-KgCmNyFIVYNS6M_zqe_5Q&s',
+		img: 'https://www.plantperks.com/wp-content/uploads/2020/02/IMG_0198-Edit.jpg',
 		classification: 'Lunch',
 		description: 'A light wrap filled with fresh vegetables, creamy hummus, and avocado.',
 		ingredients: [
@@ -310,7 +310,7 @@ export const recipes = [
 	{
 		id: 14,
 		recipe_name: 'Avocado Toast with Poached Eggs',
-		img: 'https://www.aberdeenskitchen.com/wp-content/uploads/2019/05/Avocado-Egg-Breakfast-Toast-FI-Thumbnail-1200X1200.jpg',
+		img: 'https://data.thefeedfeed.com/static/2021/04/06/1617726496606c8c20a7a82.jpg',
 		classification: 'Breakfast',
 		description:
 			'Creamy avocado spread on toasted bread, topped with perfectly poached eggs and a sprinkle of seasoning.',
@@ -334,7 +334,7 @@ export const recipes = [
 	{
 		id: 15,
 		recipe_name: 'Chicken Caesar Salad',
-		img: 'https://s23209.pcdn.co/wp-content/uploads/2023/01/220905_DD_Chx-Caesar-Salad_051-500x500.jpg',
+		img: 'https://www.mississippivegan.com/wp-content/uploads/2022/12/crispy-chickun-caeser-06-819x1024.jpg',
 		classification: 'Lunch',
 		description: 'A classic salad with grilled chicken, crunchy romaine lettuce, Caesar dressing, and crispy croutons.',
 		ingredients: [
