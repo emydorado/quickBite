@@ -1,0 +1,123 @@
+.profile-body {
+	background-color: #8bc652;
+	margin-left: 0;
+	margin-right: 0;
+	overflow: hidden;
+}
+
+.profile-content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.profile-picture-container {
+	position: relative;
+	width: 140px;
+	height: 140px;
+	margin-bottom: 12px;
+}
+
+.profile-picture {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #cae5af;
+}
+
+.edit-icon-profile {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #cae5af;
+	border-radius: 50%;
+	padding: 5px 6px 4px 6px;
+	cursor: pointer;
+}
+
+.username {
+	font-size: 28px;
+	color: white;
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+#profile-body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 80px;
+	padding: 40px 100px 40px 100px;
+	box-sizing: border-box;
+	background-color: #fffdfc;
+}
+
+#checklist-section {
+	background-color: #ffffff;
+	border-radius: 16px;
+	width: 100%;
+	padding: 20px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checklist-cards {
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.checklist-cards::-webkit-scrollbar {
+	display: none;
+}
+
+.recipes-done {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 6px;
+	font-family: 'DM Sans', sans-serif;
+	text-align: left;
+	margin-left: 16px;
+}
+
+#options-section {
+	background-color: #ffffff;
+	border-radius: 16px;
+	padding: 20px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-item {
+	display: flex;
+	align-items: center;
+	padding: 24px 0;
+	border-bottom: 1px solid #eee;
+	font-family: 'DM Sans', sans-serif;
+	cursor: pointer;
+	color: #00150f;
+	font-size: 16px;
+}
+
+.option-item svg {
+	margin-left: 30px;
+	margin-right: 15px;
+}
+
+.option-item:last-child {
+	border-bottom: none;
+}
+
+.option-item:hover {
+	color: #205546;
+}
+
+.option-item:hover svg {
+	fill: #205546;
+	transition: fill 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	#profile-body {
+		grid-template-columns: 1fr;
+		padding: 20px;
+	}
+}

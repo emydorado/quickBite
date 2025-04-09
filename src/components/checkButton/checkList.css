@@ -1,6 +1,6 @@
 #checklist button {
-	border-radius: 18px;
-	padding: 16px;
+	border-radius: 11px;
+	padding: 4px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -10,16 +10,16 @@
 
 #checklist button:hover {
 	background-color: #8bc652;
-	border: 3px solid #8bc652;
+	border: 2px solid #8bc652;
 }
 
 #checklist button.checked {
 	background-color: #8bc652;
-	border: 3px solid #8bc652;
+	border: 2px solid #8bc652;
 }
 
 #checklist button.unchecked {
-	border: 3px solid #8bc652;
+	border: 2px solid #8bc652;
 	background-color: transparent;
 }
 

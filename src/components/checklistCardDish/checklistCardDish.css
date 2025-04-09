@@ -5,15 +5,14 @@
 	padding: 16px;
 	background-color: #ffffff;
 	border-radius: 10px;
-	max-width: 45%;
-	width: 100%;
-	gap: 20px;
+	max-width: 100%;
+	gap: 15px;
 	margin: 0px;
 }
 
 #checklistCard img {
-	width: 180px;
-	height: 110px;
+	width: 150px;
+	height: 70px;
 	object-fit: cover;
 	border-radius: 8px;
 	flex-shrink: 0;
@@ -25,27 +24,34 @@
 	flex-direction: column;
 	justify-content: center;
 	font-family: 'DM Sans', sans-serif;
+	width: 190px;
 }
 
-.onlyTextChecklist .title {
-	font-size: 18px;
-	font-weight: 600;
+.checklist-title {
+	font-size: 13px;
+	font-weight: 400;
 	color: #6b6967;
+	font-family: 'DM Sans', sans-serif;
 	margin: 0;
+	text-align: left;
+	width: 220px;
 }
 
 .onlyTextChecklist .time {
-	font-size: 14px;
+	font-size: 10px;
 	color: #b5b2ae;
 	font-weight: 300;
-	margin: 4px 0 0;
+	margin: 3px 0 0;
+	text-align: left;
+	width: 180px;
 }
 
 .onlyTextChecklist .checklistDescription {
-	font-size: 14px;
+	font-size: 9px;
 	color: #6b6967;
 	margin: 4px 0 0;
 	text-align: left;
+	width: 200px;
 }
 
 @media (max-width: 900px) {

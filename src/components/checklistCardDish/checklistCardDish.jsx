@@ -6,7 +6,7 @@ const ChecklistCardDish = ({ img, title, time, description }) => {
 		<div id='checklistCard'>
 			<img src={img} alt='dish picture' />
 			<div className='onlyTextChecklist'>
-				<h1 className='title'>{title} </h1>
+				<p className='checklist-title'>{title} </p>
 				<p className='time'>{time} minutes</p>
 				<p className='checklistDescription'>{description}</p>
 			</div>
