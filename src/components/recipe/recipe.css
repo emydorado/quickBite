@@ -8,6 +8,22 @@
 	display: block;
 }
 
+.go-back-icon {
+	position: absolute;
+	background-color: #8bc652;
+	padding: 8px;
+	border-radius: 50%;
+	display: flex;
+	align-items: flex-start;
+	margin: 3%;
+	margin-top: 2.5%;
+	transition: all 0.3s ease;
+}
+
+.go-back-icon:hover {
+	background-color: #b1d98b;
+}
+
 /* Fondo blanco para la página de la receta */
 .recipe-body {
 	background-color: #fffdfc;

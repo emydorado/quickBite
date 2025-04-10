@@ -3,8 +3,11 @@ import { recipes } from '../../data/recipes';
 import NavMenu from '../../components/navMenu/navMenu';
 import './profile.css';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
+	const navigate = useNavigate();
+
 	useEffect(() => {
 		document.body.classList.add('profile-body');
 
@@ -105,7 +108,7 @@ function Profile() {
 						</svg>
 						Settings
 					</div>
-					<div className='option-item'>
+					<div className='option-item' onClick={() => navigate('/')}>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='20'
