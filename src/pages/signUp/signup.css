@@ -1,3 +1,7 @@
+.signup-body {
+	margin-top: 30px;
+}
+
 .signup-wrapper {
 	display: flex;
 	justify-content: center;
@@ -111,7 +115,13 @@
 	font-weight: 500;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 820px) {
+	.signup-body {
+		margin-top: 200px;
+	}
+}
+
+@media (max-width: 476px) {
 	.signup-container {
 		padding: 20px;
 	}
@@ -125,5 +135,10 @@
 	.signup-input-password,
 	.signup-button {
 		height: 38px;
+	}
+
+	.signup-body {
+		margin-top: 100px;
+		margin-left: 0;
 	}
 }

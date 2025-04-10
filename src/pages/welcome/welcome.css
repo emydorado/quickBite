@@ -78,3 +78,17 @@
 	margin: 18px 0px 20px;
 	font-family: 'DM Sans', sans-serif;
 }
+
+@media (max-width: 820px) {
+	.welcome-body {
+		margin-top: 250px;
+		margin-left: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.welcome-body {
+		margin-top: 150px;
+		margin-left: 0;
+	}
+}

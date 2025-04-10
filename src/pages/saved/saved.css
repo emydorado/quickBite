@@ -1,6 +1,7 @@
 #saved-cards {
 	margin-left: 340px;
 	margin-right: 350px;
+	margin-bottom: 80px;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	row-gap: 25px;

@@ -11,7 +11,7 @@ function Saved() {
 			<h1 className='saved-title'>Saved recipes</h1>
 
 			<section id='saved-cards'>
-				{[3, 4, 5, 6, 7].map((i) =>
+				{[3, 4, 5, 6, 7, 8].map((i) =>
 					recipes[i] ? (
 						<SavedCardDish
 							key={recipes[i].id}

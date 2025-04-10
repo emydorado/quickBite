@@ -126,3 +126,19 @@
 	display: block;
 	margin-bottom: 6px;
 }
+
+@media (max-width: 820px) {
+	.login-wrapper {
+		margin-top: 300px;
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 476px) {
+	.login-wrapper {
+		margin-top: 160px;
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
