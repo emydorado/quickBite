@@ -1,3 +1,7 @@
+#search-container {
+	margin: clamp(1rem, 10vw, 10rem) clamp(1rem, 3vw, 2rem);
+}
+
 .top-section {
 	display: flex;
 	flex-direction: column;
