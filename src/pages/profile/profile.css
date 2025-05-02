@@ -1,9 +1,12 @@
+.profile-container {
+	margin-top: clamp(1rem, 10vw, 10rem);
+}
+
 .profile-body {
 	background-color: #8bc652;
-	margin-left: 0;
-	margin-right: 0;
-	margin-bottom: 0;
-	overflow: hidden;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .profile-content {
@@ -46,6 +49,7 @@
 }
 
 #profile-body {
+	min-height: calc(100vh - 365px);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 80px;
