@@ -75,7 +75,7 @@
 	margin-bottom: 20px;
 	font-weight: 700;
 	color: #e15e0f;
-	margin: 18px 0px 20px;
+	margin: 18px 0px 20px 7px;
 	font-family: 'DM Sans', sans-serif;
 }
 
@@ -90,5 +90,10 @@
 	.welcome-body {
 		margin-top: 150px;
 		margin-left: 0;
+	}
+
+	.welcome-logo {
+		height: 180px;
+		width: auto;
 	}
 }
