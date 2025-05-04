@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import CheckButton from '../checkButton/checkButton';
 import './recipe.css';
 import { useNavigate } from 'react-router-dom';
+import RecipeSaveIcon from '../recipeSaveIcon/RecipeSaveIcon';
 
 const RecipeComponent = ({ img, title, time, ingredients, steps }) => {
 	const navigate = useNavigate();
@@ -35,6 +36,9 @@ const RecipeComponent = ({ img, title, time, ingredients, steps }) => {
 						<h1 className='recipe-title'>{title}</h1>
 						<div className='recipe-checkbutton'>
 							<CheckButton />
+						</div>
+						<div className='save-recipe-button'>
+							<RecipeSaveIcon />
 						</div>
 					</div>
 					<p className='recipe-time'>{time} minutes</p>
