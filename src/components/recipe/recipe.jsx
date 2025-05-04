@@ -34,11 +34,13 @@ const RecipeComponent = ({ img, title, time, ingredients, steps }) => {
 				<div id='top-section'>
 					<div className='top-text'>
 						<h1 className='recipe-title'>{title}</h1>
-						<div className='recipe-checkbutton'>
-							<CheckButton />
-						</div>
-						<div className='save-recipe-button'>
-							<RecipeSaveIcon />
+						<div className='recipe-buttons'>
+							<div className='recipe-checkbutton'>
+								<CheckButton />
+							</div>
+							<div className='save-recipe-button'>
+								<RecipeSaveIcon />
+							</div>
 						</div>
 					</div>
 					<p className='recipe-time'>{time} minutes</p>

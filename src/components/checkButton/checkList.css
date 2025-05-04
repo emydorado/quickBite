@@ -1,3 +1,9 @@
+.bookmark {
+	width: clamp(25px, 2.5vw, 35px);
+	height: clamp(25px, 2.5vw, 35px);
+	transition: fill 0.3s ease;
+}
+
 #checklist button {
 	border-radius: 11px;
 	padding: 4px;
@@ -6,6 +12,7 @@
 	justify-content: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	margin: 1vw;
 }
 
 #checklist button:hover {
@@ -23,19 +30,9 @@
 	background-color: transparent;
 }
 
-.bookmark {
-	width: 2vw;
-	height: 2vw;
-	transition: fill 0.3s ease;
-}
-
 @media (max-width: 900px) {
 	#checklist button {
 		border-radius: 10px;
 		padding: 6px;
-	}
-	.bookmark {
-		width: 4vw;
-		height: 4vw;
 	}
 }

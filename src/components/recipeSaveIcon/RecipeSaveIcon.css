@@ -1,4 +1,38 @@
 .recipe-save-icon {
-	width: clamp(18px, 1.8vw, 24px);
-	height: clamp(18px, 1.8vw, 24px);
+	width: clamp(25px, 2.5vw, 35px);
+	height: clamp(25px, 2.5vw, 35px);
+	transition: fill 0.3s ease;
+}
+
+#save-icon button {
+	border-radius: 11px;
+	padding: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin: 1vw;
+}
+
+#save-icon button:hover {
+	background-color: #8bc652;
+	border: 2px solid #8bc652;
+}
+
+#save-icon button.saved {
+	background-color: #8bc652;
+	border: 2px solid #8bc652;
+}
+
+#save-icon button.unsaved {
+	border: 2px solid #8bc652;
+	background-color: transparent;
+}
+
+@media (max-width: 900px) {
+	#save-icon button {
+		border-radius: 10px;
+		padding: 6px;
+	}
 }

@@ -57,6 +57,12 @@
 	margin: 12px 0 0 0;
 }
 
+.recipe-buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
 .recipe-checkbutton {
 	margin-left: 16px;
 }
