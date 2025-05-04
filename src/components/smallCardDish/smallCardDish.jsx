@@ -14,9 +14,7 @@ const SmallCardDish = ({ id, img, title, time }) => {
 					<h1 className='small-card-title'>{title} </h1>
 					<p className='small-card-time'>{time} minutes</p>
 				</div>
-				<div id='icon'>
-					<SavedIcon recipeId={id} />
-				</div>
+				<SavedIcon recipeId={id} />
 			</div>
 		</div>
 	);

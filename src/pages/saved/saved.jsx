@@ -19,7 +19,7 @@ function Saved() {
 					{savedRecipes.map((recipe) => (
 						<SavedCardDish
 							key={recipe.id}
-							recipeId={recipe.id}
+							id={recipe.id}
 							img={recipe.img}
 							title={recipe.recipe_name}
 							time={recipe.prep_time_minutes}
