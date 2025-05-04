@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const savedRecipesSlice = createSlice({
 	name: 'savedRecipes',
 	initialState: {
-		saved: [],
+		saved: JSON.parse(localStorage.getItem('savedRecipes')) || [],
 	},
 	reducers: {
 		toggleSave: (state, action) => {
@@ -14,6 +14,7 @@ const savedRecipesSlice = createSlice({
 			} else {
 				state.saved.splice(index, 1);
 			}
+			localStorage.setItem('savedRecipes', JSON.stringify(state.saved));
 		},
 	},
 });
