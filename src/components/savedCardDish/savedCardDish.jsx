@@ -1,7 +1,7 @@
 import '../savedCardDish/savedCardDish.css';
 import SavedIcon from '../savedIcon/savedIcon';
 
-const SavedCardDish = ({ img, title, time }) => {
+const SavedCardDish = ({ id, img, title, time }) => {
 	return (
 		<div id='savedCard'>
 			<img src={img} alt='dish picture' className='saved-image' />
@@ -11,7 +11,7 @@ const SavedCardDish = ({ img, title, time }) => {
 					<p className='saved-card-time'>{time} minutes</p>
 				</div>
 				<div id='icon'>
-					<SavedIcon />
+					<SavedIcon recipeId={id} />
 				</div>
 			</div>
 		</div>

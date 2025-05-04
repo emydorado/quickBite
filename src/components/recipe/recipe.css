@@ -8,6 +8,24 @@
 	display: block;
 }
 
+.go-back-icon {
+	position: fixed;
+	top: 2.5%;
+	left: 3%;
+	background-color: #8bc652;
+	padding: 8px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.go-back-icon:hover {
+	background-color: #b1d98b;
+}
+
 /* Fondo blanco para la página de la receta */
 .recipe-body {
 	background-color: #fffdfc;
@@ -37,8 +55,15 @@
 .recipe-title {
 	font-family: 'Radio Canada', sans-serif;
 	color: #00150f;
-	font-size: 31px;
+	font-size: clamp(1.5rem, 4vw, 2rem);
 	margin: 12px 0 0 0;
+	text-align: left;
+}
+
+.recipe-buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .recipe-checkbutton {
@@ -47,7 +72,7 @@
 
 .recipe-time {
 	font-family: 'DM Sans', sans-serif;
-	font-size: 14px;
+	font-size: clamp(0.875rem, 3vw, 1rem);
 	color: #6b6967;
 	font-weight: 500;
 	margin: 0;
@@ -57,7 +82,7 @@
 	font-family: 'DM Sans', sans-serif;
 	color: #00150f;
 	text-align: left;
-	font-size: 22px;
+	font-size: clamp(1rem, 3vw, 1.25rem);
 	font-weight: 600;
 	margin: 16px 0 8px 0;
 }
@@ -76,7 +101,7 @@
 	font-family: 'DM Sans', sans-serif;
 	list-style: disc;
 	color: #6b6967;
-	font-size: 14px;
+	font-size: clamp(0.875rem, 3vw, 1rem);
 	font-weight: 300;
 	padding-left: 16px;
 	margin: 0;
@@ -95,14 +120,14 @@
 
 .recipe-steps-numbers {
 	font-family: 'DM Sans', sans-serif;
-	font-size: 14px;
+	font-size: clamp(0.875rem, 3vw, 1rem);
 	color: #6b6967;
 	font-weight: 500;
 }
 
 .recipe-steps-description {
 	font-family: 'DM Sans', sans-serif;
-	font-size: 14px;
+	font-size: clamp(0.875rem, 3vw, 1rem);
 	color: #6b6967;
 	text-align: left;
 }

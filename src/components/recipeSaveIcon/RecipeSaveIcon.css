@@ -1,10 +1,10 @@
-.bookmark {
+.recipe-save-icon {
 	width: clamp(19px, 2.5vw, 35px);
 	height: clamp(19px, 2.5vw, 35px);
 	transition: fill 0.3s ease;
 }
 
-#checklist button {
+#save-icon button {
 	border-radius: 11px;
 	padding: 4px;
 	display: flex;
@@ -15,23 +15,23 @@
 	margin: 1vw;
 }
 
-#checklist button:hover {
+#save-icon button:hover {
 	background-color: #8bc652;
 	border: 2px solid #8bc652;
 }
 
-#checklist button.checked {
+#save-icon button.saved {
 	background-color: #8bc652;
 	border: 2px solid #8bc652;
 }
 
-#checklist button.unchecked {
+#save-icon button.unsaved {
 	border: 2px solid #8bc652;
 	background-color: transparent;
 }
 
 @media (max-width: 900px) {
-	#checklist button {
+	#save-icon button {
 		border-radius: 10px;
 		padding: 6px;
 	}

@@ -1,15 +1,24 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleSave } from '../../redux/savedRecipes/savedRecipesSlice';
 import './savedIcon.css';
 
-const SavedIcon = () => {
-	const [isSaved, setIsSaved] = useState(false);
+const SavedIcon = ({ recipeId }) => {
+	const dispatch = useDispatch();
+	const saved = useSelector((state) => state.savedRecipes.saved);
+	const isSaved = saved.includes(recipeId);
 
-	const toggleSaved = () => {
-		setIsSaved(!isSaved);
+	const handleClick = () => {
+		dispatch(toggleSave(recipeId));
 	};
 
 	return (
-		<div id='icon' onClick={toggleSaved} style={{ cursor: 'pointer' }}>
+		<div
+			id='icon'
+			onClick={() => {
+				handleClick();
+			}}
+			style={{ cursor: 'pointer' }}
+		>
 			{isSaved ? (
 				<svg
 					xmlns='http://www.w3.org/2000/svg'

@@ -2,22 +2,24 @@ import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
 import { recipes } from '../../data/recipes';
 import './home.css';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
-	const sections = [
-		{
-			title: 'Recommended recipes',
-			recipeIndexes: [1, 2, 3, 4, 5, 6],
-		},
-		{
-			title: 'Lastest recipes made by you',
-			recipeIndexes: [7, 8, 9, 10, 11, 12],
-		},
-		{
-			title: 'Because you liked "Chickpea cookies"',
-			recipeIndexes: [13, 14, 15, 16, 17, 18],
-		},
-	];
+	const [randomRecipe, setRandomRecipe] = useState([]);
+
+	function handleRandom() {
+		if (recipes.length >= 0) {
+			const shuffled = [...recipes].sort(() => 0.5 - Math.random());
+			const selected = shuffled.slice(0, 7);
+			setRandomRecipe(selected);
+		}
+	}
+
+	useEffect(() => {
+		handleRandom();
+	}, []);
+
+	console.log(randomRecipe);
 
 	return (
 		<section className='home-container'>
@@ -25,28 +27,41 @@ const Home = () => {
 
 			<NavMenu />
 
-			{sections.map(({ title, recipeIndexes }, i) => (
-				<section key={i}>
-					<p className='home-subtitle'>{title}</p>
-					<div className={`home-section home-section-${i}`}>
-						{recipeIndexes.map((index) => {
-							const recipe = recipes[index];
-							if (!recipe) return null;
-							return (
-								<SmallCardDish
-									key={recipe.id}
-									id={recipe.id}
-									img={recipe.img}
-									title={recipe.recipe_name}
-									time={recipe.prep_time_minutes}
-								/>
-							);
-						})}
+			{randomRecipe.length === 0 ? (
+				<p>Loading recipes...</p>
+			) : (
+				<div className='recomended-recipes-home'>
+					<p className='home-subtitle'>Recommended by us</p>
+
+					<div className='home-section'>
+						{randomRecipe.map((recipe) => (
+							<SmallCardDish
+								key={recipe.id}
+								id={recipe.id}
+								img={recipe.img}
+								title={recipe.recipe_name}
+								time={recipe.prep_time_minutes}
+							/>
+						))}
 					</div>
-				</section>
-			))}
+
+					<p className='home-subtitle'>Latest recipes made by you</p>
+					<div className='home-section'></div>
+
+					<p className='home-subtitle'>Beacuse you liked</p>
+					<div className='home-section'></div>
+
+					<p className='home-subtitle'>No sugar today</p>
+					<div className='home-section'></div>
+
+					<p className='home-subtitle'>Ready in 20 minutes</p>
+					<div className='home-section'></div>
+				</div>
+			)}
 		</section>
 	);
 };
+
+//					<div className={`home-section home-section-${i}`}>
 
 export default Home;
