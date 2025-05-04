@@ -4,7 +4,7 @@ import './recipe.css';
 import { useNavigate } from 'react-router-dom';
 import RecipeSaveIcon from '../recipeSaveIcon/RecipeSaveIcon';
 
-const RecipeComponent = ({ img, title, time, ingredients, steps }) => {
+const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -39,7 +39,7 @@ const RecipeComponent = ({ img, title, time, ingredients, steps }) => {
 								<CheckButton />
 							</div>
 							<div className='save-recipe-button'>
-								<RecipeSaveIcon />
+								<RecipeSaveIcon recipeId={id} />
 							</div>
 						</div>
 					</div>

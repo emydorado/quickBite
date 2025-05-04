@@ -12,6 +12,7 @@ function Recipe() {
 			<section>
 				<RecipeComponent
 					key={receta.id}
+					id={receta.id}
 					img={receta.img}
 					time={receta.prep_time_minutes}
 					title={receta.recipe_name}

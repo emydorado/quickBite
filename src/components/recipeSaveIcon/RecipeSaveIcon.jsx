@@ -1,11 +1,14 @@
-import { useState } from 'react';
 import './RecipeSaveIcon.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleSave } from '../../redux/savedRecipes/savedRecipesSlice';
 
-const RecipeSaveIcon = () => {
-	const [isSaved, setIsSaved] = useState(false);
+const RecipeSaveIcon = ({ recipeId }) => {
+	const dispatch = useDispatch();
+	const saved = useSelector((state) => state.savedRecipes.saved);
+	const isSaved = saved.includes(recipeId);
 
 	const toggleSaved = () => {
-		setIsSaved(!isSaved);
+		dispatch(toggleSave(recipeId));
 	};
 
 	return (
