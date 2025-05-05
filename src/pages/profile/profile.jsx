@@ -4,6 +4,7 @@ import NavMenu from '../../components/navMenu/navMenu';
 import './profile.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Profile() {
 	const navigate = useNavigate();
@@ -15,6 +16,10 @@ function Profile() {
 			document.body.classList.remove('profile-body');
 		};
 	}, []);
+
+	const done = useSelector((state) => state.doneRecipes.saved);
+	const doneRecipes = recipes.filter((recipe) => done.includes(recipe.id));
+
 	return (
 		<>
 			<NavMenu />
@@ -45,17 +50,16 @@ function Profile() {
 					<div id='checklist-section'>
 						<p className='recipes-done'>Recipes you’ve done</p>
 						<div className='checklist-cards'>
-							{[4, 5, 6, 7, 8].map((i) =>
-								recipes[i] ? (
-									<ChecklistCardDish
-										key={recipes[i].id}
-										img={recipes[i].img}
-										title={recipes[i].recipe_name}
-										time={recipes[i].prep_time_minutes}
-										description={recipes[i].description}
-									/>
-								) : null
-							)}{' '}
+							{doneRecipes.map((recipe) => {
+								<ChecklistCardDish
+									key={recipe.id}
+									recipeId={recipe.id}
+									img={recipe.img}
+									time={recipe.prep_time_minutes}
+									title={recipe.recipe_name}
+									description={recipe.description}
+								/>;
+							})}
 						</div>
 					</div>
 

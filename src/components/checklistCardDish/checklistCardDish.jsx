@@ -1,7 +1,7 @@
 import './checklistCardDish.css';
 import CheckButton from '../checkButton/checkButton';
 
-const ChecklistCardDish = ({ img, title, time, description }) => {
+const ChecklistCardDish = ({ id, img, title, time, description }) => {
 	return (
 		<div id='checklistCard'>
 			<img src={img} alt='dish picture' />
@@ -11,7 +11,7 @@ const ChecklistCardDish = ({ img, title, time, description }) => {
 				<p className='checklistDescription'>{description}</p>
 			</div>
 			<div id='checklist'>
-				<CheckButton />
+				<CheckButton recipeId={id} />
 			</div>
 		</div>
 	);

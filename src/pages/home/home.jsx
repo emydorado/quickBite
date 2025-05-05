@@ -19,8 +19,6 @@ const Home = () => {
 		handleRandom();
 	}, []);
 
-	console.log(randomRecipe);
-
 	return (
 		<section className='home-container'>
 			<h1 className='home-title'>Explore recipes</h1>
