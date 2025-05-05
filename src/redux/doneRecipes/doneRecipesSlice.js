@@ -3,18 +3,23 @@ import { createSlice } from '@reduxjs/toolkit';
 const doneRecipesSlice = createSlice({
 	name: 'doneRecipes',
 	initialState: {
-		saved: JSON.parse(localStorage.getItem('doneRecipes')) || [],
+		done: JSON.parse(localStorage.getItem('doneRecipes')) || [],
 	},
 	reducers: {
 		toggleDone: (state, action) => {
+			console.log('Payload recibido:', action.payload);
+			console.log('Estado inicial (done):', state.done);
+			if (!state.done) state.done = [];
+
 			const recipeId = action.payload;
-			const index = state.saved.indexOf(recipeId);
+			const index = state.done.indexOf(recipeId);
 			if (index === -1) {
-				state.saved.push(recipeId);
+				state.done.push(recipeId);
 			} else {
-				state.saved.splice(index, 1);
+				state.done.splice(index, 1);
 			}
-			localStorage.setItem('doneRecipes', JSON.stringify(state.saved));
+			console.log('Estado actualizado (done):', state.done);
+			localStorage.setItem('doneRecipes', JSON.stringify(state.done));
 		},
 	},
 });

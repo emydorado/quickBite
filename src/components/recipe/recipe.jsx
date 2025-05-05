@@ -36,7 +36,7 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 						<h1 className='recipe-title'>{title}</h1>
 						<div className='recipe-buttons'>
 							<div className='recipe-checkbutton'>
-								<CheckButton />
+								<CheckButton recipeId={id} />
 							</div>
 							<div className='save-recipe-button'>
 								<RecipeSaveIcon recipeId={id} />

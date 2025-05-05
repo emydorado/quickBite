@@ -17,7 +17,7 @@ function Profile() {
 		};
 	}, []);
 
-	const done = useSelector((state) => state.doneRecipes.saved);
+	const done = useSelector((state) => state.doneRecipes.done);
 	const doneRecipes = recipes.filter((recipe) => done.includes(recipe.id));
 
 	return (
@@ -49,17 +49,18 @@ function Profile() {
 				<section id='profile-body'>
 					<div id='checklist-section'>
 						<p className='recipes-done'>Recipes you’ve done</p>
+
 						<div className='checklist-cards'>
-							{doneRecipes.map((recipe) => {
+							{doneRecipes.map((recipe) => (
 								<ChecklistCardDish
 									key={recipe.id}
-									recipeId={recipe.id}
+									id={recipe.id}
 									img={recipe.img}
 									time={recipe.prep_time_minutes}
 									title={recipe.recipe_name}
 									description={recipe.description}
-								/>;
-							})}
+								/>
+							))}
 						</div>
 					</div>
 
