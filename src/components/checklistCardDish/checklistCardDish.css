@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: clamp(0.5rem, 1vw, 1rem);
+	padding: clamp(0.3rem, 1vw, 1rem);
 	background-color: #ffffff;
 	border-radius: clamp(0.5rem, 1vw, 1rem);
 	max-width: 100%;
@@ -28,13 +28,13 @@
 }
 
 .checklist-title {
-	font-size: clamp(0.8rem, 1.3vw, 1rem);
+	font-size: clamp(0.7rem, 1.3vw, 1rem);
 	font-weight: 400;
 	color: #6b6967;
 	font-family: 'DM Sans', sans-serif;
 	margin: 0;
 	text-align: left;
-	width: clamp(12rem, 35vw, 220px);
+	width: clamp(9rem, 35vw, 220px);
 }
 
 .onlyTextChecklist .time {
@@ -47,9 +47,9 @@
 }
 
 .onlyTextChecklist .checklistDescription {
-	font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+	font-size: clamp(0.5rem, 0.9vw, 0.75rem);
 	color: #6b6967;
 	margin: clamp(0.25rem, 0.5vw, 0.35rem) 0 0;
 	text-align: left;
-	width: clamp(10rem, 40vw, 260px);
+	width: clamp(8rem, 40vw, 260px);
 }
