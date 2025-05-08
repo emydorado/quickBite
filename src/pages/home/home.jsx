@@ -1,8 +1,8 @@
 import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
 import { recipes } from '../../data/recipes';
-import './home.css';
 import { useEffect, useState } from 'react';
+import './home.css';
 
 const Home = () => {
 	const [randomRecipe, setRandomRecipe] = useState([]);

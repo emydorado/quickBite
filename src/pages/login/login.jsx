@@ -1,8 +1,32 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { setUser } from '../../redux/auth/authSlice';
+import { auth } from '../../services/firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
 import './login.css';
 
 function LogIn() {
+	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	const handleLogin = () => {
+		signInWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+				const user = userCredential.user;
+				dispatch(setUser(user.uid));
+				navigate('/home');
+			})
+			.catch((error) => {
+				window.alert('An error occured, try again!');
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				console.log(errorCode, errorMessage);
+			});
+	};
 
 	return (
 		<div className='login-wrapper'>
@@ -14,19 +38,38 @@ function LogIn() {
 					Email
 				</label>
 				<ul></ul>
-				<input type='email' id='email' className='login-input' placeholder='Example@quickbite.com' />
+				<input
+					required
+					onChange={(e) => setEmail(e.target.value)}
+					type='email'
+					id='email'
+					className='login-input'
+					placeholder='Example@quickbite.com'
+				/>
 				<ul></ul>
 
 				<label htmlFor='password' className='login-label'>
 					Password
 				</label>
 				<ul></ul>
-				<input type='password' id='password' className='login-input-password' placeholder='Your Password' />
+				<input
+					required
+					onChange={(e) => setPassword(e.target.value)}
+					type='password'
+					id='password'
+					className='login-input-password'
+					placeholder='Your Password'
+				/>
 				<ul></ul>
 
 				<p className='login-forgot-password'>Forget password?</p>
 
-				<button className='login-button' onClick={() => navigate('/home')}>
+				<button
+					className='login-button'
+					onClick={() => {
+						handleLogin();
+					}}
+				>
 					Log in
 				</button>
 

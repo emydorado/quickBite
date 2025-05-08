@@ -1,9 +1,17 @@
+// import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+// import { setUser } from '../../redux/auth/authSlice';
+import { auth } from '../../services/firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './signup.css';
-import { useEffect } from 'react';
 
 function SignUp() {
 	const navigate = useNavigate();
+	// const dispatch = useDispatch;
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
 	useEffect(() => {
 		document.body.classList.add('signup-body');
 
@@ -11,6 +19,22 @@ function SignUp() {
 			document.body.classList.remove('signup-body');
 		};
 	}, []);
+
+	const handleRegister = () => {
+		createUserWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+				// Signed up
+				const user = userCredential.user;
+				navigate('/home');
+				console.log(user);
+			})
+			.catch((error) => {
+				window.alert('An error occured, try again!');
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				console.error(errorCode, errorMessage);
+			});
+	};
 
 	return (
 		<>
@@ -23,7 +47,7 @@ function SignUp() {
 							Name
 						</label>
 						<ul></ul>
-						<input type='text' className='signup-input-name' name='name' id='name' placeholder='Jhon Doe' />
+						<input required type='text' className='signup-input-name' name='name' id='name' placeholder='Jhon Doe' />
 					</div>
 					<div>
 						<label className='signup-label' htmlFor='email'>
@@ -31,6 +55,8 @@ function SignUp() {
 						</label>
 						<ul></ul>
 						<input
+							required
+							onChange={(e) => setEmail(e.target.value)}
 							type='email'
 							className='signup-input-mail'
 							name='email'
@@ -44,6 +70,8 @@ function SignUp() {
 						</label>
 						<ul></ul>
 						<input
+							required
+							onChange={(e) => setPassword(e.target.value)}
 							type='password'
 							className='signup-input-password'
 							name='password'
@@ -53,7 +81,12 @@ function SignUp() {
 					</div>
 					<div>
 						<p className='signup-forgot-password'>Forget password?</p>
-						<button className='signup-button' onClick={() => navigate('/home')}>
+						<button
+							className='signup-button'
+							onClick={() => {
+								handleRegister();
+							}}
+						>
 							Sign Up
 						</button>
 					</div>
