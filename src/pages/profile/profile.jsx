@@ -18,7 +18,7 @@ function Profile() {
 	}, []);
 
 	const done = useSelector((state) => state.doneRecipes.done);
-	const doneRecipes = recipes.filter((recipe) => done.includes(recipe.id));
+	const doneRecipes = recipes.filter((recipe) => Array.isArray(done) && done.includes(recipe.id));
 
 	return (
 		<>

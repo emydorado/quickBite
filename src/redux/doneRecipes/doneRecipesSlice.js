@@ -1,9 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+let saved = [];
+try {
+	saved = JSON.parse(localStorage.getItem('doneRecipes')) || [];
+} catch {
+	saved = [];
+}
+
 const doneRecipesSlice = createSlice({
 	name: 'doneRecipes',
 	initialState: {
-		done: JSON.parse(localStorage.getItem('doneRecipes')) || [],
+		done: saved,
 	},
 	reducers: {
 		toggleDone: (state, action) => {

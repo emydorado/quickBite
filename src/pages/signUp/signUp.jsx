@@ -23,7 +23,6 @@ function SignUp() {
 	const handleRegister = () => {
 		createUserWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
-				// Signed up
 				const user = userCredential.user;
 				navigate('/home');
 				console.log(user);

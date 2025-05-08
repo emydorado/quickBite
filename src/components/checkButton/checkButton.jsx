@@ -5,8 +5,7 @@ import { toggleDone } from '../../redux/doneRecipes/doneRecipesSlice';
 const CheckButton = ({ recipeId }) => {
 	const dispatch = useDispatch();
 	const done = useSelector((state) => state.doneRecipes.done);
-	const alreadyDone = done.includes(recipeId);
-
+	const alreadyDone = Array.isArray(done) && done.includes(recipeId);
 	const toggleCheck = () => {
 		dispatch(toggleDone(recipeId));
 	};
