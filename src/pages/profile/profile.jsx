@@ -52,7 +52,7 @@ function Profile() {
 
 	useEffect(() => {
 		const fetchMarkAsDoneRecipes = async () => {
-			const q = query(collection(db, 'savedRecipes'), where('uid', '==', uid));
+			const q = query(collection(db, 'alreadyDoneRecipes'), where('uid', '==', uid));
 			const querySnapshot = await getDocs(q);
 			const ids = querySnapshot.docs.map((doc) => doc.data().recipeId);
 			setDoneRecipeIds(ids);

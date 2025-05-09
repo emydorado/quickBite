@@ -7,8 +7,6 @@ const SavedIcon = ({ recipeId }) => {
 	const [isSaved, setIsSaved] = useState(false);
 	const uid = useSelector((state) => state.auth.uid);
 
-	console.log('uid from saved icon', uid);
-
 	useEffect(() => {
 		if (!uid) return;
 

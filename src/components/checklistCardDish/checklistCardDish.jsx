@@ -2,8 +2,6 @@ import './checklistCardDish.css';
 import CheckButton from '../checkButton/checkButton';
 
 const ChecklistCardDish = ({ id, img, title, time, description }) => {
-	console.log('[CHECKLIST CARD] id:', id);
-
 	return (
 		<div id='checklistCard'>
 			<img src={img} alt='dish picture' />

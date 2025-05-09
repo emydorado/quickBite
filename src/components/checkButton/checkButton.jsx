@@ -7,8 +7,6 @@ const CheckButton = ({ recipeId }) => {
 	const [alreadyDone, setAlreadyDone] = useState(false);
 	const uid = useSelector((state) => state.auth.uid);
 
-	console.log('uid from check button', uid);
-
 	useEffect(() => {
 		if (!uid) return;
 
