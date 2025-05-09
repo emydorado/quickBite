@@ -1,23 +1,31 @@
-import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
-import { recipes } from '../../data/recipes';
+import SmallCardDish from '../../components/smallCardDish/smallCardDish';
 import { useEffect, useState } from 'react';
+import { fetchRecipes } from '../../services/firebaseUtils';
 import './home.css';
 
 const Home = () => {
 	const [randomRecipe, setRandomRecipe] = useState([]);
-
-	function handleRandom() {
-		if (recipes.length >= 0) {
-			const shuffled = [...recipes].sort(() => 0.5 - Math.random());
-			const selected = shuffled.slice(0, 7);
-			setRandomRecipe(selected);
-		}
-	}
+	const [recipes, setRecipes] = useState([]);
 
 	useEffect(() => {
-		handleRandom();
+		const loadRecipes = async () => {
+			const recipes = await fetchRecipes();
+			setRecipes(recipes);
+		};
+		loadRecipes();
 	}, []);
+
+	useEffect(() => {
+		function handleRandom() {
+			if (recipes.length >= 0) {
+				const shuffled = [...recipes].sort(() => 0.5 - Math.random());
+				const selected = shuffled.slice(0, 7);
+				setRandomRecipe(selected);
+			}
+		}
+		handleRandom();
+	}, [recipes]);
 
 	return (
 		<section className='home-container'>
@@ -59,7 +67,4 @@ const Home = () => {
 		</section>
 	);
 };
-
-//					<div className={`home-section home-section-${i}`}>
-
 export default Home;

@@ -19,7 +19,7 @@ function Search() {
 			setIngredients(ingredients);
 		};
 		loadIngredients();
-	}, []);
+	}, [ingredients]);
 
 	useEffect(() => {
 		const loadCategories = async () => {
@@ -27,7 +27,7 @@ function Search() {
 			setCategories(categories);
 		};
 		loadCategories();
-	}, []);
+	}, [categories]);
 
 	useEffect(() => {
 		const loadRecipes = async () => {
@@ -35,7 +35,7 @@ function Search() {
 			setRecipes(recipes);
 		};
 		loadRecipes();
-	}, []);
+	}, [recipes]);
 
 	const handleSearchChange = (event) => {
 		setSearch(event.target.value);

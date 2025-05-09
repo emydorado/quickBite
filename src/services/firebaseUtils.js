@@ -1,4 +1,4 @@
-import { getDocs, collection } from 'firebase/firestore';
+import { getDocs, collection, doc, deleteDoc, getDoc, setDoc, query, where } from 'firebase/firestore';
 import { db } from './firebaseConfig';
 
 // fetch para traer ingredientes
@@ -35,4 +35,34 @@ export const fetchRecipes = async () => {
 		console.error('Error fetching recipes:', error);
 		return [];
 	}
+};
+
+// función para guardar recetas
+
+const COLLECTION_NAME = 'savedRecipes';
+
+export const checkIfRecipeSaved = async (uid, recipeId) => {
+	const docRef = doc(db, COLLECTION_NAME, `${uid}_${recipeId}`);
+	const docSnap = await getDoc(docRef);
+	return docSnap.exists();
+};
+
+export const saveRecipe = async (uid, recipeId) => {
+	const docRef = doc(db, COLLECTION_NAME, `${uid}_${recipeId}`);
+	await setDoc(docRef, {
+		uid,
+		recipeId,
+		timestamp: Date.now(),
+	});
+};
+
+export const removeSavedRecipe = async (uid, recipeId) => {
+	const docRef = doc(db, COLLECTION_NAME, `${uid}_${recipeId}`);
+	await deleteDoc(docRef);
+};
+
+export const getUserSavedRecipeIds = async (uid) => {
+	const q = query(collection(db, COLLECTION_NAME), where('uid', '==', uid));
+	const querySnapshot = await getDocs(q);
+	return querySnapshot.docs.map((doc) => doc.data().recipeId);
 };
