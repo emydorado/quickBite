@@ -31,18 +31,23 @@ const Home = () => {
 
 	useEffect(() => {
 		function handleQuickRecipes() {
-			const quickRecipes = recipes.filter((recipe) => Number(recipe.prep_time_minutes) <= 20);
-			setQuickRecipes(quickRecipes);
+			const filtered = recipes.filter((recipe) => Number(recipe.prep_time_minutes) <= 20);
+
+			const shuffled = [...filtered].sort(() => 0.5 - Math.random());
+			const selected = shuffled.slice(0, 7);
+			setQuickRecipes(selected);
 		}
 		handleQuickRecipes();
 	}, [recipes]);
 
 	useEffect(() => {
 		function handleChickenRecipes() {
-			const selectedRecipe = recipes.filter((recipe) =>
+			const filtered = recipes.filter((recipe) =>
 				recipe.ingredients?.some((ingredient) => ingredient.name?.toLowerCase().includes('chicken'))
 			);
-			setChickenRecipes(selectedRecipe);
+			const shuffled = [...filtered].sort(() => 0.5 - Math.random());
+			const selected = shuffled.slice(0, 7);
+			setChickenRecipes(selected);
 		}
 		handleChickenRecipes();
 	}, [recipes]);
