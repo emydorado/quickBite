@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../services/firebaseConfig';
+import { db } from '../../services/firebaseConfig';
+import { doc, setDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './signup.css';
 
@@ -8,6 +10,7 @@ function SignUp() {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [username, setUsername] = useState('');
 
 	useEffect(() => {
 		document.body.classList.add('signup-body');
@@ -19,16 +22,22 @@ function SignUp() {
 
 	const handleRegister = () => {
 		createUserWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
+			.then(async (userCredential) => {
 				const user = userCredential.user;
+
+				await setDoc(doc(db, 'users', user.uid), {
+					username: username,
+					email: email,
+				});
+
 				navigate('/home');
 				console.log(user);
 			})
 			.catch((error) => {
-				window.alert('An error occured, try again!');
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				console.error(errorCode, errorMessage);
+				window.alert(errorMessage);
 			});
 	};
 
@@ -40,10 +49,18 @@ function SignUp() {
 					<p className='signup-subtitle'>Create your new QuickBite account</p>
 					<div>
 						<label className='signup-label' htmlFor='name'>
-							Name
+							Username
 						</label>
 						<ul></ul>
-						<input required type='text' className='signup-input-name' name='name' id='name' placeholder='Jhon Doe' />
+						<input
+							required
+							onChange={(e) => setUsername(e.target.value)}
+							type='text'
+							className='signup-input-name'
+							name='name'
+							id='name'
+							placeholder='Jhon Doe'
+						/>
 					</div>
 					<div>
 						<label className='signup-label' htmlFor='email'>

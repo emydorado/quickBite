@@ -1,13 +1,16 @@
+import NavMenu from '../../components/navMenu/navMenu';
 import ChecklistCardDish from '../../components/checklistCardDish/checklistCardDish';
 import { recipes } from '../../data/recipes';
-import NavMenu from '../../components/navMenu/navMenu';
-import './profile.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth, db } from '../../services/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import './profile.css';
 
 function Profile() {
 	const navigate = useNavigate();
+	const [username, setUsername] = useState('');
 
 	useEffect(() => {
 		document.body.classList.add('profile-body');
@@ -15,6 +18,24 @@ function Profile() {
 		return () => {
 			document.body.classList.remove('profile-body');
 		};
+	}, []);
+
+	useEffect(() => {
+		const fetchUsername = async () => {
+			const user = auth.currentUser;
+			if (user) {
+				const userRef = doc(db, 'users', user.uid);
+				const userSnap = await getDoc(userRef);
+
+				if (userSnap.exists()) {
+					setUsername(userSnap.data().username);
+				} else {
+					console.log('No user data found');
+				}
+			}
+		};
+
+		fetchUsername();
 	}, []);
 
 	const done = useSelector((state) => state.doneRecipes.done);
@@ -44,7 +65,7 @@ function Profile() {
 							</svg>
 						</div>
 					</div>
-					<h1 className='username'>Juliana Morales </h1>
+					<h1 className='username'>{username}</h1>
 				</section>
 				<section id='profile-body'>
 					<div id='checklist-section'>
