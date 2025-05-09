@@ -1,13 +1,37 @@
 import './checkList.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleDone } from '../../redux/doneRecipes/doneRecipesSlice';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { checkIfRecipeIsDone, markAsDoneRecipe, removeMarkAsDoneRecipe } from '../../services/firebaseUtils';
 
 const CheckButton = ({ recipeId }) => {
-	const dispatch = useDispatch();
-	const done = useSelector((state) => state.doneRecipes.done);
-	const alreadyDone = Array.isArray(done) && done.includes(recipeId);
-	const toggleCheck = () => {
-		dispatch(toggleDone(recipeId));
+	const [alreadyDone, setAlreadyDone] = useState(false);
+	const uid = useSelector((state) => state.auth.uid);
+
+	console.log('uid from check button', uid);
+
+	useEffect(() => {
+		if (!uid) return;
+
+		const checkedRecipe = async () => {
+			const done = await checkIfRecipeIsDone(uid, recipeId);
+			setAlreadyDone(done);
+		};
+		checkedRecipe();
+	}, [recipeId, uid]);
+
+	const toggleCheck = async () => {
+		if (!uid) {
+			console.warn('Usuario no autenticado, no se puede guardar la receta');
+			return;
+		}
+
+		if (alreadyDone) {
+			await removeMarkAsDoneRecipe(uid, recipeId);
+			setAlreadyDone(false);
+		} else {
+			await markAsDoneRecipe(uid, recipeId);
+			setAlreadyDone(true);
+		}
 	};
 
 	return (

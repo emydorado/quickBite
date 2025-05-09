@@ -66,3 +66,33 @@ export const getUserSavedRecipeIds = async (uid) => {
 	const querySnapshot = await getDocs(q);
 	return querySnapshot.docs.map((doc) => doc.data().recipeId);
 };
+
+// función para marcar como hechas las recetas
+
+const COLLECTION_NAME_DONE = 'alreadyDoneRecipes';
+
+export const checkIfRecipeIsDone = async (uid, recipeId) => {
+	const docRef = doc(db, COLLECTION_NAME_DONE, `${uid}_${recipeId}`);
+	const docSnap = await getDoc(docRef);
+	return docSnap.exists();
+};
+
+export const markAsDoneRecipe = async (uid, recipeId) => {
+	const docRef = doc(db, COLLECTION_NAME_DONE, `${uid}_${recipeId}`);
+	await setDoc(docRef, {
+		uid,
+		recipeId,
+		timestamp: Date.now(),
+	});
+};
+
+export const removeMarkAsDoneRecipe = async (uid, recipeId) => {
+	const docRef = doc(db, COLLECTION_NAME_DONE, `${uid}_${recipeId}`);
+	await deleteDoc(docRef);
+};
+
+export const getUserMarkAsDoneRecipeIds = async (uid) => {
+	const q = query(collection(db, COLLECTION_NAME_DONE), where('uid', '==', uid));
+	const querySnapshot = await getDocs(q);
+	return querySnapshot.docs.map((doc) => doc.data().recipeId);
+};
