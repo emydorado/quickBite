@@ -61,12 +61,7 @@ function Profile() {
 		fetchMarkAsDoneRecipes();
 	}, [uid]);
 
-	console.log('all recipes:', recipes);
-
 	const doneRecipes = recipes.filter((recipe) => doneRecipeIds.includes(String(recipe.id)));
-
-	console.log('done recipes ids:', doneRecipeIds);
-	console.log('done recipes:', doneRecipes);
 
 	return (
 		<>
