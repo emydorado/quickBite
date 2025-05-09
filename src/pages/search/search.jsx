@@ -3,9 +3,8 @@ import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import CategorieButton from '../../components/categorieButton';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
 import { useEffect, useState } from 'react';
-import { db } from '../../services/firebaseConfig';
+import { fetchIngredients, fetchCategories, fetchRecipes } from '../../services/firebaseUtils';
 import './search.css';
-import { getDocs, collection } from 'firebase/firestore';
 
 function Search() {
 	const [search, setSearch] = useState('');
@@ -14,58 +13,28 @@ function Search() {
 	const [categories, setCategories] = useState([]);
 	const [recipes, setRecipes] = useState([]);
 
-	// fetch para traer ingredientes
 	useEffect(() => {
-		const fetchIngredients = async () => {
-			try {
-				const querySnapshot = await getDocs(collection(db, 'INGREDIENTS'));
-				const fetchedIngredients = querySnapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data(),
-				}));
-				setIngredients(fetchedIngredients);
-			} catch (error) {
-				console.error('Error fetching ingredients:', error);
-			}
+		const loadIngredients = async () => {
+			const ingredients = await fetchIngredients();
+			setIngredients(ingredients);
 		};
-
-		fetchIngredients();
+		loadIngredients();
 	}, []);
 
-	// fetch para traer categorías
 	useEffect(() => {
-		const fetchCategories = async () => {
-			try {
-				const querySnapshot = await getDocs(collection(db, 'CATEGORIES'));
-				const fetchedCategories = querySnapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data(),
-				}));
-				setCategories(fetchedCategories);
-			} catch (error) {
-				console.error('Error fetching ingredients:', error);
-			}
+		const loadCategories = async () => {
+			const categories = await fetchCategories();
+			setCategories(categories);
 		};
-
-		fetchCategories();
+		loadCategories();
 	}, []);
 
-	// fetch para traer recetas
 	useEffect(() => {
-		const fetchRecipes = async () => {
-			try {
-				const querySnapshot = await getDocs(collection(db, 'RECIPES'));
-				const fetchedRecipes = querySnapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data(),
-				}));
-				setRecipes(fetchedRecipes);
-			} catch (error) {
-				console.error('Error fetching ingredients:', error);
-			}
+		const loadRecipes = async () => {
+			const recipes = await fetchRecipes();
+			setRecipes(recipes);
 		};
-
-		fetchRecipes();
+		loadRecipes();
 	}, []);
 
 	const handleSearchChange = (event) => {

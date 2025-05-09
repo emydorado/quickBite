@@ -20,6 +20,7 @@ export const recipes = [
 			step_5: 'Slice or mash the avocado as desired and serve on the side or on top of the scrambled eggs.',
 		},
 		prep_time_minutes: 10,
+		Categories: ['fit', 'Breakfast'],
 	},
 	{
 		id: 2,
