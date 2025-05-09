@@ -1,14 +1,11 @@
-// import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { setUser } from '../../redux/auth/authSlice';
 import { auth } from '../../services/firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './signup.css';
 
 function SignUp() {
 	const navigate = useNavigate();
-	// const dispatch = useDispatch;
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 

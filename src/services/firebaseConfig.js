@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { setUser, removeUser } from '../redux/auth/authSlice';
+import { store } from '../redux/store';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyAo5FYfUkSrEMPDrUi3IhEeV9S-IHLOnAA',
@@ -21,7 +23,15 @@ onAuthStateChanged(auth, (user) => {
 		// User is signed in, see docs for a list of available properties
 		// https://firebase.google.com/docs/reference/js/auth.user
 		const uid = user.uid;
-		console.log(uid);
+		console.log('user from config:', uid);
+
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				store.dispatch(setUser(user.uid));
+			} else {
+				store.dispatch(removeUser());
+			}
+		});
 	} else {
 		// User is signed out
 		// ...
