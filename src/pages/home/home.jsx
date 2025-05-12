@@ -91,12 +91,11 @@ const Home = () => {
 	useEffect(() => {
 		if (doneRecipes.length > 0) {
 			const randomDoneRecipe = doneRecipes[Math.floor(Math.random() * doneRecipes.length)];
-
 			const ingredientNames = randomDoneRecipe.ingredients.map((ing) => ing.name);
-
 			const randomIngredient = ingredientNames[Math.floor(Math.random() * ingredientNames.length)];
+			console.log(randomIngredient);
 
-			setRelatedTitle(randomDoneRecipe.recipe_name);
+			setRelatedTitle(randomIngredient);
 
 			const filtered = recipes.filter(
 				(recipe) =>
