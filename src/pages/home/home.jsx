@@ -156,7 +156,7 @@ const Home = () => {
 
 							{relatedRecipes.length > 0 && (
 								<>
-									<p className='home-subtitle'>Because you liked {relatedTitle}</p>
+									<p className='home-subtitle'>Because you liked recipes with {relatedTitle}</p>
 									<div className='home-section'>
 										{relatedRecipes.map((recipe) => (
 											<SmallCardDish

@@ -52,7 +52,7 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 						<ol id='ingredients'>
 							{ingredients.map((ing, index) => (
 								<li key={index}>
-									{ing.quantity} {ing.unit} {ing.name}
+									{ing.quantity} {ing.unit} of {ing.name}
 								</li>
 							))}
 						</ol>
