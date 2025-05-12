@@ -90,10 +90,27 @@ const Home = () => {
 
 	// recetas porque te gustó tal
 	useEffect(() => {
-		if (doneRecipes.length > 0) {
+		if (doneRecipes.length > 0 && recipes.length > 0) {
 			const randomDoneRecipe = doneRecipes[Math.floor(Math.random() * doneRecipes.length)];
 			const ingredientNames = randomDoneRecipe.ingredients.map((ing) => ing.name);
-			const randomIngredient = ingredientNames[Math.floor(Math.random() * ingredientNames.length)];
+
+			const viableIngredients = ingredientNames.filter((ingredientName) => {
+				const matches = recipes.filter(
+					(recipe) =>
+						recipe.id !== randomDoneRecipe.id &&
+						Array.isArray(recipe.ingredients) &&
+						recipe.ingredients.some((ing) => ing.name.toLowerCase().includes(ingredientName.toLowerCase()))
+				);
+				return matches.length > 0;
+			});
+
+			if (viableIngredients.length === 0) {
+				setRelatedRecipes([]);
+				setRelatedTitle('');
+				return;
+			}
+
+			const randomIngredient = viableIngredients[Math.floor(Math.random() * viableIngredients.length)];
 			console.log(randomIngredient);
 
 			setRelatedTitle(randomIngredient);
