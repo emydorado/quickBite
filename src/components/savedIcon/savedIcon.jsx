@@ -1,14 +1,35 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleSave } from '../../redux/savedRecipes/savedRecipesSlice';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { checkIfRecipeSaved, saveRecipe, removeSavedRecipe } from '../../services/firebaseUtils';
 import './savedIcon.css';
 
 const SavedIcon = ({ recipeId }) => {
-	const dispatch = useDispatch();
-	const saved = useSelector((state) => state.savedRecipes.saved);
-	const isSaved = saved.includes(recipeId);
+	const [isSaved, setIsSaved] = useState(false);
+	const uid = useSelector((state) => state.auth.uid);
 
-	const handleClick = () => {
-		dispatch(toggleSave(recipeId));
+	useEffect(() => {
+		if (!uid) return;
+
+		const checkSaved = async () => {
+			const saved = await checkIfRecipeSaved(uid, recipeId);
+			setIsSaved(saved);
+		};
+		checkSaved();
+	}, [recipeId, uid]);
+
+	const handleClick = async () => {
+		if (!uid) {
+			console.warn('Usuario no autenticado, no se puede guardar la receta');
+			return;
+		}
+
+		if (isSaved) {
+			await removeSavedRecipe(uid, recipeId);
+			setIsSaved(false);
+		} else {
+			await saveRecipe(uid, recipeId);
+			setIsSaved(true);
+		}
 	};
 
 	return (

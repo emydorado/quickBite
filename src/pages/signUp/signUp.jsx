@@ -1,9 +1,17 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth } from '../../services/firebaseConfig';
+import { db } from '../../services/firebaseConfig';
+import { doc, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './signup.css';
-import { useEffect } from 'react';
 
 function SignUp() {
 	const navigate = useNavigate();
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [username, setUsername] = useState('');
+
 	useEffect(() => {
 		document.body.classList.add('signup-body');
 
@@ -11,6 +19,27 @@ function SignUp() {
 			document.body.classList.remove('signup-body');
 		};
 	}, []);
+
+	const handleRegister = () => {
+		createUserWithEmailAndPassword(auth, email, password)
+			.then(async (userCredential) => {
+				const user = userCredential.user;
+
+				await setDoc(doc(db, 'users', user.uid), {
+					username: username,
+					email: email,
+				});
+
+				navigate('/home');
+				console.log(user);
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				console.error(errorCode, errorMessage);
+				window.alert(errorMessage);
+			});
+	};
 
 	return (
 		<>
@@ -20,10 +49,18 @@ function SignUp() {
 					<p className='signup-subtitle'>Create your new QuickBite account</p>
 					<div>
 						<label className='signup-label' htmlFor='name'>
-							Name
+							Username
 						</label>
 						<ul></ul>
-						<input type='text' className='signup-input-name' name='name' id='name' placeholder='Jhon Doe' />
+						<input
+							required
+							onChange={(e) => setUsername(e.target.value)}
+							type='text'
+							className='signup-input-name'
+							name='name'
+							id='name'
+							placeholder='Jhon Doe'
+						/>
 					</div>
 					<div>
 						<label className='signup-label' htmlFor='email'>
@@ -31,6 +68,8 @@ function SignUp() {
 						</label>
 						<ul></ul>
 						<input
+							required
+							onChange={(e) => setEmail(e.target.value)}
 							type='email'
 							className='signup-input-mail'
 							name='email'
@@ -44,6 +83,8 @@ function SignUp() {
 						</label>
 						<ul></ul>
 						<input
+							required
+							onChange={(e) => setPassword(e.target.value)}
 							type='password'
 							className='signup-input-password'
 							name='password'
@@ -53,7 +94,12 @@ function SignUp() {
 					</div>
 					<div>
 						<p className='signup-forgot-password'>Forget password?</p>
-						<button className='signup-button' onClick={() => navigate('/home')}>
+						<button
+							className='signup-button'
+							onClick={() => {
+								handleRegister();
+							}}
+						>
 							Sign Up
 						</button>
 					</div>

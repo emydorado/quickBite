@@ -1,16 +1,41 @@
-import './search.css';
-import { categories } from '../../data/categories';
-import IngredientButton from '../../components/ingredientButton/ingredientButton';
-import { ingredientes } from '../../data/ingredients';
-import { recipes } from '../../data/recipes';
-import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import NavMenu from '../../components/navMenu/navMenu';
+import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import CategorieButton from '../../components/categorieButton';
-import { useState } from 'react';
+import IngredientButton from '../../components/ingredientButton/ingredientButton';
+import { useEffect, useState } from 'react';
+import { fetchIngredients, fetchCategories, fetchRecipes } from '../../services/firebaseUtils';
+import './search.css';
 
 function Search() {
 	const [search, setSearch] = useState('');
 	const [searchIngredient, setSearchIngredient] = useState('');
+	const [ingredients, setIngredients] = useState([]);
+	const [categories, setCategories] = useState([]);
+	const [recipes, setRecipes] = useState([]);
+
+	useEffect(() => {
+		const loadIngredients = async () => {
+			const ingredients = await fetchIngredients();
+			setIngredients(ingredients);
+		};
+		loadIngredients();
+	}, [ingredients]);
+
+	useEffect(() => {
+		const loadCategories = async () => {
+			const categories = await fetchCategories();
+			setCategories(categories);
+		};
+		loadCategories();
+	}, [categories]);
+
+	useEffect(() => {
+		const loadRecipes = async () => {
+			const recipes = await fetchRecipes();
+			setRecipes(recipes);
+		};
+		loadRecipes();
+	}, [recipes]);
 
 	const handleSearchChange = (event) => {
 		setSearch(event.target.value);
@@ -18,8 +43,8 @@ function Search() {
 	};
 
 	const filteredRecipes = recipes.filter((recipe) => recipe.recipe_name.toLowerCase().includes(search.toLowerCase()));
-	const filteredIngredient = ingredientes.filter((ingrediente) =>
-		ingrediente.name.toLowerCase().includes(searchIngredient.toLowerCase())
+	const filteredIngredient = ingredients.filter((ingredient) =>
+		ingredient.name.toLowerCase().includes(searchIngredient.toLowerCase())
 	);
 
 	return (

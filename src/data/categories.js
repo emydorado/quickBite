@@ -11,12 +11,11 @@ export const categories = [
 	},
 	{
 		id: 3,
-		emoji: '🌯',
+		emoji: '🍕',
 		name: 'Dinner',
 	},
 	{
-		id: 4,
-		emoji: '🥗',
+		emoji: '🥜',
 		name: 'Snack',
 	},
 	{

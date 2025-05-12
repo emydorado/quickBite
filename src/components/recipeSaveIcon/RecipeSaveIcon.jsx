@@ -1,19 +1,40 @@
 import './RecipeSaveIcon.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleSave } from '../../redux/savedRecipes/savedRecipesSlice';
+import { useState, useEffect } from 'react';
+import { saveRecipe, checkIfRecipeSaved, removeSavedRecipe } from '../../services/firebaseUtils';
+import { useSelector } from 'react-redux';
 
 const RecipeSaveIcon = ({ recipeId }) => {
-	const dispatch = useDispatch();
-	const saved = useSelector((state) => state.savedRecipes.saved);
-	const isSaved = saved.includes(recipeId);
+	const [isSaved, setIsSaved] = useState(false);
+	const uid = useSelector((state) => state.auth.uid);
 
-	const toggleSaved = () => {
-		dispatch(toggleSave(recipeId));
+	useEffect(() => {
+		if (!uid) return;
+
+		const checkSaved = async () => {
+			const saved = await checkIfRecipeSaved(uid, recipeId);
+			setIsSaved(saved);
+		};
+		checkSaved();
+	}, [recipeId, uid]);
+
+	const handleClick = async () => {
+		if (!uid) {
+			console.warn('Usuario no autenticado, no se puede guardar la receta');
+			return;
+		}
+
+		if (isSaved) {
+			await removeSavedRecipe(uid, recipeId);
+			setIsSaved(false);
+		} else {
+			await saveRecipe(uid, recipeId);
+			setIsSaved(true);
+		}
 	};
 
 	return (
 		<div id='save-icon'>
-			<button onClick={toggleSaved} className={isSaved ? 'saved' : 'unsaved'}>
+			<button onClick={handleClick} className={isSaved ? 'saved' : 'unsaved'}>
 				{isSaved ? (
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
