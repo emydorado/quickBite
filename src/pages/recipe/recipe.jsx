@@ -2,6 +2,7 @@ import RecipeComponent from '../../components/recipe/recipe';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchRecipes } from '../../services/firebaseUtils';
+import Loader from '../../components/loader/Loader';
 
 function Recipe() {
 	const { id } = useParams();
@@ -25,7 +26,7 @@ function Recipe() {
 	return (
 		<>
 			{loading ? (
-				<p>Loading...</p>
+				<Loader />
 			) : (
 				<section>
 					<RecipeComponent
