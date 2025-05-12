@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { fetchRecipes } from '../../services/firebaseUtils';
 import { db } from '../../services/firebaseConfig';
 import { query, collection, getDocs, where } from 'firebase/firestore';
+import Loader from '../../components/loader/Loader';
 import './home.css';
 
 const Home = () => {
@@ -111,7 +112,7 @@ const Home = () => {
 	return (
 		<>
 			{loading ? (
-				<p>Loading...</p>
+				<Loader />
 			) : (
 				<section className='home-container'>
 					<h1 className='home-title'>Explore recipes</h1>
