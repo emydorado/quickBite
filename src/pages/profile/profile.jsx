@@ -5,6 +5,7 @@ import { auth, db } from '../../services/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { fetchRecipes } from '../../services/firebaseUtils';
+import Loader from '../../components/loader/Loader';
 import { doc, getDoc, query, collection, getDocs, where } from 'firebase/firestore';
 import './profile.css';
 
@@ -66,7 +67,7 @@ function Profile() {
 	return (
 		<>
 			{loading ? (
-				<p>Loading...</p>
+				<Loader />
 			) : (
 				<div className='profile-container'>
 					<NavMenu />
