@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react';
 import NavMenu from '../../components/navMenu/navMenu';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import CategorieButton from '../../components/categorieButton';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
-import { useEffect, useState } from 'react';
 import { fetchIngredients, fetchCategories, fetchRecipes } from '../../services/firebaseUtils';
 import './search.css';
 
@@ -13,43 +13,45 @@ function Search() {
 	const [categories, setCategories] = useState([]);
 	const [recipes, setRecipes] = useState([]);
 
+	// ✅ solo se ejecuta una vez al montar
 	useEffect(() => {
 		const loadIngredients = async () => {
-			const ingredients = await fetchIngredients();
-			setIngredients(ingredients);
+			const ingredientsData = await fetchIngredients();
+			setIngredients(ingredientsData);
 		};
 		loadIngredients();
-	}, [ingredients]);
+	}, []);
 
 	useEffect(() => {
 		const loadCategories = async () => {
-			const categories = await fetchCategories();
-			setCategories(categories);
+			const categoriesData = await fetchCategories();
+			setCategories(categoriesData);
 		};
 		loadCategories();
-	}, [categories]);
+	}, []);
 
 	useEffect(() => {
 		const loadRecipes = async () => {
-			const recipes = await fetchRecipes();
-			setRecipes(recipes);
+			const recipesData = await fetchRecipes();
+			setRecipes(recipesData);
 		};
 		loadRecipes();
-	}, [recipes]);
+	}, []);
 
 	const handleSearchChange = (event) => {
 		setSearch(event.target.value);
 		setSearchIngredient(event.target.value);
 	};
 
-	const filteredRecipes = recipes.filter((recipe) => recipe.recipe_name.toLowerCase().includes(search.toLowerCase()));
-	const filteredIngredient = ingredients.filter((ingredient) =>
-		ingredient.name.toLowerCase().includes(searchIngredient.toLowerCase())
+	const filteredRecipes = recipes.filter((recipe) => recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()));
+
+	const filteredIngredients = ingredients.filter((ingredient) =>
+		ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase())
 	);
 
 	return (
 		<>
-			<NavMenu></NavMenu>
+			<NavMenu />
 
 			<div id='search-container'>
 				<div className='top-section'>
@@ -66,14 +68,14 @@ function Search() {
 					<div id='filters'>
 						<section className='container-categories'>
 							{categories.map((category) => (
-								<CategorieButton key={category.id} emoji={category.emoji} categorie={category.name}></CategorieButton>
+								<CategorieButton key={category.id} emoji={category.emoji} categorie={category.name} />
 							))}
 						</section>
 
 						<section className='container-ingredients'>
 							{searchIngredient &&
-								filteredIngredient.map((ingrediente) => (
-									<IngredientButton key={ingrediente.id} name={ingrediente.name} emoji={ingrediente.emoji} />
+								filteredIngredients.map((ingredient) => (
+									<IngredientButton key={ingredient.id} name={ingredient.name} emoji={ingredient.emoji} />
 								))}
 						</section>
 					</div>
