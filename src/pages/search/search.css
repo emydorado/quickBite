@@ -46,10 +46,8 @@
 	display: flex;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
-	width: 100%;
-	max-width: min(600px, 87vw);
+	max-width: min(838px, 87vw);
 	padding: 0.5rem;
-	background-color: #b5b2ae;
 	border-radius: 10px;
 	gap: clamp(0.25rem, 1vw, 0.5rem);
 	scrollbar-width: none;
