@@ -26,3 +26,7 @@
 	transform: scale(0.98);
 	box-shadow: none;
 }
+.categorie-button.active {
+	background-color: #4c6d2d;
+	color: #dbedc9;
+}
