@@ -1,6 +1,6 @@
 export const ingredientes = [
-	{ id: 1, name: 'tomato', emoji: '🍅' },
-	{ id: 2, name: 'onion', emoji: '🧅' },
+	{ id: 1, name: 'onion', emoji: '🧅' },
+	{ id: 2, name: 'tomato', emoji: '🍅' },
 	{ id: 3, name: 'garlic', emoji: '🧄' },
 	{ id: 4, name: 'carrot', emoji: '🥕' },
 	{ id: 5, name: 'potato', emoji: '🥔' },
