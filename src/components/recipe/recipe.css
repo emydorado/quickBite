@@ -1,4 +1,3 @@
-/* Imagen principal */
 .banner-image {
 	width: 100vw;
 	height: 50vh;
@@ -26,18 +25,15 @@
 	background-color: #b1d98b;
 }
 
-/* Fondo blanco para la página de la receta */
 .recipe-body {
 	background-color: #fffdfc;
 	margin: 0;
 }
 
-/* Contenedor general del contenido */
 #recipe-content {
 	margin: 16px;
 }
 
-/* Sección superior: título y botón */
 #top-section {
 	display: flex;
 	flex-direction: column;
@@ -130,6 +126,41 @@
 	font-size: clamp(0.875rem, 3vw, 1rem);
 	color: #6b6967;
 	text-align: left;
+}
+
+.servings-input-container {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 20px;
+	font-family: 'DM Sans', sans-serif;
+}
+
+.servings-input-container label {
+	font-size: 1rem;
+	font-weight: 500;
+	color: #2e4633;
+	margin: 0;
+	white-space: nowrap;
+}
+
+.servings-input-container input {
+	width: 60px;
+	padding: 8px 10px;
+	border: 1px solid #dbedc9;
+	border-radius: 10px;
+	font-size: 1rem;
+	font-family: 'DM Sans', sans-serif;
+	color: #333;
+	background-color: #ffffff;
+	transition: border-color 0.3s ease;
+}
+
+.servings-input-container input:focus {
+	border-color: #8bc652;
+	outline: none;
+	background-color: #fff;
+	box-shadow: 0 0 0 2px rgba(139, 198, 82, 0.2);
 }
 
 @media (min-width: 1000px) {
