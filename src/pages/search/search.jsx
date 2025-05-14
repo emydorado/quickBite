@@ -67,11 +67,14 @@ function Search() {
 		}
 	};
 
-	const filteredIngredients = ingredients.filter(
-		(ingredient) =>
-			ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase()) ||
-			selectedIngredients.some((i) => i.id === ingredient.id)
-	);
+	const filteredIngredients = [
+		...selectedIngredients,
+		...ingredients.filter(
+			(ingredient) =>
+				ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase()) &&
+				!selectedIngredients.some((i) => i.id === ingredient.id)
+		),
+	];
 
 	const filteredRecipes = recipes.filter((recipe) => {
 		const matchesSearch = search ? recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()) : true;
@@ -115,6 +118,7 @@ function Search() {
 						))}
 					</section>
 
+					{}
 					<section className='container-categories'>
 						{categories.map((category) => (
 							<CategorieButton
@@ -128,6 +132,7 @@ function Search() {
 					</section>
 				</div>
 
+				{}
 				<section className='results'>
 					{filteredRecipes.map((recipe) => (
 						<BigCardDish
