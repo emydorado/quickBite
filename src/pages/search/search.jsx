@@ -42,7 +42,6 @@ function Search() {
 	const handleSearchChange = (event) => {
 		setSearch(event.target.value);
 		setSearchIngredient(event.target.value);
-		setSelectedCategory(null);
 	};
 
 	const handleCategoryClick = async (category) => {
