@@ -2,13 +2,13 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
-	padding: 3px 10px; /* Botones más pequeños */
+	padding: 3px 10px;
 	margin: 6px;
-	font-size: 0.9rem; /* Texto un poco más pequeño */
+	font-size: 0.9rem;
 	font-weight: 500;
 	font-family: 'Roboto', sans-serif;
-	background-color: #e7e7e7; /* Color gris */
-	color: #4a4a4a; /* Gris más oscuro para el texto */
+	background-color: #e7e7e7;
+	color: #4a4a4a;
 	border: 2px solid transparent;
 	border-radius: 999px;
 	cursor: pointer;
@@ -16,9 +16,9 @@
 }
 
 .ingredient-button:hover {
-	background-color: #b0b0b0; /* Gris más oscuro al pasar el ratón */
-	border-color: #8e8e8e; /* Ligeramente más oscuro para el borde */
-	color: #3a3a3a; /* Gris más oscuro para el texto */
+	background-color: #b0b0b0;
+	border-color: #8e8e8e;
+	color: #3a3a3a;
 	transform: translateY(-2px);
 }
 
@@ -28,45 +28,44 @@
 }
 
 .ingredient-button.selected {
-	background-color: #7a7a7a; /* Gris más oscuro cuando está seleccionado */
-	color: #f0f0f0; /* Texto blanco cuando está seleccionado */
+	background-color: #7a7a7a;
+	color: #f0f0f0;
 }
 
 .ingredient-emoji {
-	font-size: 1.3rem; /* Mantener tamaño de emoji para buena visibilidad */
+	font-size: 1.3rem;
 }
 
 .ingredient-name {
-	font-size: 0.9rem; /* Texto más pequeño */
+	font-size: 0.9rem;
 }
 
-/* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
 	.ingredient-button {
-		padding: 5px 10px; /* Reducir el tamaño del padding en móviles */
-		font-size: 0.8rem; /* Texto más pequeño en móviles */
+		padding: 5px 10px;
+		font-size: 0.8rem;
 	}
 
 	.ingredient-emoji {
-		font-size: 1.2rem; /* Reducir el tamaño del emoji en móviles */
+		font-size: 1.2rem;
 	}
 
 	.ingredient-name {
-		font-size: 0.8rem; /* Texto más pequeño en móviles */
+		font-size: 0.8rem;
 	}
 }
 
 @media (max-width: 480px) {
 	.ingredient-button {
-		padding: 4px 8px; /* Aún más pequeño en pantallas muy pequeñas */
-		font-size: 0.75rem; /* Reducir aún más el texto */
+		padding: 4px 8px;
+		font-size: 0.75rem;
 	}
 
 	.ingredient-emoji {
-		font-size: 1.1rem; /* Reducir tamaño del emoji en pantallas pequeñas */
+		font-size: 1.1rem;
 	}
 
 	.ingredient-name {
-		font-size: 0.75rem; /* Reducir tamaño del texto en pantallas pequeñas */
+		font-size: 0.75rem;
 	}
 }
