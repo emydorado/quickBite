@@ -5,13 +5,13 @@ import { setUser, removeUser } from '../redux/auth/authSlice';
 import { store } from '../redux/store';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyAo5FYfUkSrEMPDrUi3IhEeV9S-IHLOnAA',
-	authDomain: 'quickbite-3e9d9.firebaseapp.com',
-	projectId: 'quickbite-3e9d9',
-	storageBucket: 'quickbite-3e9d9.firebasestorage.app',
-	messagingSenderId: '270051332291',
-	appId: '1:270051332291:web:25815eb521d96521df1276',
-	measurementId: 'G-0CJ7401PB2',
+	apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+	authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+	projectId: import.meta.env.VITE_PROJECT_ID,
+	storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+	messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+	appId: import.meta.env.VITE_APP_ID,
+	measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
 
 export const app = initializeApp(firebaseConfig);
