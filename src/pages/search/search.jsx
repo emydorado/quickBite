@@ -55,7 +55,7 @@ function Search() {
 			setSelectedCategory(category);
 			const filteredByCategory = await fetchRecipesByCategory(category);
 			setRecipes(filteredByCategory);
-			// Nota: Ya no reseteamos el search aquí
+
 		}
 	};
 
