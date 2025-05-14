@@ -93,7 +93,7 @@ function Search() {
 						onChange={handleSearchChange}
 					/>
 
-					{/* Ingredientes seleccionables - ARRIBA de categorías */}
+					{}
 					<section className='container-ingredients'>
 						{filteredIngredients.map((ingredient) => (
 							<IngredientButton
