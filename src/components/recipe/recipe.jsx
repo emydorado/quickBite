@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import CheckButton from '../checkButton/checkButton';
 import './recipe.css';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ import RecipeSaveIcon from '../recipeSaveIcon/RecipeSaveIcon';
 
 const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 	const navigate = useNavigate();
+	const [servings, setServings] = useState(1);
 
 	useEffect(() => {
 		document.body.classList.add('recipe-body');
@@ -13,6 +14,17 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 			document.body.classList.remove('recipe-body');
 		};
 	}, []);
+
+	// Escalar cantidades
+	const scaledIngredients = ingredients.map((ingredient) => {
+		const baseQuantity = parseFloat(ingredient.quantity);
+		if (isNaN(baseQuantity)) return ingredient;
+		const newQuantity = Math.round(baseQuantity * servings);
+		return {
+			...ingredient,
+			quantity: newQuantity,
+		};
+	});
 
 	return (
 		<div id='recipe-page'>
@@ -43,14 +55,26 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 							</div>
 						</div>
 					</div>
+
 					<p className='recipe-time'>{time} minutes</p>
+
+					<div className='servings-input-container'>
+						<label htmlFor='servings'>¿Cuántas porciones quieres hacer?</label>
+						<input
+							id='servings'
+							type='number'
+							min='1'
+							value={servings}
+							onChange={(e) => setServings(parseInt(e.target.value) || 1)}
+						/>
+					</div>
 				</div>
 
 				<div className='recipe-steps-ingredients'>
 					<div className='recipe-ingredients-container'>
 						<h2 className='titulo-ingredientes'>Ingredients</h2>
 						<ol id='ingredients'>
-							{ingredients.map((ing, index) => (
+							{scaledIngredients.map((ing, index) => (
 								<li key={index}>
 									{ing.quantity} {ing.unit} of {ing.name}
 								</li>
@@ -75,3 +99,4 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 };
 
 export default RecipeComponent;
+
