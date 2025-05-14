@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import NavMenu from '../../components/navMenu/navMenu';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
-import CategorieButton from '../../components/categorieButton';
+import CategorieButton from '../../components/categorieButton/categorieButton';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
 import { fetchIngredients, fetchCategories, fetchRecipes } from '../../services/firebaseUtils';
 import './search.css';
@@ -13,7 +13,6 @@ function Search() {
 	const [categories, setCategories] = useState([]);
 	const [recipes, setRecipes] = useState([]);
 
-	// ✅ solo se ejecuta una vez al montar
 	useEffect(() => {
 		const loadIngredients = async () => {
 			const ingredientsData = await fetchIngredients();

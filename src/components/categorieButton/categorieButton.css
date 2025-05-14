@@ -1,0 +1,28 @@
+.categorie-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 10px 16px;
+	margin: 6px;
+	font-size: 1rem;
+	font-weight: 500;
+	background-color: #dbedc9;
+	color: #3a5322;
+	border: 2px solid transparent;
+	border-radius: 999px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.categorie-button:hover {
+	background-color: #dbedc9;
+	border-color: #cae5af;
+	color: #3a5322;
+	transform: translateY(-2px);
+}
+
+.categorie-button:active {
+	transform: scale(0.98);
+	box-shadow: none;
+}
