@@ -13,6 +13,7 @@ function Search() {
 	const [categories, setCategories] = useState([]);
 	const [recipes, setRecipes] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState(null);
+	const [selectedIngredients, setSelectedIngredients] = useState([]);
 
 	useEffect(() => {
 		const loadIngredients = async () => {
@@ -41,12 +42,11 @@ function Search() {
 	const handleSearchChange = (event) => {
 		setSearch(event.target.value);
 		setSearchIngredient(event.target.value);
-		setSelectedCategory(null); // quitar categoría activa si se hace búsqueda manual
+		setSelectedCategory(null);
 	};
 
 	const handleCategoryClick = async (category) => {
 		if (category === selectedCategory) {
-			// Si se vuelve a hacer clic, deselecciona
 			setSelectedCategory(null);
 			const allRecipes = await fetchRecipes();
 			setRecipes(allRecipes);
@@ -54,17 +54,28 @@ function Search() {
 			setSelectedCategory(category);
 			const filteredByCategory = await fetchRecipesByCategory(category);
 			setRecipes(filteredByCategory);
-			setSearch(''); // borra búsqueda manual si hay selección por categoría
+			setSearch('');
 		}
 	};
+
+	const handleIngredientToggle = (ingredient) => {
+		const alreadySelected = selectedIngredients.some((i) => i.id === ingredient.id);
+		if (alreadySelected) {
+			setSelectedIngredients((prev) => prev.filter((i) => i.id !== ingredient.id));
+		} else {
+			setSelectedIngredients((prev) => [...prev, ingredient]);
+		}
+	};
+
+	const filteredIngredients = ingredients.filter(
+		(ingredient) =>
+			ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase()) ||
+			selectedIngredients.some((i) => i.id === ingredient.id)
+	);
 
 	const filteredRecipes = search
 		? recipes.filter((recipe) => recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()))
 		: recipes;
-
-	const filteredIngredients = ingredients.filter((ingredient) =>
-		ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase())
-	);
 
 	return (
 		<>
@@ -76,32 +87,36 @@ function Search() {
 
 					<input
 						type='text'
-						placeholder="What's in your fridge?..."
+						placeholder="What's in your fridge?... "
 						className='search-input'
 						value={search}
 						onChange={handleSearchChange}
 					/>
 
-					<div id='filters'>
-						<section className='container-categories'>
-							{categories.map((category) => (
-								<CategorieButton
-									key={category.id}
-									emoji={category.emoji}
-									categorie={category.name}
-									onClick={handleCategoryClick}
-									isActive={selectedCategory === category.name}
-								/>
-							))}
-						</section>
+					{/* Ingredientes seleccionables - ARRIBA de categorías */}
+					<section className='container-ingredients'>
+						{filteredIngredients.map((ingredient) => (
+							<IngredientButton
+								key={ingredient.id}
+								name={ingredient.name}
+								emoji={ingredient.emoji}
+								isSelected={selectedIngredients.some((i) => i.id === ingredient.id)}
+								onToggle={() => handleIngredientToggle(ingredient)}
+							/>
+						))}
+					</section>
 
-						<section className='container-ingredients'>
-							{searchIngredient &&
-								filteredIngredients.map((ingredient) => (
-									<IngredientButton key={ingredient.id} name={ingredient.name} emoji={ingredient.emoji} />
-								))}
-						</section>
-					</div>
+					<section className='container-categories'>
+						{categories.map((category) => (
+							<CategorieButton
+								key={category.id}
+								emoji={category.emoji}
+								categorie={category.name}
+								onClick={handleCategoryClick}
+								isActive={selectedCategory === category.name}
+							/>
+						))}
+					</section>
 				</div>
 
 				<section className='results'>

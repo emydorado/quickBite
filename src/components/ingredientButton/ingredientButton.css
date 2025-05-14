@@ -1,66 +1,32 @@
-.ingredient-emoji,
-.ingredientName {
-	font-size: 14px;
-	font-family: 'DM Sans', sans-serif;
-	font-weight: 400;
-	color: #00150f;
-	margin: 0;
-}
-
-#ingredientContainer {
-	display: inline-flex;
-	gap: 5px;
-	background-color: #e8e4df;
-	width: auto;
-	height: auto;
-	border-radius: 12px;
-	justify-content: center;
-	align-items: center;
-	font-size: 14px;
-	padding: 5px 10px 5px 10px;
-	cursor: pointer;
-}
-
-.deleteButton {
-	width: 1.5vw;
-	height: 1.5vw;
-	padding: 2px;
-	border-radius: 50%;
-	border: none;
-	font-size: 1rem;
-	font-family: 'DM Sans', sans-serif;
-	font-weight: 200;
-	cursor: pointer;
+.ingredient-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.2s ease-in-out;
-	background-color: #fffdfc;
+	background-color: #f0f0f0;
+	border: 2px solid transparent;
+	border-radius: 20px;
+	padding: 0.5rem 1rem;
+	margin: 0.3rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
-.x-icon {
-	fill: #00150f;
+.ingredient-button:hover {
+	background-color: #e0e0e0;
 }
 
-.deleteButton:hover {
-	background-color: #fffaf5;
-	transform: scale(1.1);
+.ingredient-button.selected {
+	background-color: #d0ebff;
+	border-color: #007bff;
+	color: #007bff;
+	font-weight: bold;
 }
 
-@media (max-width: 820px) {
-	.deleteButton {
-		width: 2vw;
-		height: 2vw;
-		font-size: 0.8rem;
-		margin: 0;
-	}
+.ingredient-emoji {
+	margin-right: 0.5rem;
+	font-size: 1.2rem;
 }
 
-@media (max-width: 768px) {
-	.deleteButton {
-		width: 5vw;
-		height: 5vw;
-		font-size: 0.8rem;
-		margin: 0;
-	}
+.ingredient-name {
+	font-size: 1rem;
 }
