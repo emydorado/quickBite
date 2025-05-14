@@ -1,12 +1,9 @@
-import './ingredientButton/ingredientButton.css';
-
-const CategorieButton = ({ emoji, categorie }) => {
+function CategorieButton({ emoji, categorie, onClick }) {
 	return (
-		<div id='ingredientContainer'>
-			<h1 className='ingredient-emoji'>{emoji}</h1>
-			<h1 className='ingredientName'>{categorie} </h1>
-		</div>
+		<button onClick={() => onClick(categorie)} className='categorie-button'>
+			<span>{emoji}</span> {categorie}
+		</button>
 	);
-};
+}
 
 export default CategorieButton;
