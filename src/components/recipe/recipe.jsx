@@ -59,7 +59,7 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 					<p className='recipe-time'>{time} minutes</p>
 
 					<div className='servings-input-container'>
-						<label htmlFor='servings'>¿Cuántas porciones quieres hacer?</label>
+						<label htmlFor='servings'>How many servings do you want to make?</label>
 						<input
 							id='servings'
 							type='number'
@@ -99,4 +99,3 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 };
 
 export default RecipeComponent;
-
