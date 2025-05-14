@@ -6,10 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { fetchRecipes } from '../../services/firebaseUtils';
 import Loader from '../../components/loader/Loader';
+import { signOut } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { removeUser } from '../../redux/auth/authSlice';
 import { doc, getDoc, query, collection, getDocs, where } from 'firebase/firestore';
 import './profile.css';
 
 function Profile() {
+	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const [username, setUsername] = useState('');
 	const [doneRecipeIds, setDoneRecipeIds] = useState([]);
@@ -63,6 +67,17 @@ function Profile() {
 	}, [uid]);
 
 	const doneRecipes = recipes.filter((recipe) => doneRecipeIds.includes(String(recipe.id)));
+
+	const handleLogout = () => {
+		signOut(auth)
+			.then(() => {
+				dispatch(removeUser());
+				navigate('/login');
+			})
+			.catch((error) => {
+				console.error('Logout error:', error);
+			});
+	};
 
 	return (
 		<>
@@ -161,7 +176,7 @@ function Profile() {
 								</svg>
 								Settings
 							</div>
-							<div className='option-item' onClick={() => navigate('/')}>
+							<div className='option-item' onClick={handleLogout}>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									width='20'
