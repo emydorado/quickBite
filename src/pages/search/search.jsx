@@ -73,9 +73,18 @@ function Search() {
 			selectedIngredients.some((i) => i.id === ingredient.id)
 	);
 
-	const filteredRecipes = search
-		? recipes.filter((recipe) => recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()))
-		: recipes;
+	const filteredRecipes = recipes.filter((recipe) => {
+		const matchesSearch = search ? recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()) : true;
+
+		const matchesIngredients =
+			selectedIngredients.length > 0
+				? selectedIngredients.every((selectedIng) =>
+						recipe.ingredients?.some((ing) => ing.name.toLowerCase() === selectedIng.name.toLowerCase())
+				  )
+				: true;
+
+		return matchesSearch && matchesIngredients;
+	});
 
 	return (
 		<>
