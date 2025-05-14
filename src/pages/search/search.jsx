@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import NavMenu from '../../components/navMenu/navMenu';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import CategorieButton from '../../components/categorieButton/categorieButton';
@@ -14,6 +14,8 @@ function Search() {
 	const [recipes, setRecipes] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [selectedIngredients, setSelectedIngredients] = useState([]);
+
+	const ingredientContainerRef = useRef(null);
 
 	useEffect(() => {
 		const loadIngredients = async () => {
@@ -53,7 +55,7 @@ function Search() {
 			setSelectedCategory(category);
 			const filteredByCategory = await fetchRecipesByCategory(category);
 			setRecipes(filteredByCategory);
-			setSearch('');
+
 		}
 	};
 
@@ -62,7 +64,19 @@ function Search() {
 		if (alreadySelected) {
 			setSelectedIngredients((prev) => prev.filter((i) => i.id !== ingredient.id));
 		} else {
-			setSelectedIngredients((prev) => [...prev, ingredient]);
+			setSelectedIngredients((prev) => [ingredient, ...prev]);
+		}
+	};
+
+	const scrollLeft = () => {
+		if (ingredientContainerRef.current) {
+			ingredientContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+		}
+	};
+
+	const scrollRight = () => {
+		if (ingredientContainerRef.current) {
+			ingredientContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' });
 		}
 	};
 
@@ -70,8 +84,8 @@ function Search() {
 		...selectedIngredients,
 		...ingredients.filter(
 			(ingredient) =>
-				ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase()) &&
-				!selectedIngredients.some((i) => i.id === ingredient.id)
+				!selectedIngredients.some((i) => i.id === ingredient.id) &&
+				ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase())
 		),
 	];
 
@@ -104,20 +118,28 @@ function Search() {
 						onChange={handleSearchChange}
 					/>
 
-					{}
-					<section className='container-ingredients'>
-						{filteredIngredients.map((ingredient) => (
-							<IngredientButton
-								key={ingredient.id}
-								name={ingredient.name}
-								emoji={ingredient.emoji}
-								isSelected={selectedIngredients.some((i) => i.id === ingredient.id)}
-								onToggle={() => handleIngredientToggle(ingredient)}
-							/>
-						))}
-					</section>
+					<div className='ingredient-scroll-wrapper'>
+						<button className='scroll-button left' onClick={scrollLeft}>
+							←
+						</button>
 
-					{}
+						<section className='container-ingredients' ref={ingredientContainerRef}>
+							{filteredIngredients.map((ingredient) => (
+								<IngredientButton
+									key={ingredient.id}
+									name={ingredient.name}
+									emoji={ingredient.emoji}
+									isSelected={selectedIngredients.some((i) => i.id === ingredient.id)}
+									onToggle={() => handleIngredientToggle(ingredient)}
+								/>
+							))}
+						</section>
+
+						<button className='scroll-button right' onClick={scrollRight}>
+							→
+						</button>
+					</div>
+
 					<section className='container-categories'>
 						{categories.map((category) => (
 							<CategorieButton
@@ -131,7 +153,6 @@ function Search() {
 					</section>
 				</div>
 
-				{}
 				<section className='results'>
 					{filteredRecipes.map((recipe) => (
 						<BigCardDish
