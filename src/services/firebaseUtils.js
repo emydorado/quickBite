@@ -1,6 +1,19 @@
 import { getDocs, collection, doc, deleteDoc, getDoc, setDoc, query, where } from 'firebase/firestore';
 import { db } from './firebaseConfig';
 
+// Traer recetas por categoria
+
+export async function fetchRecipesByCategory(category) {
+	const recipesRef = collection(db, 'RECIPES');
+	const q = query(recipesRef, where('categories', 'array-contains', category));
+	const querySnapshot = await getDocs(q);
+	const recipes = [];
+	querySnapshot.forEach((doc) => {
+		recipes.push({ id: doc.id, ...doc.data() });
+	});
+	return recipes;
+}
+
 // fetch para traer ingredientes
 
 export const fetchIngredients = async () => {

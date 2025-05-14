@@ -3,7 +3,7 @@ import NavMenu from '../../components/navMenu/navMenu';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import CategorieButton from '../../components/categorieButton/categorieButton';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
-import { fetchIngredients, fetchCategories, fetchRecipes } from '../../services/firebaseUtils';
+import { fetchIngredients, fetchCategories, fetchRecipes, fetchRecipesByCategory } from '../../services/firebaseUtils';
 import './search.css';
 
 function Search() {
@@ -12,6 +12,7 @@ function Search() {
 	const [ingredients, setIngredients] = useState([]);
 	const [categories, setCategories] = useState([]);
 	const [recipes, setRecipes] = useState([]);
+	const [selectedCategory, setSelectedCategory] = useState(null);
 
 	useEffect(() => {
 		const loadIngredients = async () => {
@@ -40,9 +41,26 @@ function Search() {
 	const handleSearchChange = (event) => {
 		setSearch(event.target.value);
 		setSearchIngredient(event.target.value);
+		setSelectedCategory(null); // quitar categoría activa si se hace búsqueda manual
 	};
 
-	const filteredRecipes = recipes.filter((recipe) => recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()));
+	const handleCategoryClick = async (category) => {
+		if (category === selectedCategory) {
+			// Si se vuelve a hacer clic, deselecciona
+			setSelectedCategory(null);
+			const allRecipes = await fetchRecipes();
+			setRecipes(allRecipes);
+		} else {
+			setSelectedCategory(category);
+			const filteredByCategory = await fetchRecipesByCategory(category);
+			setRecipes(filteredByCategory);
+			setSearch(''); // borra búsqueda manual si hay selección por categoría
+		}
+	};
+
+	const filteredRecipes = search
+		? recipes.filter((recipe) => recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()))
+		: recipes;
 
 	const filteredIngredients = ingredients.filter((ingredient) =>
 		ingredient.name?.toLowerCase().includes(searchIngredient.toLowerCase())
@@ -67,7 +85,13 @@ function Search() {
 					<div id='filters'>
 						<section className='container-categories'>
 							{categories.map((category) => (
-								<CategorieButton key={category.id} emoji={category.emoji} categorie={category.name} />
+								<CategorieButton
+									key={category.id}
+									emoji={category.emoji}
+									categorie={category.name}
+									onClick={handleCategoryClick}
+									isActive={selectedCategory === category.name}
+								/>
 							))}
 						</section>
 
@@ -81,16 +105,15 @@ function Search() {
 				</div>
 
 				<section className='results'>
-					{search &&
-						filteredRecipes.map((recipe) => (
-							<BigCardDish
-								key={recipe.id}
-								id={recipe.id}
-								img={recipe.img}
-								title={recipe.recipe_name}
-								time={recipe.prep_time_minutes}
-							/>
-						))}
+					{filteredRecipes.map((recipe) => (
+						<BigCardDish
+							key={recipe.id}
+							id={recipe.id}
+							img={recipe.img}
+							title={recipe.recipe_name}
+							time={recipe.prep_time_minutes}
+						/>
+					))}
 				</section>
 			</div>
 		</>
