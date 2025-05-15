@@ -3,6 +3,7 @@ import NavMenu from '../../components/navMenu/navMenu';
 import BigCardDish from '../../components/bigCardDish/bigCardDish';
 import CategorieButton from '../../components/categorieButton/categorieButton';
 import IngredientButton from '../../components/ingredientButton/ingredientButton';
+import Loader from '../../components/loader/Loader';
 import { fetchIngredients, fetchCategories, fetchRecipes, fetchRecipesByCategory } from '../../services/firebaseUtils';
 import './search.css';
 
@@ -14,6 +15,7 @@ function Search() {
 	const [recipes, setRecipes] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [selectedIngredients, setSelectedIngredients] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	const ingredientContainerRef = useRef(null);
 
@@ -35,8 +37,10 @@ function Search() {
 
 	useEffect(() => {
 		const loadRecipes = async () => {
+			setLoading(true);
 			const recipesData = await fetchRecipes();
 			setRecipes(recipesData);
+			setLoading(false);
 		};
 		loadRecipes();
 	}, []);
@@ -47,6 +51,7 @@ function Search() {
 	};
 
 	const handleCategoryClick = async (category) => {
+		setLoading(true);
 		if (category === selectedCategory) {
 			setSelectedCategory(null);
 			const allRecipes = await fetchRecipes();
@@ -55,8 +60,8 @@ function Search() {
 			setSelectedCategory(category);
 			const filteredByCategory = await fetchRecipesByCategory(category);
 			setRecipes(filteredByCategory);
-
 		}
+		setLoading(false);
 	};
 
 	const handleIngredientToggle = (ingredient) => {
@@ -154,15 +159,19 @@ function Search() {
 				</div>
 
 				<section className='results'>
-					{filteredRecipes.map((recipe) => (
-						<BigCardDish
-							key={recipe.id}
-							id={recipe.id}
-							img={recipe.img}
-							title={recipe.recipe_name}
-							time={recipe.prep_time_minutes}
-						/>
-					))}
+					{loading ? (
+						<Loader />
+					) : (
+						filteredRecipes.map((recipe) => (
+							<BigCardDish
+								key={recipe.id}
+								id={recipe.id}
+								img={recipe.img}
+								title={recipe.recipe_name}
+								time={recipe.prep_time_minutes}
+							/>
+						))
+					)}
 				</section>
 			</div>
 		</>
