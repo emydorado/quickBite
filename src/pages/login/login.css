@@ -19,7 +19,7 @@
 }
 
 .login-title {
-	font-size: clamp(1.75rem, 5vw, 2rem); /* Mín 1.75rem, ideal 5vw, máx 2rem */
+	font-size: clamp(1.75rem, 5vw, 2rem);
 	margin-bottom: 0.625rem;
 	color: #00150f;
 	font-family: 'Radio Canada', sans-serif;
@@ -61,7 +61,7 @@
 .login-button {
 	font-size: clamp(0.875rem, 3vw, 1rem);
 	margin-bottom: 20px;
-	background-color: #8bc652;
+	background-color: #638d3a;
 	height: 41px;
 	width: 100%;
 	border-radius: 12px;
@@ -73,7 +73,7 @@
 }
 
 .login-button:hover {
-	background-color: #7eb44b;
+	background-color: #4c6d2d;
 }
 
 .login-button:active {

@@ -73,7 +73,7 @@ const Home = () => {
 			const querySnapshot = await getDocs(q);
 
 			const ids = querySnapshot.docs.map((doc) => doc.data().recipeId);
-			const shuffled = ids.sort(() => 0.5 - Math.random());
+			const shuffled = [...ids].sort(() => 0.5 - Math.random());
 			const selected = shuffled.slice(0, 6);
 			setDoneRecipeIds(selected);
 			setLoading(false);

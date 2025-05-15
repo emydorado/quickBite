@@ -46,7 +46,7 @@
 	width: 380px;
 }
 .big-card-time {
-	color: #b5b2ae;
+	color: #575757;
 	font-family: 'DM Sans', sans-serif;
 	font-weight: medium;
 	font-size: clamp(0.875rem, 2vw, 1rem);
