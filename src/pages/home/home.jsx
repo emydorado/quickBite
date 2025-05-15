@@ -53,6 +53,7 @@ const Home = () => {
 		handleQuickRecipes();
 	}, [recipes]);
 
+	
 	// recetas de pollo
 	useEffect(() => {
 		function handleChickenRecipes() {
