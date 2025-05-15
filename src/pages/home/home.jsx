@@ -72,11 +72,10 @@ const Home = () => {
 		const fetchMarkAsDoneRecipes = async () => {
 			const q = query(collection(db, 'alreadyDoneRecipes'), where('uid', '==', uid));
 			const querySnapshot = await getDocs(q);
-			const ids = querySnapshot.docs.map((doc) => doc.data().recipeId);
 
+			const ids = querySnapshot.docs.map((doc) => doc.data().recipeId);
 			const shuffled = ids.sort(() => 0.5 - Math.random());
 			const selected = shuffled.slice(0, 6);
-
 			setDoneRecipeIds(selected);
 			setLoading(false);
 		};
@@ -155,7 +154,7 @@ const Home = () => {
 								))}
 							</div>
 
-							{doneRecipes.length > 0 && (
+							{doneRecipes.length >= 5 && (
 								<>
 									<p className='home-subtitle'>Crave again</p>
 									<div className='home-section'>
