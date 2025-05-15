@@ -2,7 +2,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
-	padding: 3px 15px;
+	padding: 3px 10px;
 	margin: 6px;
 	font-size: 0.9rem;
 	font-weight: 500;
@@ -16,8 +16,8 @@
 }
 
 .ingredient-button:hover {
-	background-color: #b0b0b0;
-	border-color: #8e8e8e;
+	background-color: #dfdfdf;
+	border-color: #cacaca;
 	color: #3a3a3a;
 	transform: translateY(-2px);
 }

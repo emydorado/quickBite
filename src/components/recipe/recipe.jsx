@@ -15,7 +15,6 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 		};
 	}, []);
 
-	// Escalar cantidades
 	const scaledIngredients = ingredients.map((ingredient) => {
 		const baseQuantity = parseFloat(ingredient.quantity);
 		if (isNaN(baseQuantity)) return ingredient;
