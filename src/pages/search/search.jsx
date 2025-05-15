@@ -11,7 +11,6 @@ import { fetchIngredients, fetchCategories, fetchRecipes, fetchRecipesByCategory
 import './search.css';
 
 function Search() {
-	const [search, setSearch] = useState('');
 	const [searchIngredient, setSearchIngredient] = useState('');
 	const [ingredients, setIngredients] = useState([]);
 	const [categories, setCategories] = useState([]);
@@ -49,7 +48,6 @@ function Search() {
 	}, []);
 
 	const handleSearchChange = (event) => {
-		setSearch(event.target.value);
 		setSearchIngredient(event.target.value);
 	};
 
@@ -98,8 +96,6 @@ function Search() {
 	];
 
 	const filteredRecipes = recipes.filter((recipe) => {
-		const matchesSearch = search ? recipe.recipe_name?.toLowerCase().includes(search.toLowerCase()) : true;
-
 		const matchesIngredients =
 			selectedIngredients.length > 0
 				? selectedIngredients.every((selectedIng) =>
@@ -107,7 +103,7 @@ function Search() {
 				  )
 				: true;
 
-		return matchesSearch && matchesIngredients;
+		return matchesIngredients;
 	});
 
 	return (
@@ -122,7 +118,7 @@ function Search() {
 						type='text'
 						placeholder="What's in your fridge?... "
 						className='search-input'
-						value={search}
+						value={searchIngredient}
 						onChange={handleSearchChange}
 					/>
 
