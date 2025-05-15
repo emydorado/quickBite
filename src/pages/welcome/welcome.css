@@ -30,7 +30,7 @@
 .welcome-button-started {
 	font-size: 14px;
 	margin-bottom: 20px;
-	background-color: #8bc652;
+	background-color: #7eb44b;
 	height: 41px;
 	width: 216px;
 	border-radius: 12px;
@@ -42,7 +42,7 @@
 }
 
 .welcome-button-started:hover {
-	background-color: #7eb44b;
+	background-color: #4C6D2D;
 }
 
 .welcome-button-started:active {

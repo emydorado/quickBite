@@ -85,7 +85,7 @@
 	width: 100%;
 	height: 40px;
 	border-radius: 12px;
-	background-color: #8bc652;
+	background-color: #638d3a;
 	color: #fffdfc;
 	font-weight: 600;
 	border: none;
@@ -95,7 +95,7 @@
 }
 
 .signup-button:hover {
-	background-color: #7eb44b;
+	background-color: #4C6D2D;
 }
 
 .signup-button:active {
