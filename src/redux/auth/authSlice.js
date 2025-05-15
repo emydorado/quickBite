@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	uid: null,
+	isLoading: true,
 };
 
 const AuthSlice = createSlice({
@@ -9,10 +10,12 @@ const AuthSlice = createSlice({
 	initialState,
 	reducers: {
 		setUser: (state, action) => {
-			state.uid = action.payload.uid;
+			state.uid = action.payload;
+			state.isLoading = false;
 		},
 		removeUser: (state) => {
 			state.uid = null;
+			state.isLoading = false;
 		},
 	},
 });
