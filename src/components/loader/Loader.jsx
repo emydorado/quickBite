@@ -2,11 +2,12 @@ import './loader.css';
 
 function Loader() {
 	return (
-		<div className='loader-container'>
-			<div className='spinner'></div>
-			<p className='loader-text'>Loading...</p>
+		<div className="loader-fullscreen">
+			<div className="spinner"></div>
+			<span className="loader-text">Loading recipes...</span>
 		</div>
 	);
 }
 
 export default Loader;
+
