@@ -21,8 +21,6 @@ function Recipe() {
 	const receta = recipes.find((rec) => rec.id === id);
 	if (!receta) return <Loader />;
 
-	console.log(receta);
-
 	return (
 		<>
 			{loading ? (
