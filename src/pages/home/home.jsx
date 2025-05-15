@@ -110,7 +110,6 @@ const Home = () => {
 			}
 
 			const randomIngredient = viableIngredients[Math.floor(Math.random() * viableIngredients.length)];
-			console.log(randomIngredient);
 
 			setRelatedTitle(randomIngredient);
 
