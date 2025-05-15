@@ -7,7 +7,7 @@ const BigCardDish = ({ img, title, time, id }) => {
 
 	return (
 		<div className='big-card'>
-			<img src={img} alt='dish picture' onClick={() => navigate(`/recipe/${id}`)} />
+			<img src={img} alt='dish picture' loading='lazy' onClick={() => navigate(`/recipe/${id}`)} />
 			<div className='text-icon-big'>
 				<div className='onlyText-big' onClick={() => navigate(`/recipe/${id}`)}>
 					<h1 className='big-card-title'>{title} </h1>
