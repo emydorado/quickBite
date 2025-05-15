@@ -9,12 +9,17 @@ import Loader from '../../components/loader/Loader';
 import { signOut } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { removeUser } from '../../redux/auth/authSlice';
-import { doc, getDoc, query, collection, getDocs, where } from 'firebase/firestore';
+import { updateProfile } from 'firebase/auth';
+import { doc, getDoc, query, collection, getDocs, where, updateDoc } from 'firebase/firestore';
 import './profile.css';
 
 function Profile() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const [showUsernameModal, setShowUsernameModal] = useState(false);
+	const [newUsername, setNewUsername] = useState('');
+	const [showProfilePicModal, setShowProfilePicModal] = useState(false);
+	const [photoURL, setPhotoURL] = useState('');
 	const [username, setUsername] = useState('');
 	const [doneRecipeIds, setDoneRecipeIds] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -22,6 +27,7 @@ function Profile() {
 	const uid = useSelector((state) => state.auth.uid);
 
 	useEffect(() => {
+		// función para fetchear recetas
 		const loadRecipes = async () => {
 			const recipes = await fetchRecipes();
 			setRecipes(recipes);
@@ -29,6 +35,7 @@ function Profile() {
 		loadRecipes();
 	}, []);
 
+	// función para darle un body diferente a profile
 	useEffect(() => {
 		document.body.classList.add('profile-body');
 
@@ -36,6 +43,8 @@ function Profile() {
 			document.body.classList.remove('profile-body');
 		};
 	}, []);
+
+	// función para fetchear username
 
 	useEffect(() => {
 		const fetchUsername = async () => {
@@ -55,6 +64,8 @@ function Profile() {
 		fetchUsername();
 	}, []);
 
+	// funcion para fetchear recetas hechas
+
 	useEffect(() => {
 		const fetchMarkAsDoneRecipes = async () => {
 			const q = query(collection(db, 'alreadyDoneRecipes'), where('uid', '==', uid));
@@ -68,6 +79,7 @@ function Profile() {
 
 	const doneRecipes = recipes.filter((recipe) => doneRecipeIds.includes(String(recipe.id)));
 
+	// función logout
 	const handleLogout = () => {
 		signOut(auth)
 			.then(() => {
@@ -79,8 +91,97 @@ function Profile() {
 			});
 	};
 
+	// función para actualizar foto de perfil
+	const changeProfilePhoto = async (newPhotoURL) => {
+		try {
+			if (auth.currentUser) {
+				await updateProfile(auth.currentUser, {
+					photoURL: newPhotoURL,
+				});
+				console.log('Foto de perfil actualizada');
+			}
+		} catch (error) {
+			console.error('Error al actualizar la foto de perfil:', error);
+		}
+	};
+
+	// función para editar el username
+	const updateUsername = async () => {
+		try {
+			const user = auth.currentUser;
+			if (user) {
+				const userRef = doc(db, 'users', user.uid);
+				await updateDoc(userRef, {
+					username: newUsername,
+				});
+				setUsername(newUsername);
+				setNewUsername('');
+				setShowUsernameModal(false);
+				alert('Username updated successfully!');
+			}
+		} catch (error) {
+			console.error('Error updating username:', error);
+			alert('Error updating username');
+		}
+	};
+
+	const handleSubmit = async () => {
+		await changeProfilePhoto(photoURL);
+		alert('Foto actualizada');
+	};
+
 	return (
 		<>
+			{showUsernameModal && (
+				<div className='modal-overlay'>
+					<div className='modal-content'>
+						<h2 className='modal-title'>Change Username</h2>
+						<p className='modal-body'>Enter your new username:</p>
+						<input
+							className='modal-input'
+							type='text'
+							placeholder='New username'
+							value={newUsername}
+							onChange={(e) => setNewUsername(e.target.value)}
+						/>
+						<button className='modal-button' onClick={updateUsername}>
+							Submit
+						</button>
+						<button className='modal-button modal-button-secondary' onClick={() => setShowUsernameModal(false)}>
+							Close
+						</button>
+					</div>
+				</div>
+			)}
+
+			{showProfilePicModal && (
+				<div className='modal-overlay'>
+					<div className='modal-content'>
+						<h2 className='modal-title'>Change Profile Photo</h2>
+						<p className='modal-body'>¿Estás seguro de que deseas continuar con esta acción?</p>
+						<input
+							className='modal-input'
+							type='text'
+							placeholder='Enter image URL'
+							value={photoURL}
+							onChange={(e) => setPhotoURL(e.target.value)}
+						/>
+						<button
+							className='modal-button'
+							onClick={() => {
+								handleSubmit();
+								() => setShowProfilePicModal(false);
+							}}
+						>
+							Submit
+						</button>
+						<button className='modal-button modal-button-secondary' onClick={() => setShowProfilePicModal(false)}>
+							Close
+						</button>
+					</div>
+				</div>
+			)}
+
 			{loading ? (
 				<Loader />
 			) : (
@@ -90,11 +191,12 @@ function Profile() {
 					<section className='profile-content'>
 						<div className='profile-picture-container'>
 							<img
-								src='https://static.vecteezy.com/system/resources/thumbnails/029/271/069/small_2x/avatar-profile-icon-in-flat-style-female-user-profile-illustration-on-isolated-background-women-profile-sign-business-concept-vector.jpg'
+								src={auth.currentUser?.photoURL || './src/assets/default-image-url.png'}
 								alt='profile picture'
 								className='profile-picture'
 							/>
-							<div className='edit-icon-profile'>
+
+							<div className='edit-icon-profile' onClick={() => setShowProfilePicModal(true)}>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									width='20'
@@ -127,7 +229,7 @@ function Profile() {
 						</div>
 
 						<div id='options-section'>
-							<div className='option-item'>
+							<div className='option-item' onClick={() => setShowUsernameModal(true)}>
 								<svg
 									xmlns='http://www.w3.org/2000/svg'
 									width='20'
