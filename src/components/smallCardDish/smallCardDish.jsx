@@ -7,7 +7,13 @@ const SmallCardDish = ({ id, img, title, time }) => {
 
 	return (
 		<div id='smallCard'>
-			<img src={img} alt='dish picture' className='home-image' onClick={() => navigate(`/recipe/${id}`)} />
+			<img
+				src={img}
+				alt='dish picture'
+				loading='lazy'
+				className='home-image'
+				onClick={() => navigate(`/recipe/${id}`)}
+			/>
 
 			<div className='text-icon'>
 				<div className='onlyText' onClick={() => navigate(`/recipe/${id}`)}>

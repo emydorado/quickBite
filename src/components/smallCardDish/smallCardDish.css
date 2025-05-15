@@ -46,7 +46,7 @@
 }
 
 .small-card-time {
-	color: #b5b2ae;
+	color: #575757;
 	font-family: 'DM Sans', sans-serif;
 	font-weight: 500;
 	font-size: clamp(0.75rem, 2.5vw, 0.875rem);
