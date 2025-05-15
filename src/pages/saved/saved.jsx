@@ -5,12 +5,14 @@ import { useEffect, useState } from 'react';
 import { db } from '../../services/firebaseConfig';
 import { fetchRecipes } from '../../services/firebaseUtils';
 import { collection, getDocs, query, where } from 'firebase/firestore';
+import Loader from '../../components/loader/Loader'; // 👈 importar el loader
 import './saved.css';
 
 function Saved() {
 	const [savedRecipeIds, setSavedRecipeIds] = useState([]);
-	const uid = useSelector((state) => state.auth.uid);
 	const [recipes, setRecipes] = useState([]);
+	const [loading, setLoading] = useState(true); // 👈 estado para el loader
+	const uid = useSelector((state) => state.auth.uid);
 
 	useEffect(() => {
 		const loadRecipes = async () => {
@@ -28,19 +30,22 @@ function Saved() {
 			const querySnapshot = await getDocs(q);
 			const ids = querySnapshot.docs.map((doc) => doc.data().recipeId);
 			setSavedRecipeIds(ids);
+			setLoading(false);
 		};
 		fetchSavedRecipes();
 	}, [uid]);
 
 	const savedRecipes = recipes.filter((recipe) => savedRecipeIds.includes(recipe.id));
 
+	if (loading) {
+		return <Loader />;
+	}
+
 	return (
 		<>
 			<div className='saved-container'>
-				<NavMenu></NavMenu>
-
+				<NavMenu />
 				<h1 className='saved-title'>Saved recipes</h1>
-
 				<section id='saved-cards'>
 					{savedRecipes.map((recipe) => (
 						<SavedCardDish
