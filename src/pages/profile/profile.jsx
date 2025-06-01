@@ -23,6 +23,8 @@ function Profile() {
 	const [username, setUsername] = useState('');
 	const [doneRecipeIds, setDoneRecipeIds] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [uploading, setUploading] = useState(false);
+
 	const [recipes, setRecipes] = useState([]);
 	const uid = useSelector((state) => state.auth.uid);
 
@@ -125,10 +127,56 @@ function Profile() {
 		}
 	};
 
-	const handleSubmit = async () => {
-		await changeProfilePhoto(photoURL);
-		alert('Foto actualizada');
+	const handleImageUpload = async (e) => {
+		const file = e.target.files[0];
+		if (!file) return;
+
+		setUploading(true); // activar loader
+		const formData = new FormData();
+
+		formData.append('file', file);
+		formData.append('upload_preset', 'user_profile_photos'); // tu preset en Cloudinary
+		formData.append('public_id', `${uid}_${Date.now()}`);
+
+		try {
+			const response = await fetch(`https://api.cloudinary.com/v1_1/dkhpqx9na/image/upload`, {
+				method: 'POST',
+				body: formData,
+			});
+
+			const data = await response.json();
+			const imageUrl = data.secure_url;
+			console.log('Nueva URL desde Cloudinary:', data.secure_url);
+
+			await changeProfilePhoto(imageUrl); // actualiza en Firebase Auth
+
+			// Actualizar en Firebase Auth
+			await changeProfilePhoto(imageUrl);
+
+			// Actualizar en Firestore
+			const userRef = doc(db, 'users', uid);
+			await updateDoc(userRef, { photoURL: imageUrl });
+
+			// Forzar actualización del estado local
+			setPhotoURL(imageUrl + `?${Date.now()}`); // Añadir timestamp para evitar cache
+
+			setUploading(false); // desactivar loader
+			setShowProfilePicModal(false);
+		} catch (error) {
+			console.error('Error al subir la imagen:', error);
+			setUploading(false); // desactivar loader aunque haya error
+		}
 	};
+
+	useEffect(() => {
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			if (user) {
+				setPhotoURL(user.photoURL ? `${user.photoURL}?${Date.now()}` : './src/assets/default-image-url.png');
+			}
+		});
+
+		return () => unsubscribe();
+	}, []);
 
 	return (
 		<>
@@ -158,26 +206,15 @@ function Profile() {
 				<div className='modal-overlay'>
 					<div className='modal-content'>
 						<h2 className='modal-title'>Change Profile Photo</h2>
-						<p className='modal-body'>¿Estás seguro de que deseas continuar con esta acción?</p>
-						<input
-							className='modal-input'
-							type='text'
-							placeholder='Enter image URL'
-							value={photoURL}
-							onChange={(e) => setPhotoURL(e.target.value)}
-						/>
-						<button
-							className='modal-button'
-							onClick={() => {
-								handleSubmit();
-								() => setShowProfilePicModal(false);
-							}}
-						>
-							Submit
-						</button>
-						<button className='modal-button modal-button-secondary' onClick={() => setShowProfilePicModal(false)}>
-							Close
-						</button>
+						<p className='modal-body'>Selecciona tu nueva foto de perfil:</p>
+
+						{uploading ? <Loader /> : <input type='file' accept='image/*' onChange={handleImageUpload} />}
+
+						{!uploading && (
+							<button className='modal-button modal-button-secondary' onClick={() => setShowProfilePicModal(false)}>
+								Close
+							</button>
+						)}
 					</div>
 				</div>
 			)}
@@ -191,9 +228,10 @@ function Profile() {
 					<section className='profile-content'>
 						<div className='profile-picture-container'>
 							<img
-								src={auth.currentUser?.photoURL || './src/assets/default-image-url.png'}
+								src={photoURL || `${auth.currentUser?.photoURL}?${Date.now()}` || './src/assets/default-image-url.png'}
 								alt='profile picture'
 								className='profile-picture'
+								key={photoURL} // Esto fuerza un remontaje cuando cambia la URL
 							/>
 
 							<div className='edit-icon-profile' onClick={() => setShowProfilePicModal(true)}>
