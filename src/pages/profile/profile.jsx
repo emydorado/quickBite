@@ -183,6 +183,25 @@ function Profile() {
 			{showUsernameModal && (
 				<div className='modal-overlay'>
 					<div className='modal-content'>
+						<button className='modal-button modal-button-secondary' onClick={() => setShowUsernameModal(false)}>
+							<svg
+								class='w-6 h-6 text-gray-800 dark:text-white'
+								aria-hidden='true'
+								xmlns='http://www.w3.org/2000/svg'
+								width='20'
+								height='20'
+								fill='none'
+								viewBox='0 0 24 24'
+							>
+								<path
+									stroke='currentColor'
+									strokeLinecap='round'
+									strokeLinejoin='round'
+									strokeWidth='3'
+									d='M6 18 17.94 6M18 18 6.06 6'
+								/>
+							</svg>{' '}
+						</button>
 						<h2 className='modal-title'>Change Username</h2>
 						<p className='modal-body'>Enter your new username:</p>
 						<input
@@ -195,9 +214,6 @@ function Profile() {
 						<button className='modal-button' onClick={updateUsername}>
 							Submit
 						</button>
-						<button className='modal-button modal-button-secondary' onClick={() => setShowUsernameModal(false)}>
-							Close
-						</button>
 					</div>
 				</div>
 			)}
@@ -205,15 +221,37 @@ function Profile() {
 			{showProfilePicModal && (
 				<div className='modal-overlay'>
 					<div className='modal-content'>
+						{!uploading && (
+							<button className='modal-button modal-button-secondary' onClick={() => setShowProfilePicModal(false)}>
+								<svg
+									class='w-6 h-6 text-gray-800 dark:text-white'
+									aria-hidden='true'
+									xmlns='http://www.w3.org/2000/svg'
+									width='20'
+									height='20'
+									fill='none'
+									viewBox='0 0 24 24'
+								>
+									<path
+										stroke='currentColor'
+										strokeLinecap='round'
+										strokeLinejoin='round'
+										strokeWidth='3'
+										d='M6 18 17.94 6M18 18 6.06 6'
+									/>
+								</svg>
+							</button>
+						)}
 						<h2 className='modal-title'>Change Profile Photo</h2>
 						<p className='modal-body'>Selecciona tu nueva foto de perfil:</p>
 
-						{uploading ? <Loader /> : <input type='file' accept='image/*' onChange={handleImageUpload} />}
-
-						{!uploading && (
-							<button className='modal-button modal-button-secondary' onClick={() => setShowProfilePicModal(false)}>
-								Close
-							</button>
+						{uploading ? (
+							<Loader />
+						) : (
+							<label className='file-upload'>
+								Subir foto
+								<input type='file' accept='image/*' onChange={handleImageUpload} />
+							</label>
 						)}
 					</div>
 				</div>
@@ -231,7 +269,7 @@ function Profile() {
 								src={photoURL || `${auth.currentUser?.photoURL}?${Date.now()}` || './src/assets/default-image-url.png'}
 								alt='profile picture'
 								className='profile-picture'
-								key={photoURL} // Esto fuerza un remontaje cuando cambia la URL
+								key={photoURL}
 							/>
 
 							<div className='edit-icon-profile' onClick={() => setShowProfilePicModal(true)}>
