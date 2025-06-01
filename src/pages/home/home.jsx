@@ -6,6 +6,9 @@ import { fetchRecipes } from '../../services/firebaseUtils';
 import { db } from '../../services/firebaseConfig';
 import { query, collection, getDocs, where } from 'firebase/firestore';
 import Loader from '../../components/loader/Loader';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useRef } from 'react';
 import './home.css';
 
 const Home = () => {
@@ -19,6 +22,7 @@ const Home = () => {
 	const [relatedRecipes, setRelatedRecipes] = useState([]);
 	const [relatedTitle, setRelatedTitle] = useState([]);
 	const uid = useSelector((state) => state.auth.uid);
+	const scrollRef = useRef(null);
 
 	// fetch recetas
 	useEffect(() => {
@@ -124,6 +128,17 @@ const Home = () => {
 		}
 	}, [recipes, doneRecipes]);
 
+	const scroll = (direction) => {
+		const container = scrollRef.current;
+		if (container) {
+			const scrollAmount = 300; // píxeles por clic
+			container.scrollBy({
+				left: direction === 'left' ? -scrollAmount : scrollAmount,
+				behavior: 'smooth',
+			});
+		}
+	};
+
 	return (
 		<>
 			{loading ? (
@@ -138,42 +153,88 @@ const Home = () => {
 						<p>Loading recipes...</p>
 					) : (
 						<div className='recomended-recipes-home'>
-							<p className='home-subtitle'>Recommended by us</p>
-
-							<div className='home-section'>
-								{randomRecipe.map((recipe) => (
-									<SmallCardDish
-										key={recipe.id}
-										id={recipe.id}
-										img={recipe.img}
-										title={recipe.recipe_name}
-										time={recipe.prep_time_minutes}
-									/>
-								))}
+							<div className='carousel-container'>
+								<p className='home-subtitle'>Recommended by us</p>
+								<div className='scroll-wrapper'>
+									<button className='scroll-button-home left' onClick={() => scroll('left')}>
+										<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
+									</button>
+									<div className='home-section' ref={scrollRef}>
+										{randomRecipe.map((recipe) => (
+											<SmallCardDish
+												key={recipe.id}
+												id={recipe.id}
+												img={recipe.img}
+												title={recipe.recipe_name}
+												time={recipe.prep_time_minutes}
+											/>
+										))}
+									</div>
+									<button className='scroll-button-home right' onClick={() => scroll('right')}>
+										<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
+									</button>
+								</div>
 							</div>
 
 							{doneRecipes.length >= 5 && (
-								<>
+								<div className='carousel-container'>
 									<p className='home-subtitle'>Crave again</p>
-									<div className='home-section'>
-										{doneRecipes.map((recipe) => (
-											<SmallCardDish
-												key={recipe.id}
-												id={recipe.id}
-												img={recipe.img}
-												time={recipe.prep_time_minutes}
-												title={recipe.recipe_name}
-											/>
-										))}
+									<div className='scroll-wrapper'>
+										<button className='scroll-button-home left' onClick={() => scroll('left')}>
+											<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
+										</button>
+										<div className='home-section' ref={scrollRef}>
+											{doneRecipes.map((recipe) => (
+												<SmallCardDish
+													key={recipe.id}
+													id={recipe.id}
+													img={recipe.img}
+													time={recipe.prep_time_minutes}
+													title={recipe.recipe_name}
+												/>
+											))}
+										</div>
+										<button className='scroll-button-home right' onClick={() => scroll('right')}>
+											<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
+										</button>
 									</div>
-								</>
+								</div>
 							)}
 
 							{relatedRecipes.length > 0 && (
-								<>
+								<div className='carousel-container'>
 									<p className='home-subtitle'>Because you liked recipes with {relatedTitle}</p>
-									<div className='home-section'>
-										{relatedRecipes.map((recipe) => (
+									<div className='scroll-wrapper'>
+										<button className='scroll-button-home left' onClick={() => scroll('left')}>
+											<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
+										</button>
+										<div className='home-section' ref={scrollRef}>
+											{' '}
+											{relatedRecipes.map((recipe) => (
+												<SmallCardDish
+													key={recipe.id}
+													id={recipe.id}
+													img={recipe.img}
+													title={recipe.recipe_name}
+													time={recipe.prep_time_minutes}
+												/>
+											))}
+										</div>
+										<button className='scroll-button-home right' onClick={() => scroll('right')}>
+											<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
+										</button>
+									</div>
+								</div>
+							)}
+
+							<div className='carousel-container'>
+								<p className='home-subtitle'>Chicken fix</p>
+								<div className='scroll-wrapper'>
+									<button className='scroll-button-home left' onClick={() => scroll('left')}>
+										<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
+									</button>
+									<div className='home-section' ref={scrollRef}>
+										{chickenRecipes.map((recipe) => (
 											<SmallCardDish
 												key={recipe.id}
 												id={recipe.id}
@@ -183,33 +244,34 @@ const Home = () => {
 											/>
 										))}
 									</div>
-								</>
-							)}
-
-							<p className='home-subtitle'>Chicken fix</p>
-							<div className='home-section'>
-								{chickenRecipes.map((recipe) => (
-									<SmallCardDish
-										key={recipe.id}
-										id={recipe.id}
-										img={recipe.img}
-										title={recipe.recipe_name}
-										time={recipe.prep_time_minutes}
-									/>
-								))}
+									<button className='scroll-button-home right' onClick={() => scroll('right')}>
+										<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
+									</button>
+								</div>
 							</div>
 
-							<p className='home-subtitle'>Ready in 20 minutes</p>
-							<div className='home-section'>
-								{quickRecipes.map((recipe) => (
-									<SmallCardDish
-										key={recipe.id}
-										id={recipe.id}
-										img={recipe.img}
-										title={recipe.recipe_name}
-										time={recipe.prep_time_minutes}
-									/>
-								))}
+							<div className='carousel-container'>
+								<p className='home-subtitle'>Ready in 20 minutes</p>
+								<div className='scroll-wrapper'>
+									<button className='scroll-button-home left' onClick={() => scroll('left')}>
+										<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
+									</button>
+									<div className='home-section' ref={scrollRef}>
+										{' '}
+										{quickRecipes.map((recipe) => (
+											<SmallCardDish
+												key={recipe.id}
+												id={recipe.id}
+												img={recipe.img}
+												title={recipe.recipe_name}
+												time={recipe.prep_time_minutes}
+											/>
+										))}
+									</div>
+									<button className='scroll-button-home right' onClick={() => scroll('right')}>
+										<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
+									</button>
+								</div>
 							</div>
 						</div>
 					)}

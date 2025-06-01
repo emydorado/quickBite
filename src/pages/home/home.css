@@ -24,8 +24,55 @@
 	scroll-snap-type: x mandatory;
 	gap: clamp(0.75rem, 2vw, 1.25rem);
 	scroll-padding: clamp(0.5rem, 1.5vw, 1rem);
+	scrollbar-width: none;
 }
 
 .home-section::-webkit-scrollbar {
 	display: none;
+}
+
+.carousel-container {
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+.scroll-wrapper {
+	position: relative;
+}
+
+.scroll-button-home {
+	position: absolute;
+	top: 45%;
+	transform: translateY(-50%);
+	z-index: 2;
+	background-color: rgb(255, 255, 255);
+	border: none;
+	border-radius: 50%;
+	padding: 8px;
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+
+.scroll-button-home:hover {
+	background-color: #ffffff;
+	transform: translateY(-50%) scale(1.05);
+}
+
+.scroll-button-home.left {
+	left: -4px;
+}
+.scroll-button-home.right {
+	right: -4px;
+}
+
+@media (max-width: 820px) {
+	.scroll-button-home {
+		display: none;
+	}
 }

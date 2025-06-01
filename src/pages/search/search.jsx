@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
 import NavMenu from '../../components/navMenu/navMenu';
 import { Suspense, lazy } from 'react';
-
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const BigCardDish = lazy(() => import('../../components/bigCardDish/bigCardDish'));
 const CategorieButton = lazy(() => import('../../components/categorieButton/categorieButton'));
 const IngredientButton = lazy(() => import('../../components/ingredientButton/ingredientButton'));
-
 import Loader from '../../components/loader/Loader';
 import { fetchIngredients, fetchCategories, fetchRecipes, fetchRecipesByCategory } from '../../services/firebaseUtils';
 import './search.css';
@@ -124,7 +124,7 @@ function Search() {
 
 					<div className='ingredient-scroll-wrapper'>
 						<button className='scroll-button left' onClick={scrollLeft}>
-							←
+							<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
 						</button>
 
 						<section className='container-ingredients' ref={ingredientContainerRef}>
@@ -140,7 +140,7 @@ function Search() {
 						</section>
 
 						<button className='scroll-button right' onClick={scrollRight}>
-							→
+							<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
 						</button>
 					</div>
 
