@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 const BigCardDish = ({ img, title, time, id }) => {
 	const navigate = useNavigate();
-
 	const handleNavigate = () => navigate(`/recipe/${id}`);
 
 	return (
