@@ -119,11 +119,9 @@ function Profile() {
 				setUsername(newUsername);
 				setNewUsername('');
 				setShowUsernameModal(false);
-				alert('Username updated successfully!');
 			}
 		} catch (error) {
 			console.error('Error updating username:', error);
-			alert('Error updating username');
 		}
 	};
 
