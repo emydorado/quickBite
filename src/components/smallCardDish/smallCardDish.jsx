@@ -22,9 +22,7 @@ const SmallCardDish = ({ id, img, title, time }) => {
 							{time} minutes
 						</Typography>
 					</Box>
-					<IconButton sx={{ p: 0.5 }} onClick={(e) => e.stopPropagation()}>
-						<SavedIcon recipeId={id} />
-					</IconButton>
+					<SavedIcon recipeId={id} />
 				</Box>
 			</CardContent>
 		</Card>

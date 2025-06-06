@@ -5,7 +5,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import { checkIfRecipeSaved, saveRecipe, removeSavedRecipe } from '../../services/firebaseUtils';
 
-const SavedIcon = ({ recipeId }) => {
+const SavedIcon = ({ recipeId, iconSize = '24px' }) => {
 	const [isSaved, setIsSaved] = useState(false);
 	const uid = useSelector((state) => state.auth.uid);
 
@@ -35,8 +35,8 @@ const SavedIcon = ({ recipeId }) => {
 	};
 
 	return (
-		<IconButton onClick={handleClick} sx={{ color: '#6b6967', padding: 0.5 }}>
-			{isSaved ? <BookmarkIcon /> : <BookmarkBorderIcon />}
+		<IconButton onClick={handleClick} sx={{ color: '#6b6967', padding: 0 }}>
+			{isSaved ? <BookmarkIcon sx={{ fontSize: iconSize }} /> : <BookmarkBorderIcon sx={{ fontSize: iconSize }} />}
 		</IconButton>
 	);
 };

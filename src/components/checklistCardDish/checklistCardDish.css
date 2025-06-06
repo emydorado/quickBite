@@ -36,6 +36,9 @@
 	margin: 0;
 	text-align: left;
 	width: clamp(9rem, 35vw, 220px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .onlyTextChecklist .time {
