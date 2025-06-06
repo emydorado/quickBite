@@ -13,7 +13,7 @@ const BigCardDish = ({ img, title, time, id }) => {
 				display: 'flex',
 				flexDirection: 'column',
 				borderRadius: 1.5,
-				width: 'clamp(290px, 90vw, 410px)',
+				width: 'clamp(300px, 80vw, 350px)',
 				overflow: 'hidden',
 				cursor: 'pointer',
 				scrollSnapAlign: 'start',
@@ -54,6 +54,7 @@ const BigCardDish = ({ img, title, time, id }) => {
 					alignItems: 'center',
 					justifyContent: 'space-between',
 					padding: '8px 0 8px 0',
+					backgroundColor: '#fffdfc',
 				}}
 			>
 				<Box sx={{ display: 'flex', flexDirection: 'column', width: '70%' }}>
