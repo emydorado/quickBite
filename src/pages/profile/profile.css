@@ -50,7 +50,7 @@
 }
 
 #profile-body {
-	min-height: calc(100vh - 365px);
+	min-height: 100vh;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: stretch;
@@ -58,6 +58,13 @@
 	padding: clamp(1rem, 4vw, 3rem) clamp(2rem, 6vw, 6rem);
 	box-sizing: border-box;
 	background-color: #fffdfc;
+	width: 100%;
+	margin: 0;
+}
+
+#checklist-section,
+#options-section {
+	height: 100%;
 }
 
 #checklist-section {
