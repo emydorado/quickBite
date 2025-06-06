@@ -115,7 +115,7 @@ function Search() {
 					mt: 4,
 					mb: 4,
 					pt: {
-						xs: 0, // 0-600px: 0
+						xs: 0,
 						sm: 0,
 						md: '80px',
 					},
@@ -123,7 +123,7 @@ function Search() {
 			>
 				<Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 					<Typography
-						variant='h4'
+						variant='h1'
 						component='h1'
 						gutterBottom
 						sx={{

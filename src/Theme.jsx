@@ -17,6 +17,14 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: 'DM Sans, sans-serif',
+
+		h1: {
+			fontFamily: 'Radio Canada, sans-serif',
+			fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+			fontWeight: 700,
+			lineHeight: 1.3,
+			marginBottom: '1rem',
+		},
 	},
 
 	breakpoints: {
