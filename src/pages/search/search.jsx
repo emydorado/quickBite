@@ -172,7 +172,7 @@ function Search() {
 							position: 'relative',
 							width: '100%',
 							maxWidth: 800,
-							mb: 3,
+							mb: 1,
 						}}
 					>
 						<IconButton
@@ -251,10 +251,10 @@ function Search() {
 								display: 'none',
 							},
 							py: 1,
-							mb: 4,
+							mb: 1,
 						}}
 					>
-						<Box sx={{ display: 'flex', gap: 2 }}>
+						<Box sx={{ display: 'flex', gap: 0.5 }}>
 							{categories.map((category) => (
 								<CategorieButton
 									key={category.id}
