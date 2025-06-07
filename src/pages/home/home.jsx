@@ -22,7 +22,23 @@ const Home = () => {
 	const [relatedRecipes, setRelatedRecipes] = useState([]);
 	const [relatedTitle, setRelatedTitle] = useState([]);
 	const uid = useSelector((state) => state.auth.uid);
-	const scrollRef = useRef(null);
+	const recommendedRef = useRef(null);
+	const craveAgainRef = useRef(null);
+	const relatedRef = useRef(null);
+	const chickenRef = useRef(null);
+	const quickRef = useRef(null);
+
+	// Función de scroll
+	const scroll = (ref, direction) => {
+		const container = ref.current;
+		if (container) {
+			const scrollAmount = 300;
+			container.scrollBy({
+				left: direction === 'left' ? -scrollAmount : scrollAmount,
+				behavior: 'smooth',
+			});
+		}
+	};
 
 	// fetch recetas
 	useEffect(() => {
@@ -128,17 +144,6 @@ const Home = () => {
 		}
 	}, [recipes, doneRecipes]);
 
-	const scroll = (direction) => {
-		const container = scrollRef.current;
-		if (container) {
-			const scrollAmount = 300; // píxeles por clic
-			container.scrollBy({
-				left: direction === 'left' ? -scrollAmount : scrollAmount,
-				behavior: 'smooth',
-			});
-		}
-	};
-
 	return (
 		<>
 			{loading ? (
@@ -156,10 +161,10 @@ const Home = () => {
 							<div className='carousel-container'>
 								<p className='home-subtitle'>Recommended by us</p>
 								<div className='scroll-wrapper'>
-									<button className='scroll-button-home left' onClick={() => scroll('left')}>
+									<button className='scroll-button-home left' onClick={() => scroll(recommendedRef, 'left')}>
 										<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
 									</button>
-									<div className='home-section' ref={scrollRef}>
+									<div className='home-section' ref={recommendedRef}>
 										{randomRecipe.map((recipe) => (
 											<SmallCardDish
 												key={recipe.id}
@@ -170,7 +175,7 @@ const Home = () => {
 											/>
 										))}
 									</div>
-									<button className='scroll-button-home right' onClick={() => scroll('right')}>
+									<button className='scroll-button-home right' onClick={() => scroll(recommendedRef, 'right')}>
 										<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
 									</button>
 								</div>
@@ -180,10 +185,10 @@ const Home = () => {
 								<div className='carousel-container'>
 									<p className='home-subtitle'>Crave again</p>
 									<div className='scroll-wrapper'>
-										<button className='scroll-button-home left' onClick={() => scroll('left')}>
+										<button className='scroll-button-home left' onClick={() => scroll(craveAgainRef, 'left')}>
 											<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
 										</button>
-										<div className='home-section' ref={scrollRef}>
+										<div className='home-section' ref={craveAgainRef}>
 											{doneRecipes.map((recipe) => (
 												<SmallCardDish
 													key={recipe.id}
@@ -194,7 +199,7 @@ const Home = () => {
 												/>
 											))}
 										</div>
-										<button className='scroll-button-home right' onClick={() => scroll('right')}>
+										<button className='scroll-button-home right' onClick={() => scroll(craveAgainRef, 'right')}>
 											<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
 										</button>
 									</div>
@@ -205,11 +210,10 @@ const Home = () => {
 								<div className='carousel-container'>
 									<p className='home-subtitle'>Because you liked recipes with {relatedTitle}</p>
 									<div className='scroll-wrapper'>
-										<button className='scroll-button-home left' onClick={() => scroll('left')}>
+										<button className='scroll-button-home left' onClick={() => scroll(relatedRef, 'left')}>
 											<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
 										</button>
-										<div className='home-section' ref={scrollRef}>
-											{' '}
+										<div className='home-section' ref={relatedRef}>
 											{relatedRecipes.map((recipe) => (
 												<SmallCardDish
 													key={recipe.id}
@@ -220,7 +224,7 @@ const Home = () => {
 												/>
 											))}
 										</div>
-										<button className='scroll-button-home right' onClick={() => scroll('right')}>
+										<button className='scroll-button-home right' onClick={() => scroll(relatedRef, 'right')}>
 											<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
 										</button>
 									</div>
@@ -230,10 +234,10 @@ const Home = () => {
 							<div className='carousel-container'>
 								<p className='home-subtitle'>Chicken fix</p>
 								<div className='scroll-wrapper'>
-									<button className='scroll-button-home left' onClick={() => scroll('left')}>
+									<button className='scroll-button-home left' onClick={() => scroll(chickenRef, 'left')}>
 										<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
 									</button>
-									<div className='home-section' ref={scrollRef}>
+									<div className='home-section' ref={chickenRef}>
 										{chickenRecipes.map((recipe) => (
 											<SmallCardDish
 												key={recipe.id}
@@ -244,7 +248,7 @@ const Home = () => {
 											/>
 										))}
 									</div>
-									<button className='scroll-button-home right' onClick={() => scroll('right')}>
+									<button className='scroll-button-home right' onClick={() => scroll(chickenRef, 'right')}>
 										<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
 									</button>
 								</div>
@@ -253,10 +257,10 @@ const Home = () => {
 							<div className='carousel-container'>
 								<p className='home-subtitle'>Ready in 20 minutes</p>
 								<div className='scroll-wrapper'>
-									<button className='scroll-button-home left' onClick={() => scroll('left')}>
+									<button className='scroll-button-home left' onClick={() => scroll(quickRef, 'left')}>
 										<ArrowBackIosNewIcon sx={{ color: '#00150f' }} />
 									</button>
-									<div className='home-section' ref={scrollRef}>
+									<div className='home-section' ref={quickRef}>
 										{' '}
 										{quickRecipes.map((recipe) => (
 											<SmallCardDish
@@ -268,7 +272,7 @@ const Home = () => {
 											/>
 										))}
 									</div>
-									<button className='scroll-button-home right' onClick={() => scroll('right')}>
+									<button className='scroll-button-home right' onClick={() => scroll(quickRef, 'right')}>
 										<ArrowForwardIosIcon sx={{ color: '#00150f' }} />
 									</button>
 								</div>
