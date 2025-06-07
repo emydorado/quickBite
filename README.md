@@ -31,7 +31,7 @@ https://quick-bite-eight.vercel.app/profile
 ### Instalación
 
 ```bash
-https://github.com/emydorado/quickBite.git
+git clone https://github.com/emydorado/quickBite.git
 cd quickbite
 npm install
 npm run dev
