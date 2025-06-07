@@ -18,6 +18,15 @@ function LogIn() {
 	const handleLogin = (e) => {
 		e.preventDefault();
 
+		if (!email.trim()) {
+			toast.error('Please enter your email.');
+			return;
+		}
+		if (!password) {
+			toast.error('Please enter your password.');
+			return;
+		}
+
 		signInWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
 				const user = userCredential.user;
@@ -58,18 +67,18 @@ function LogIn() {
 				<h1 className='login-title'>Welcome back!</h1>
 				<p className='login-subtitle'>Please Log In to continue</p>
 
-				<form onSubmit={handleLogin}>
+				<form onSubmit={handleLogin} noValidate>
 					<label htmlFor='email' className='login-label'>
 						Email
 					</label>
 					<input
 						required
-						onChange={(e) => setEmail(e.target.value)}
 						type='email'
 						id='email'
 						className='login-input'
 						placeholder='Example@quickbite.com'
 						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 
 					<label htmlFor='password' className='login-label'>
@@ -77,12 +86,12 @@ function LogIn() {
 					</label>
 					<input
 						required
-						onChange={(e) => setPassword(e.target.value)}
 						type='password'
 						id='password'
 						className='login-input-password'
 						placeholder='Your Password'
 						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 					/>
 
 					<p className='login-forgot-password'>Forget password?</p>
@@ -99,7 +108,8 @@ function LogIn() {
 					</p>
 				</section>
 			</div>
-			<ToastContainer position='top-center' autoClose={3000} theme='light' />
+
+			<ToastContainer position='top-right' autoClose={3000} theme='light' />
 		</div>
 	);
 }
