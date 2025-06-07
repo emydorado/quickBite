@@ -149,10 +149,18 @@
 	}
 
 	.login-container {
-		padding: 1.25rem;
+		width: 100%;
+		max-width: 360px;
+		background-color: transparent;
+		padding: 0;
+		box-shadow: none;
 	}
 
 	.login-forgot-password {
 		margin-bottom: 1.5rem;
+	}
+
+	.login-subtitle {
+		margin-bottom: 80px;
 	}
 }
