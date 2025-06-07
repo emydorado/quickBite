@@ -7,6 +7,10 @@ const BigCardDish = ({ img, title, time, id }) => {
 	const navigate = useNavigate();
 	const handleNavigate = () => navigate(`/recipe/${id}`);
 
+	const handleSaveClick = (e) => {
+		e.stopPropagation();
+	};
+
 	return (
 		<Card
 			sx={{
@@ -85,7 +89,9 @@ const BigCardDish = ({ img, title, time, id }) => {
 						{time} minutos
 					</Typography>
 				</Box>
-				<SavedIcon recipeId={id} iconSize='30px' />
+				<Box onClick={handleSaveClick}>
+					<SavedIcon recipeId={id} iconSize='30px' />
+				</Box>
 			</CardContent>
 		</Card>
 	);
