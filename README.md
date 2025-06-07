@@ -52,7 +52,8 @@ src/
 ├── main.jsx            # Punto de entrada de React
 └── store.js            # Configuración del store de Redux
 ```
-###Ejemplo de uso
+### Ejemplo de uso
+
 1. Abre la app
 
 2. Escribe los ingredientes que tienes en tu nevera:
