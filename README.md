@@ -1,4 +1,5 @@
 # QuickBite
+![Logo](./assets/screenshot1.png)
 **QuickBite** es una aplicación diseñada para buscar recetas, su función más destacada es permitir a los usuarios ingresar los ingredientes que tienen disponibles. A partir de esta información, la app sugiere recetas que pueden preparar con esos ingredientes, además, ajusta las cantidades según las necesidades del usuario.
 
 ## Demo
