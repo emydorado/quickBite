@@ -14,10 +14,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 	backgroundColor: 'transparent',
 	transition: 'transform 0.2s ease',
 	cursor: 'pointer',
-	'&:hover': {
-		transform: 'translateY(-4px)',
-		boxShadow: theme.shadows[4],
-	},
+
 	[theme.breakpoints.down('sm')]: {
 		width: 170,
 		height: 160,
