@@ -35,3 +35,37 @@ https://github.com/emydorado/quickBite.git
 cd quickbite
 npm install
 npm run dev
+```
+
+### Estructura del proyecto
+
+```bash
+src/
+├── components/         # Componentes reutilizables (botones, inputs, etc.)
+├── features/
+│   ├── fridge/         # Redux slice para ingredientes en la nevera
+│   └── recipes/        # Redux slice para recetas sugeridas
+├── pages/              # Páginas principales de la app (Inicio, Recetas, etc.)
+├── services/           # Funciones para buscar recetas o consultar APIs
+├── hooks/              # Hooks personalizados
+├── App.jsx             # Componente principal de la aplicación
+├── main.jsx            # Punto de entrada de React
+└── store.js            # Configuración del store de Redux
+```
+##Ejemplo de uso
+1. Abre la app
+
+2. Escribe los ingredientes que tienes en tu nevera:
+   Por ejemplo: chicken, pepper
+
+4. Haz clic en que tipo de comida buscas:
+   Por ejemplo: Dinner
+
+La app te sugiere recetas como:
+- Grilled checken taco
+Cheese and Spinach Stuffed Chicken
+
+5. Haz clic en la receta que mas te guste
+6. Selecciona las porciones que necesites
+7. Hazla
+8. Marcala como hecha
