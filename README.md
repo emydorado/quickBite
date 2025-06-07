@@ -62,11 +62,11 @@ src/
 4. Haz clic en que tipo de comida buscas:
    Por ejemplo: Dinner
 
-La app te sugiere recetas como:
-- Grilled checken taco
-Cheese and Spinach Stuffed Chicken
+   La app te sugiere recetas como:
+   - Grilled checken taco
+   - Cheese and Spinach Stuffed Chicken
 
-5. Haz clic en la receta que mas te guste
-6. Selecciona las porciones que necesites
-7. Hazla
-8. Marcala como hecha
+6. Haz clic en la receta que mas te guste
+7. Selecciona las porciones que necesites
+8. Hazla
+9. Marcala como hecha
