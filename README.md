@@ -1,41 +1,37 @@
-# 🥕 FridgeSaver (o el nombre de tu app)
+# QuickBite
+**QuickBite** es una aplicación diseñada para buscar recetas, su función más destacada es permitir a los usuarios ingresar los ingredientes que tienen disponibles. A partir de esta información, la app sugiere recetas que pueden preparar con esos ingredientes, además, ajusta las cantidades según las necesidades del usuario.
 
-**FridgeSaver** es una aplicación web que ayuda a reducir el desperdicio de alimentos. Los usuarios ingresan los ingredientes que tienen disponibles y la app les sugiere recetas posibles usando esos ingredientes.
+## Demo
 
-## 🚀 Demo
+https://quick-bite-eight.vercel.app/profile
 
-[Link a la demo en vivo si tienes una (por ejemplo en Vercel/Netlify)]
+## Características principales
 
-## 📸 Capturas de pantalla
-
-![screenshot1](link-o-path-a-la-imagen)
-![screenshot2](link-o-path-a-la-imagen)
-
-## 🧠 Características
-
-- Ingresar ingredientes que tienes en casa
-- Obtener sugerencias de recetas basadas en lo que tienes
-- Guardar recetas favoritas (si aplica)
+- Sugerencia de recetas a partir de los ingredientes en tu cocina
+- Filtrar por tipo de comida
+- Guardar recetas que te gusten
 - Interfaz intuitiva construida con React + Redux
 
-## 🛠️ Tecnologías usadas
+## Tecnologías usadas
 
-- [React](https://reactjs.org/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [TailwindCSS](https://tailwindcss.com/) (si lo usas)
-- [Vite](https://vitejs.dev/) o Create React App, etc.
+- [React](https://reactjs.org/) – Biblioteca principal para construir la interfaz
+- [Redux Toolkit](https://redux-toolkit.js.org/) – Manejo del estado global
+- [Material UI](https://mui.com/) – Componentes de interfaz
+- [Vite](https://vitejs.dev/) – Empaquetador y servidor de desarrollo rápido
+- [react-router-dom](https://reactrouter.com/) – Navegación entre páginas
 
-## 🏁 Cómo empezar
+
+##  Cómo empezar
 
 ### Prerrequisitos
 
-- Node.js >= 14
-- npm o yarn
+- Node.js
+- npm
 
 ### Instalación
 
 ```bash
-git clone https://github.com/tu-usuario/fridgesaver.git
+https://github.com/emydorado/quickBite.git
 cd fridgesaver
 npm install
 npm run dev
