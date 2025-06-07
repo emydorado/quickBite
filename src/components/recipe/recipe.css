@@ -11,7 +11,7 @@
 	position: fixed;
 	top: 2.5%;
 	left: 3%;
-	background-color: #8bc652;
+	background-color: #3a5322;
 	padding: 8px;
 	border-radius: 50%;
 	display: flex;
@@ -22,7 +22,7 @@
 }
 
 .go-back-icon:hover {
-	background-color: #b1d98b;
+	background-color: #52673f;
 }
 
 .recipe-body {

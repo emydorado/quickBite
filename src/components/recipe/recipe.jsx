@@ -32,7 +32,7 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 				width='28'
 				height='28'
 				viewBox='0 0 320 512'
-				style={{ fill: '#3A5322' }}
+				style={{ fill: '#fffdfc' }}
 				className='go-back-icon'
 				onClick={() => navigate(-1)}
 			>

@@ -6,10 +6,18 @@ import './smallCardDish.css';
 const SmallCardDish = ({ id, img, title, time }) => {
 	const navigate = useNavigate();
 
+	const handleCardClick = () => {
+		navigate(`/recipe/${id}`);
+	};
+
+	const handleSaveClick = (e) => {
+		e.stopPropagation();
+	};
+
 	return (
 		<Card
 			className='small-card'
-			onClick={() => navigate(`/recipe/${id}`)}
+			onClick={handleCardClick}
 			sx={{ borderRadius: 2, boxShadow: 'none', bgcolor: 'transparent' }}
 		>
 			<CardMedia component='img' image={img} alt='dish picture' className='small-card-image' />
@@ -22,7 +30,9 @@ const SmallCardDish = ({ id, img, title, time }) => {
 							{time} minutes
 						</Typography>
 					</Box>
-					<SavedIcon recipeId={id} />
+					<Box onClick={handleSaveClick}>
+						<SavedIcon recipeId={id} />
+					</Box>
 				</Box>
 			</CardContent>
 		</Card>
