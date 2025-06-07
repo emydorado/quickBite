@@ -32,6 +32,6 @@ https://quick-bite-eight.vercel.app/profile
 
 ```bash
 https://github.com/emydorado/quickBite.git
-cd fridgesaver
+cd quickbite
 npm install
 npm run dev
