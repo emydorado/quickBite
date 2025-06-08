@@ -8,7 +8,11 @@ const NavMenu = () => {
 	return (
 		<div id='navContainer'>
 			<div id='logo'>
-				<img src='../../src/assets/logo.png' alt='logo' onClick={() => navigate('/home')} />
+				<img
+					src='https://res.cloudinary.com/dkhpqx9na/image/upload/v1749402955/logo_fdu3m1.png'
+					alt='logo'
+					onClick={() => navigate('/home')}
+				/>
 			</div>
 
 			<div id='icons'>
