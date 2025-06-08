@@ -123,7 +123,7 @@ function OnBoarding({ tutorialType }) {
 
 				if (!hasSeenTutorial) {
 					setTimeout(async () => {
-						await waitForElement(TUTORIAL_STEPS[tutorialType][0].element);
+						await Promise.all(TUTORIAL_STEPS[tutorialType].map((step) => waitForElement(step.element)));
 
 						driver.setSteps(TUTORIAL_STEPS[tutorialType]);
 						driver.drive();

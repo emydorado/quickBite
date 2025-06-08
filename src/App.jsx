@@ -3,6 +3,7 @@ import { store } from './redux/store';
 import Router from './routes/router';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme.jsx';
+import 'driver.js/dist/driver.css';
 
 function App() {
 	return (
