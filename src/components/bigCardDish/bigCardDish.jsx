@@ -67,7 +67,7 @@ const BigCardDish = ({ img, title, time, id }) => {
 							fontFamily: 'DM Sans, sans-serif',
 							fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
 							color: '#6b6967',
-							fontWeight: 500,
+							fontWeight: 400,
 							textAlign: 'left',
 							whiteSpace: 'nowrap',
 							overflow: 'hidden',
@@ -78,15 +78,15 @@ const BigCardDish = ({ img, title, time, id }) => {
 					</Typography>
 					<Typography
 						sx={{
-							color: '#575757',
+							color: '#6b6967a8',
 							fontFamily: 'DM Sans, sans-serif',
-							fontWeight: 500,
+							fontWeight: 400,
 							fontSize: 'clamp(0.875rem, 2vw, 1rem)',
 							textAlign: 'left',
 							mt: '2px',
 						}}
 					>
-						{time} minutos
+						{time} minutes
 					</Typography>
 				</Box>
 				<Box onClick={handleSaveClick}>
