@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import CheckButton from '../checkButton/checkButton';
-import './recipe.css';
 import { useNavigate } from 'react-router-dom';
 import RecipeSaveIcon from '../recipeSaveIcon/RecipeSaveIcon';
+import OnBoarding from '../onBoarding/OnBoarding';
+import './recipe.css';
 
 const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 	const navigate = useNavigate();
@@ -27,6 +28,8 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 
 	return (
 		<div id='recipe-page'>
+			<OnBoarding tutorialType='recipe' />
+
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='28'

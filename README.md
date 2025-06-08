@@ -1,34 +1,37 @@
-# QuickBite
-**QuickBite** es una aplicación diseñada para buscar recetas, su función más destacada es permitir a los usuarios ingresar los ingredientes que tienen disponibles. A partir de esta información, la app sugiere recetas que pueden preparar con esos ingredientes, además, ajusta las cantidades según las necesidades del usuario.
+# 🍽️ QuickBite 
 
-## Demo
+**QuickBite** es una aplicación diseñada para buscar recetas. Su función más destacada es permitir a los usuarios ingresar los ingredientes que tienen disponibles. A partir de esta información, la app sugiere recetas que pueden preparar con esos ingredientes. Además, ajusta las cantidades según las necesidades del usuario.
 
-https://quick-bite-eight.vercel.app/profile
+## 🚀 Demo
 
-## Características principales
+[https://quick-bite-eight.vercel.app/profile](https://quick-bite-eight.vercel.app/profile)
 
-- Sugerencia de recetas a partir de los ingredientes en tu cocina
-- Filtrar por tipo de comida
-- Guardar recetas que te gusten
-- Interfaz intuitiva construida con React + Redux
+## ✨ Características principales
 
-## Tecnologías usadas
+- Sugerencia de recetas a partir de los ingredientes en tu cocina  
+- Filtrar por tipo de comida  
+- Guardar recetas que te gusten  
+- Interfaz intuitiva construida con React + Redux  
 
-- [React](https://reactjs.org/) – Biblioteca principal para construir la interfaz
-- [Redux Toolkit](https://redux-toolkit.js.org/) – Manejo del estado global
-- [Material UI](https://mui.com/) – Componentes de interfaz
-- [Vite](https://vitejs.dev/) – Empaquetador y servidor de desarrollo rápido
-- [react-router-dom](https://reactrouter.com/) – Navegación entre páginas
+## 🛠️ Tecnologías usadas
 
+- [React](https://reactjs.org/) – Biblioteca principal para construir la interfaz  
+- Redux Toolkit](https://redux-toolkit.js.org/) – Manejo del estado global  
+- [Material UI](https://mui.com/) – Componentes de interfaz  
+- [Vite](https://vitejs.dev/) – Empaquetador y servidor de desarrollo rápido  
+- [react-router-dom](https://reactrouter.com/) – Navegación entre páginas  
 
-##  Cómo empezar
+## 🚧 Cómo empezar
 
-### Prerrequisitos
+### ✅ Prerrequisitos
 
-- Node.js
-- npm
+Asegúrate de tener instalado:
 
-### Instalación
+- 🟢 [Node.js](https://nodejs.org/) (v18 o superior recomendado)  
+- 📦 npm (v9 o superior) o yarn  
+- 🧪 Git (opcional, si vas a clonar el repositorio)  
+
+### 📥 Instalación
 
 ```bash
 git clone https://github.com/emydorado/quickBite.git
@@ -37,22 +40,7 @@ npm install
 npm run dev
 ```
 
-### Estructura del proyecto
-
-```bash
-src/
-├── components/         # Componentes reutilizables (botones, inputs, etc.)
-├── features/
-│   ├── fridge/         # Redux slice para ingredientes en la nevera
-│   └── recipes/        # Redux slice para recetas sugeridas
-├── pages/              # Páginas principales de la app (Inicio, Recetas, etc.)
-├── services/           # Funciones para buscar recetas o consultar APIs
-├── hooks/              # Hooks personalizados
-├── App.jsx             # Componente principal de la aplicación
-├── main.jsx            # Punto de entrada de React
-└── store.js            # Configuración del store de Redux
-```
-### Ejemplo de uso
+### 👩‍🍳Ejemplo de uso
 
 1. Abre la app
 
@@ -66,7 +54,14 @@ src/
    - Grilled checken taco
    - Cheese and Spinach Stuffed Chicken
 
-6. Haz clic en la receta que mas te guste
-7. Selecciona las porciones que necesites
-8. Hazla
-9. Marcala como hecha
+5. Haz clic en la receta que mas te guste
+6. Selecciona las porciones que necesites
+7. Hazla
+8. Marcala como hecha
+
+### ✒️Autores
+
+Este proyecto fue desarrollado por:
+
+👩‍💻 Emy Dorado  
+👩‍💻 Natalia García

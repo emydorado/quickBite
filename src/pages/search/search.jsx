@@ -3,6 +3,11 @@ import NavMenu from '../../components/navMenu/navMenu';
 import { Suspense, lazy } from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import OnBoarding from '../../components/onBoarding/OnBoarding';
+const BigCardDish = lazy(() => import('../../components/bigCardDish/bigCardDish'));
+const CategorieButton = lazy(() => import('../../components/categorieButton/categorieButton'));
+const IngredientButton = lazy(() => import('../../components/ingredientButton/ingredientButton'));
+import { fetchIngredients, fetchCategories, fetchRecipes, fetchRecipesByCategory } from '../../services/firebaseUtils';
 import {
 	Box,
 	Container,
@@ -14,10 +19,6 @@ import {
 	useTheme,
 	CircularProgress,
 } from '@mui/material';
-const BigCardDish = lazy(() => import('../../components/bigCardDish/bigCardDish'));
-const CategorieButton = lazy(() => import('../../components/categorieButton/categorieButton'));
-const IngredientButton = lazy(() => import('../../components/ingredientButton/ingredientButton'));
-import { fetchIngredients, fetchCategories, fetchRecipes, fetchRecipesByCategory } from '../../services/firebaseUtils';
 
 function Search() {
 	const [searchIngredient, setSearchIngredient] = useState('');
@@ -27,10 +28,10 @@ function Search() {
 	const [selectedCategory, setSelectedCategory] = useState(null);
 	const [selectedIngredients, setSelectedIngredients] = useState([]);
 	const [loading, setLoading] = useState(true);
-
 	const ingredientContainerRef = useRef(null);
 	const theme = useTheme();
 	const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
 	useEffect(() => {
 		const loadInitialData = async () => {
 			try {
@@ -107,6 +108,7 @@ function Search() {
 
 	return (
 		<>
+			<OnBoarding tutorialType='search' />
 			<NavMenu />
 
 			<Container
@@ -138,6 +140,7 @@ function Search() {
 
 					<TextField
 						fullWidth
+						id='input-search-ingredient'
 						variant='outlined'
 						placeholder="What's in your fridge?..."
 						value={searchIngredient}
@@ -195,6 +198,7 @@ function Search() {
 						</IconButton>
 
 						<Box
+							id='ingredients-container-search'
 							ref={ingredientContainerRef}
 							sx={{
 								display: 'flex',
@@ -241,6 +245,7 @@ function Search() {
 					</Box>
 
 					<Box
+						id='categories-container-search'
 						sx={{
 							width: '100%',
 							maxWidth: 800,
