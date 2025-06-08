@@ -21,6 +21,7 @@ const Home = () => {
 	const [recipes, setRecipes] = useState([]);
 	const [relatedRecipes, setRelatedRecipes] = useState([]);
 	const [relatedTitle, setRelatedTitle] = useState([]);
+
 	const uid = useSelector((state) => state.auth.uid);
 	const recommendedRef = useRef(null);
 	const craveAgainRef = useRef(null);

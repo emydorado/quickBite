@@ -20,7 +20,6 @@ export const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
 	if (user) {
-		console.log('user from config:', user.uid);
 		store.dispatch(setUser({ uid: user.uid }));
 	} else {
 		store.dispatch(removeUser());
