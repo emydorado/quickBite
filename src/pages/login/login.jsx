@@ -5,8 +5,10 @@ import { setUser } from '../../redux/auth/authSlice';
 import { auth } from '../../services/firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+import 'react-toastify/dist/ReactToastify.css';
 import './login.css';
 
 function LogIn() {
@@ -14,6 +16,7 @@ function LogIn() {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [showPassword, setShowPassword] = useState(false);
 
 	const handleLogin = (e) => {
 		e.preventDefault();
@@ -84,15 +87,21 @@ function LogIn() {
 					<label htmlFor='password' className='login-label'>
 						Password
 					</label>
-					<input
-						required
-						type='password'
-						id='password'
-						className='login-input-password'
-						placeholder='Your Password'
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
+
+					<div className='password-input-container'>
+						<input
+							required
+							type={showPassword ? 'text' : 'password'}
+							id='password'
+							className='login-input-password'
+							placeholder='Your Password'
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+						<button type='button' onClick={() => setShowPassword(!showPassword)} className='toggle-password'>
+							{showPassword ? <Visibility /> : <VisibilityOff />}
+						</button>
+					</div>
 
 					<p className='login-forgot-password'>Forget password?</p>
 
