@@ -116,6 +116,34 @@ function OnBoarding({ tutorialType }) {
 				doneBtnText: 'Done',
 				nextBtnText: 'Next',
 				prevBtnText: 'Previous',
+				popoverClass: 'driverjs-popover', // Clase personalizada
+				overlayClass: 'driverjs-overlay', // Clase personalizada para el overlay
+				stageBackground: 'transparent', // Fondo del elemento resaltado
+				showProgress: true,
+				onHighlightStarted: (element) => {
+					// Forzar el stacking context
+					element.style.zIndex = '2147483645';
+					element.style.position = 'relative';
+					element.style.isolation = 'auto';
+
+					// Resetear cualquier transform que pueda afectar el z-index
+					element.style.transform = 'none';
+					element.style.willChange = 'auto';
+				},
+				onHighlighted: (element) => {
+					// Asegurar que el elemento no capture eventos
+					element.style.pointerEvents = 'none';
+				},
+				onReset: (element) => {
+					// Limpiar estilos al resetear
+					if (element) {
+						element.style.zIndex = '';
+						element.style.position = '';
+						element.style.transform = '';
+						element.style.willChange = '';
+						element.style.pointerEvents = '';
+					}
+				},
 			});
 
 			try {

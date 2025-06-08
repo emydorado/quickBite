@@ -14,27 +14,99 @@ body {
 }
 
 /* css popover */
+/* Estilos base para el overlay */
+/* Reset del stacking context */
+body.driver-active-display {
+	position: static !important;
+	overflow: visible !important;
+	transform: none !important;
+	will-change: auto !important;
+}
 
-/* Cambiar color de fondo del popover */
-.driver-popover {
+/* Overlay - debe estar DETRÁS del popover pero DELANTE del fondo */
+.driverjs-overlay {
+	background-color: rgba(0, 0, 0, 0.85) !important;
+	z-index: 2147483646 !important; /* Un valor menos que el popover */
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* Popover - debe estar ENCIMA de todo */
+.driverjs-popover {
 	background-color: #fffdfc !important;
-	border-radius: 12px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-	font-family: 'DM Sans', sans-serif;
+	border-radius: 12px !important;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+	font-family: 'DM Sans', sans-serif !important;
+	border: none !important;
+	max-width: 320px !important;
+	z-index: 2147483647 !important; /* Máximo valor posible */
+	position: fixed !important;
+	transform: none !important;
 }
 
-/* Cambiar color del título */
-.driver-popover-title {
-	color: #333333;
-	font-size: 18px;
-	font-weight: 600;
+/* Elemento resaltado - debe estar DELANTE del overlay pero DETRÁS del popover */
+.driver-highlighted-element {
+	z-index: 2147483645 !important;
+	position: relative !important;
+	box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.5) !important;
+	border-radius: 4px !important;
+	background-color: transparent !important;
+	pointer-events: none !important;
 }
 
-/* Cambiar descripción */
-.driver-popover-description {
-	color: #555555;
-	font-size: 14px;
-	line-height: 1.6;
+/* Flecha del popover */
+.driverjs-popover-arrow {
+	border-color: transparent !important;
+	background-color: #fffdfc !important;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+	z-index: 2147483647 !important; /* Igual que el popover */
+}
+
+/* Contenido del popover */
+.driverjs-popover-title {
+	color: #333333 !important;
+	font-size: 18px !important;
+	font-weight: 600 !important;
+	margin-bottom: 8px !important;
+}
+
+.driverjs-popover-description {
+	color: #555555 !important;
+	font-size: 14px !important;
+	line-height: 1.6 !important;
+	margin-bottom: 16px !important;
+}
+
+.driverjs-popover-footer {
+	display: flex !important;
+	justify-content: space-between !important;
+	gap: 8px !important;
+	padding-top: 12px !important;
+}
+
+.driverjs-popover-footer button {
+	border-radius: 8px !important;
+	padding: 8px 16px !important;
+	font-size: 14px !important;
+	font-weight: 500 !important;
+	transition: all 0.2s ease !important;
+	flex: 1 !important;
+	border: none !important;
+	cursor: pointer !important;
+}
+
+/* Botones del popover */
+.driverjs-popover-footer button {
+	border-radius: 8px !important;
+	padding: 8px 16px !important;
+	font-size: 14px !important;
+	font-weight: 500 !important;
+	transition: all 0.2s ease !important;
+	flex: 1 !important;
+	border: none !important;
 }
 
 /* Cambiar los botones */
