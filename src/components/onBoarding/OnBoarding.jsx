@@ -4,6 +4,7 @@ import { db } from '../../services/firebaseConfig';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { driver as Driver } from 'driver.js';
 import 'driver.js/dist/driver.css';
+import './OnBoarding.css';
 
 const TUTORIAL_STEPS = {
 	search: [
