@@ -4,7 +4,7 @@
 
 ## 🚀 Demo
 
-[https://quick-bite-eight.vercel.app/profile](https://quick-bite-eight.vercel.app/profile)
+[https://quick-bite-eight.vercel.app](https://quick-bite-eight.vercel.app)
 
 ## ✨ Main Features
 
@@ -42,7 +42,6 @@ This project uses the following main libraries and tools:
 - `@mui/icons-material` – Material UI icon set  
 - `@mui/material` – Material UI components  
 - `@reduxjs/toolkit` – Simplified Redux state management  
-- `driver.js` – Guided tours and feature highlights  
 - `firebase` – Firebase backend services  
 - `prop-types` – Runtime props validation for React  
 - `react` – Core React library (v19)  
