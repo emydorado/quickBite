@@ -202,7 +202,7 @@ function Profile() {
 									strokeWidth='3'
 									d='M6 18 17.94 6M18 18 6.06 6'
 								/>
-							</svg>{' '}
+							</svg>
 						</button>
 						<h2 className='modal-title'>Change Username</h2>
 						<p className='modal-body'>Enter your new username:</p>

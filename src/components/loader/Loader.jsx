@@ -13,6 +13,9 @@ const Loader = () => {
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
+				backgroundColor: '#fffdfc',
+				padding: '20px 40px',
+				borderRadius: '20px',
 			}}
 		>
 			<CircularProgress
