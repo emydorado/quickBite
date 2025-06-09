@@ -1,4 +1,3 @@
-import logo from '../../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 import './welcome.css';
 import { useEffect } from 'react';
@@ -18,7 +17,11 @@ function Welcome() {
 		<>
 			<div className='Container'>
 				<h1 className='welcome-title'>Welcome</h1>
-				<img className='welcome-logo' src={logo} alt='QuickBite-logo' />
+				<img
+					className='welcome-logo'
+					src='https://res.cloudinary.com/dkhpqx9na/image/upload/v1749402955/logo_fdu3m1.png'
+					alt='QuickBite-logo'
+				/>
 				<p className='welcome-slogan'>Cook delicious recipes with what’s in your fridge</p>
 				<button onClick={() => navigate('/signup')} className='welcome-button-started'>
 					Get Started
