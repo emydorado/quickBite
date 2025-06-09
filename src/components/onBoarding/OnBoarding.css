@@ -19,7 +19,7 @@ body.driver-active-display {
 }
 
 /* Popover - debe estar ENCIMA de todo */
-.driver-popover-content {
+.driverjs-popover {
 	background-color: #fffdfc !important;
 	border-radius: 12px !important;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
