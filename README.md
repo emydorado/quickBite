@@ -58,3 +58,9 @@ npm run dev
 6. Cook it  
 7. Mark it as done
 
+### ✒️ Authors
+
+This project was developed by:
+
+👩‍💻 Emy Dorado  
+👩‍💻 Natalia García
