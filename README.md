@@ -4,7 +4,7 @@
 
 ## 🚀 Demo
 
-[https://quick-bite-eight.vercel.app/profile](https://quick-bite-eight.vercel.app/profile)
+[https://quick-bite-eight.vercel.app/profile](https://quick-bite-eight.vercel.app)
 
 ## ✨ Main Features
 
