@@ -19,7 +19,7 @@ body.driver-active-display {
 }
 
 /* Popover - debe estar ENCIMA de todo */
-.driverjs-popover {
+.driver-popover-content {
 	background-color: #fffdfc !important;
 	border-radius: 12px !important;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
@@ -42,7 +42,7 @@ body.driver-active-display {
 }
 
 /* Flecha del popover */
-.driverjs-popover-arrow {
+.driver-popover-arrow {
 	border-color: transparent !important;
 	background-color: #fffdfc !important;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
@@ -66,14 +66,14 @@ body.driver-active-display {
 	margin-bottom: 16px !important;
 }
 
-.driverjs-popover-footer {
+.driver-popover-footer {
 	display: flex !important;
 	justify-content: space-between !important;
 	gap: 8px !important;
 	padding-top: 12px !important;
 }
 
-.driverjs-popover-footer button {
+.driver-popover-footer button {
 	border-radius: 8px !important;
 	padding: 8px 16px !important;
 	font-size: 14px !important;
@@ -82,23 +82,4 @@ body.driver-active-display {
 	flex: 1 !important;
 	border: none !important;
 	cursor: pointer !important;
-}
-
-/* Botones del popover */
-.driverjs-popover-footer button {
-	border-radius: 8px !important;
-	padding: 8px 16px !important;
-	font-size: 14px !important;
-	font-weight: 500 !important;
-	transition: all 0.2s ease !important;
-	flex: 1 !important;
-	border: none !important;
-}
-
-/* Cambiar los botones */
-.driver-popover-footer button {
-	border-radius: 8px;
-	padding: 6px 12px;
-	font-size: 14px;
-	font-weight: 500;
 }
