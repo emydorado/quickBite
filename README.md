@@ -29,7 +29,27 @@ Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v18 or higher recommended)  
 - npm (v9 or higher) or yarn  
-- Git (optional, if you’re cloning the repo)  
+- Git (optional, if you’re cloning the repo)
+
+## 📦 Dependencies
+
+This project uses the following main libraries and tools:
+
+- `@cloudinary/react` – Cloudinary integration for image handling  
+- `@cloudinary/url-gen` – Cloudinary URL generation utilities  
+- `@emotion/react` – CSS-in-JS styling support  
+- `@emotion/styled` – Styled components with Emotion  
+- `@mui/icons-material` – Material UI icon set  
+- `@mui/material` – Material UI components  
+- `@reduxjs/toolkit` – Simplified Redux state management  
+- `driver.js` – Guided tours and feature highlights  
+- `firebase` – Firebase backend services  
+- `prop-types` – Runtime props validation for React  
+- `react` – Core React library (v19)  
+- `react-dom` – React DOM rendering  
+- `react-redux` – Official Redux bindings for React  
+- `react-router-dom` – Routing and navigation  
+- `react-toastify` – Notification system for React
 
 ### 📥 Installation
 
