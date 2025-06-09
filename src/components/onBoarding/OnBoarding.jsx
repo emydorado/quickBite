@@ -117,35 +117,6 @@ function OnBoarding({ tutorialType }) {
 				doneBtnText: 'Done',
 				nextBtnText: 'Next',
 				prevBtnText: 'Previous',
-				className: 'driverjs-tour', // Clase contenedora principal
-				popoverClass: 'driverjs-popover-custom', // Contenedor del popover
-				overlayClass: 'driverjs-overlay-custom', // Capa de overlay
-				stageClass: 'driverjs-stage-custom', // Elemento resaltado
-				arrowClass: 'driverjs-arrow-custom', // Flecha del popover
-				titleClass: 'driverjs-title-custom', // Título
-				descriptionClass: 'driverjs-description-custom', // Descripción
-				footerClass: 'driverjs-footer-custom', // Pie de popover
-				nextBtnClass: 'driverjs-next-btn-custom', // Botón siguiente
-				prevBtnClass: 'driverjs-prev-btn-custom', // Botón anterior
-				closeBtnClass: 'driverjs-close-btn-custom', // Botón cerrar
-				progressClass: 'driverjs-progress-custom', // Barra de progreso
-
-				stageBackground: 'transparent', // Fondo del elemento resaltado
-				showProgress: true,
-
-				onHighlightStarted: (element) => {
-					element.classList.add('driverjs-element-highlighted');
-					element.style.zIndex = '2147483645';
-					element.style.position = 'relative';
-				},
-
-				onReset: (element) => {
-					if (element) {
-						element.classList.remove('driverjs-element-highlighted');
-						element.style.zIndex = '';
-						element.style.position = '';
-					}
-				},
 			});
 
 			try {

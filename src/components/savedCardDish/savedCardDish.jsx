@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardMedia, CardContent, Typography, Box, styled } from '@mui/material';
 import SavedIcon from '../savedIcon/savedIcon';
+import { useNavigate } from 'react-router-dom';
 
 const StyledCard = styled(Card)(({ theme }) => ({
 	display: 'flex',
@@ -40,8 +41,18 @@ const TextContent = styled(Box)(({ theme }) => ({
 }));
 
 const SavedCardDish = ({ id, img, title, time }) => {
+	const navigate = useNavigate();
+
+	const handleCardClick = () => {
+		navigate(`/recipe/${id}`);
+	};
+
+	const handleSaveClick = (e) => {
+		e.stopPropagation();
+	};
+
 	return (
-		<StyledCard>
+		<StyledCard onClick={handleCardClick}>
 			<StyledCardMedia component='img' image={img} alt='dish picture' />
 			<CardContent sx={{ p: 0, flexGrow: 1, boxShadow: 'none' }}>
 				<TextContent>
@@ -78,7 +89,7 @@ const SavedCardDish = ({ id, img, title, time }) => {
 							{time} minutes
 						</Typography>
 					</Box>
-					<Box sx={{ height: 24, width: 24 }}>
+					<Box sx={{ height: 24, width: 24 }} onClick={handleSaveClick}>
 						<SavedIcon recipeId={id} />
 					</Box>
 				</TextContent>
