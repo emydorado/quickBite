@@ -39,4 +39,22 @@ cd quickbite
 npm install
 npm run dev
 ```
+### 👩‍🍳 Usage Example
+
+1. Open the app
+
+2. Enter the ingredients you have in your fridge:  
+   Example: `chicken`, `pepper`
+
+3. Click on the type of meal you're looking for:  
+   Example: `Dinner`
+
+   The app might suggest recipes like:  
+   - Grilled Chicken Taco  
+   - Cheese and Spinach Stuffed Chicken  
+
+4. Click the recipe you like the most  
+5. Select how many servings you need  
+6. Cook it  
+7. Mark it as done
 
