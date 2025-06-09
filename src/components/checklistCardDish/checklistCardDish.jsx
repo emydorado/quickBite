@@ -6,6 +6,10 @@ const ChecklistCardDish = ({ id, img, title, time, description }) => {
 	const navigate = useNavigate();
 
 	const handleNavigate = () => navigate(`/recipe/${id}`);
+
+	const handleChecklistClick = (e) => {
+		e.stopPropagation();
+	};
 	return (
 		<div id='checklistCard' onClick={handleNavigate} role='button' aria-label={`Ver receta de ${title}`}>
 			<img src={img} alt='dish picture' />
@@ -14,7 +18,7 @@ const ChecklistCardDish = ({ id, img, title, time, description }) => {
 				<p className='time'>{time} minutes</p>
 				<p className='checklistDescription'>{description}</p>
 			</div>
-			<div id='checklist'>
+			<div id='checklist' onClick={handleChecklistClick}>
 				<CheckButton recipeId={id} />
 			</div>
 		</div>
