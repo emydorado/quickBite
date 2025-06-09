@@ -3,7 +3,6 @@ import NavMenu from '../../components/navMenu/navMenu';
 import { Suspense, lazy } from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import OnBoarding from '../../components/onBoarding/OnBoarding';
 const BigCardDish = lazy(() => import('../../components/bigCardDish/bigCardDish'));
 const CategorieButton = lazy(() => import('../../components/categorieButton/categorieButton'));
 const IngredientButton = lazy(() => import('../../components/ingredientButton/ingredientButton'));
@@ -108,7 +107,6 @@ function Search() {
 
 	return (
 		<>
-			<OnBoarding tutorialType='search' />
 			<NavMenu />
 
 			<Container

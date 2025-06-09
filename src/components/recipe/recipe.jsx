@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import CheckButton from '../checkButton/checkButton';
 import { useNavigate } from 'react-router-dom';
 import RecipeSaveIcon from '../recipeSaveIcon/RecipeSaveIcon';
-import OnBoarding from '../onBoarding/OnBoarding';
+import { IconButton } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import './recipe.css';
 
 const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
@@ -26,10 +28,16 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 		};
 	});
 
+	const increment = () => {
+		setServings((prev) => prev + 1);
+	};
+
+	const decrement = () => {
+		setServings((prev) => (prev > 1 ? prev - 1 : 1)); // evita que baje de 1
+	};
+
 	return (
 		<div id='recipe-page'>
-			<OnBoarding tutorialType='recipe' />
-
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width='28'
@@ -61,14 +69,22 @@ const RecipeComponent = ({ id, img, title, time, ingredients, steps }) => {
 					<p className='recipe-time'>{time} minutes</p>
 
 					<div className='servings-input-container'>
-						<label htmlFor='servings'>How many servings do you want to make?</label>
-						<input
-							id='servings'
-							type='number'
-							min='1'
-							value={servings}
-							onChange={(e) => setServings(parseInt(e.target.value) || 1)}
-						/>
+						<label htmlFor='servings'>How many servings do you need?</label>
+						<div className='servings-input-container-btns'>
+							<IconButton onClick={decrement}>
+								<RemoveIcon sx={{ color: '#3a5322' }} />
+							</IconButton>
+							<input
+								id='servings'
+								type='number'
+								min='1'
+								value={servings}
+								onChange={(e) => setServings(parseInt(e.target.value) || 1)}
+							/>
+							<IconButton onClick={increment}>
+								<AddIcon sx={{ color: '#3a5322' }} />
+							</IconButton>
+						</div>
 					</div>
 				</div>
 
