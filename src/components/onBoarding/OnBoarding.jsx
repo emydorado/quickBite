@@ -117,8 +117,7 @@ function OnBoarding({ tutorialType }) {
 				doneBtnText: 'Done',
 				nextBtnText: 'Next',
 				prevBtnText: 'Previous',
-
-				popoverClass: 'driverjs-popover', // Clase personalizadaAdd commentMore actions
+				popoverClass: 'driverjs-popover', // Clase personalizada
 				overlayClass: 'driverjs-overlay', // Clase personalizada para el overlay
 				stageBackground: 'transparent', // Fondo del elemento resaltado
 				showProgress: true,
