@@ -169,7 +169,11 @@ function Profile() {
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			if (user) {
-				setPhotoURL(user.photoURL ? `${user.photoURL}?${Date.now()}` : './src/assets/default-image-url.png');
+				setPhotoURL(
+					user.photoURL
+						? `${user.photoURL}?${Date.now()}`
+						: 'https://res.cloudinary.com/dkhpqx9na/image/upload/v1749504359/default-image-url_nbj9o4.png'
+				);
 			}
 		});
 
