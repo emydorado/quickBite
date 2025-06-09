@@ -1,37 +1,57 @@
-# 🍽️ QuickBite 
+# QuickBite 
 
-**QuickBite** es una aplicación diseñada para buscar recetas. Su función más destacada es permitir a los usuarios ingresar los ingredientes que tienen disponibles. A partir de esta información, la app sugiere recetas que pueden preparar con esos ingredientes. Además, ajusta las cantidades según las necesidades del usuario.
+**QuickBite** is an app designed to help users find recipes. Its standout feature is allowing users to enter the ingredients they already have. Based on that input, the app suggests recipes that can be made with those ingredients. Additionally, it adjusts quantities based on the user's needs.
 
 ## 🚀 Demo
 
 [https://quick-bite-eight.vercel.app/profile](https://quick-bite-eight.vercel.app/profile)
 
-## ✨ Características principales
+## ✨ Main Features
 
-- Sugerencia de recetas a partir de los ingredientes en tu cocina  
-- Filtrar por tipo de comida  
-- Guardar recetas que te gusten  
-- Interfaz intuitiva construida con React + Redux  
+- Recipe suggestions based on available ingredients  
+- Filter by meal type  
+- Save your favorite recipes  
+- Intuitive interface built with React + Redux  
 
-## 🛠️ Tecnologías usadas
+## 🛠️ Technologies Used
 
-- [React](https://reactjs.org/) – Biblioteca principal para construir la interfaz  
-- Redux Toolkit](https://redux-toolkit.js.org/) – Manejo del estado global  
-- [Material UI](https://mui.com/) – Componentes de interfaz  
-- [Vite](https://vitejs.dev/) – Empaquetador y servidor de desarrollo rápido  
-- [react-router-dom](https://reactrouter.com/) – Navegación entre páginas  
+- [React](https://reactjs.org/) – Main library for building the UI  
+- [Redux Toolkit](https://redux-toolkit.js.org/) – Global state management  
+- [Material UI](https://mui.com/) – UI components  
+- [Vite](https://vitejs.dev/) – Fast bundler and development server  
+- [react-router-dom](https://reactrouter.com/) – Page navigation  
 
-## 🚧 Cómo empezar
+## 🚧 Getting Started
 
-### ✅ Prerrequisitos
+### Prerequisites
 
-Asegúrate de tener instalado:
+Make sure you have the following installed:
 
-- 🟢 [Node.js](https://nodejs.org/) (v18 o superior recomendado)  
-- 📦 npm (v9 o superior) o yarn  
-- 🧪 Git (opcional, si vas a clonar el repositorio)  
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)  
+- npm (v9 or higher) or yarn  
+- Git (optional, if you’re cloning the repo)
 
-### 📥 Instalación
+## 📦 Dependencies
+
+This project uses the following main libraries and tools:
+
+- `@cloudinary/react` – Cloudinary integration for image handling  
+- `@cloudinary/url-gen` – Cloudinary URL generation utilities  
+- `@emotion/react` – CSS-in-JS styling support  
+- `@emotion/styled` – Styled components with Emotion  
+- `@mui/icons-material` – Material UI icon set  
+- `@mui/material` – Material UI components  
+- `@reduxjs/toolkit` – Simplified Redux state management  
+- `driver.js` – Guided tours and feature highlights  
+- `firebase` – Firebase backend services  
+- `prop-types` – Runtime props validation for React  
+- `react` – Core React library (v19)  
+- `react-dom` – React DOM rendering  
+- `react-redux` – Official Redux bindings for React  
+- `react-router-dom` – Routing and navigation  
+- `react-toastify` – Notification system for React
+
+### 📥 Installation
 
 ```bash
 git clone https://github.com/emydorado/quickBite.git
@@ -39,29 +59,28 @@ cd quickbite
 npm install
 npm run dev
 ```
+### 👩‍🍳 Usage Example
 
-### 👩‍🍳Ejemplo de uso
+1. Open the app
 
-1. Abre la app
+2. Enter the ingredients you have in your fridge:  
+   Example: `chicken`, `pepper`
 
-2. Escribe los ingredientes que tienes en tu nevera:
-   Por ejemplo: chicken, pepper
+3. Click on the type of meal you're looking for:  
+   Example: `Dinner`
 
-4. Haz clic en que tipo de comida buscas:
-   Por ejemplo: Dinner
+   The app might suggest recipes like:  
+   - Grilled Chicken Taco  
+   - Cheese and Spinach Stuffed Chicken  
 
-   La app te sugiere recetas como:
-   - Grilled checken taco
-   - Cheese and Spinach Stuffed Chicken
+4. Click the recipe you like the most  
+5. Select how many servings you need  
+6. Cook it  
+7. Mark it as done
 
-5. Haz clic en la receta que mas te guste
-6. Selecciona las porciones que necesites
-7. Hazla
-8. Marcala como hecha
+### ✒️ Authors
 
-### ✒️Autores
-
-Este proyecto fue desarrollado por:
+This project was developed by:
 
 👩‍💻 Emy Dorado  
 👩‍💻 Natalia García
